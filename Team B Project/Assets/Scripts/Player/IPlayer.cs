@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class IPlayer : MonoBehaviour
 {
-    public int Resources { get; private set; }
+    public int Resources { get; private set; } = 0;
     private List<object> _ownedPlanets = new List<object>();
     public IReadOnlyList<object> OwnedPlanets
     {
@@ -18,6 +18,10 @@ public abstract class IPlayer : MonoBehaviour
     public void AddResources(int amount)
     {
         Resources += amount;
+    }
+    public virtual void Update()
+    {
+
     }
     //Player Actions
     public void SpawnUnit(int unitType)
