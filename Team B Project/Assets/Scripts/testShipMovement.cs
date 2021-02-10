@@ -9,12 +9,11 @@ public class testShipMovement : MonoBehaviour
     GameObject currentTarget;
     GameObject nullTarget;//empty gameObject to assert target hasn't been destroyed
 
-    public Vector3 currentTargetCordinates;
-
     string myTargetTag;
 
     float pursuitRange = 40f;
     float firingRange = 5f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -60,9 +59,7 @@ public class testShipMovement : MonoBehaviour
 
         }
 
-        currentTargetCordinates = currentTarget.GetComponent<testShipMovement>().targeted();//obtain targets current position
-
-        if (Mathf.Abs(currentTargetCordinates.x - transform.position.x) > firingRange && Mathf.Abs(currentTargetCordinates.z - transform.position.z) > firingRange)//if target is out of firing range move twords it
+        if (Mathf.Abs(currentTarget.transform.position.x - transform.position.x) > firingRange && Mathf.Abs(currentTarget.transform.position.z - transform.position.z) > firingRange)//if target is out of firing range move twords it
         {
             GetComponent<NavMeshAgent>().SetDestination(new Vector3(currentTarget.transform.position.x, .25f, currentTarget.transform.position.z));//move tranform
             transform.rotation = Quaternion.LookRotation(gameObject.GetComponent<NavMeshAgent>().velocity.normalized);//face target
