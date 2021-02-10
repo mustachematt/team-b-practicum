@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - spawn
+  - testShip
+  - testShipEnemy
   layers:
   - Default
   - TransparentFX

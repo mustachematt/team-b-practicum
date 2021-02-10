@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class UnitSpawnTest : MonoBehaviour
 {
     GameObject[] waypoints;
-    [SerializeField] GameObject prefab;
+    [SerializeField] GameObject[] prefab;   //made this an array to try opposing ships
     
     void Start()
     {
@@ -21,6 +21,6 @@ public class UnitSpawnTest : MonoBehaviour
 
     public void SpawnShip()
     {
-        GameObject.Instantiate(prefab, waypoints[Random.Range(0,waypoints.Length)].transform);
+        GameObject.Instantiate(prefab[Random.Range(0, prefab.Length)], waypoints[Random.Range(0,waypoints.Length)].transform);
     }
 }
