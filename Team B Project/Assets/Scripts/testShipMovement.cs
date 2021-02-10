@@ -11,7 +11,7 @@ public class testShipMovement : MonoBehaviour
 
     string myTargetTag;
 
-    float pursuitRange = 50f;
+    float pursuitRange = 500f;
     float firingRange = 1f;
 
 
@@ -19,9 +19,9 @@ public class testShipMovement : MonoBehaviour
     void Start()
     {
         if (gameObject.CompareTag("testShipEnemy"))//assert what this' tag is to find enemy ships
-            myTargetTag = "testShip";
+            myTargetTag = "BasePlayer1";
         else
-            myTargetTag = "testShipEnemy";
+            myTargetTag = "BasePlayer2";
 
         targetBag = GameObject.FindGameObjectsWithTag(myTargetTag);//gather objects of requisite tag
 
@@ -55,7 +55,7 @@ public class testShipMovement : MonoBehaviour
         if (currentTarget == null) return;
         if (Mathf.Abs(currentTarget.transform.position.x - transform.position.x) > firingRange && Mathf.Abs(currentTarget.transform.position.z - transform.position.z) > firingRange)//if target is out of firing range move twords it
         {
-            GetComponent<NavMeshAgent>().SetDestination(new Vector3(currentTarget.transform.position.x, .25f, currentTarget.transform.position.z));//move tranform
+            GetComponent<NavMeshAgent>().SetDestination(new Vector3(currentTarget.transform.position.x, currentTarget.transform.position.y, currentTarget.transform.position.z));//move tranform
             transform.rotation = Quaternion.LookRotation(gameObject.GetComponent<NavMeshAgent>().velocity.normalized);//face target
         }
         else

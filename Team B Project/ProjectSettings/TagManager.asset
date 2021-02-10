@@ -8,6 +8,10 @@ TagManager:
   - testShip
   - testShipEnemy
   - Planet
+  - BasePlayer1
+  - BasePlayer2
+  - SpawnPlayer1
+  - SpawnPlayer2
   layers:
   - Default
   - TransparentFX
