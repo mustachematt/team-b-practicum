@@ -11,8 +11,8 @@ public class testShipMovement : MonoBehaviour
 
     string myTargetTag;
 
-    float pursuitRange = 40f;
-    float firingRange = 5f;
+    float pursuitRange = 50f;
+    float firingRange = 1f;
 
 
     // Start is called before the first frame update
@@ -25,16 +25,7 @@ public class testShipMovement : MonoBehaviour
 
         targetBag = GameObject.FindGameObjectsWithTag(myTargetTag);//gather objects of requisite tag
 
-        int index = 0;      //loop index
-        while (currentTarget == nullTarget && index != targetBag.Length)//find a new target if need be/ make sure array bounds are honored
-        {
-
-            if (targetBag[index] != gameObject && Mathf.Abs(targetBag[index].transform.position.x - transform.position.x) < pursuitRange && Mathf.Abs(targetBag[index].transform.position.z - transform.position.z) < pursuitRange)//if possible target is relatively close assign as new target
-                currentTarget = targetBag[index];
-            else
-                ++index;//else keep searching
-
-        }
+        UpdateTarget();
         
     }
 
@@ -42,11 +33,8 @@ public class testShipMovement : MonoBehaviour
         return gameObject.transform.position;
     }
 
-
-    // Update is called once per frame
-    void Update()
+    public void UpdateTarget()
     {
-        targetBag = GameObject.FindGameObjectsWithTag(myTargetTag);//gather objects of requisite tag
         int index = 0;//loop index
 
         while (currentTarget == nullTarget && index != targetBag.Length)//find a new target if need be/ make sure array bounds are honored
@@ -58,7 +46,13 @@ public class testShipMovement : MonoBehaviour
                 ++index;//else keep searching
 
         }
-
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        targetBag = GameObject.FindGameObjectsWithTag(myTargetTag);//gather objects of requisite tag
+        UpdateTarget();
+        if (currentTarget == null) return;
         if (Mathf.Abs(currentTarget.transform.position.x - transform.position.x) > firingRange && Mathf.Abs(currentTarget.transform.position.z - transform.position.z) > firingRange)//if target is out of firing range move twords it
         {
             GetComponent<NavMeshAgent>().SetDestination(new Vector3(currentTarget.transform.position.x, .25f, currentTarget.transform.position.z));//move tranform

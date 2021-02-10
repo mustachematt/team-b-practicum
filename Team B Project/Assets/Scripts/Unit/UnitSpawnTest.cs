@@ -21,6 +21,7 @@ public class UnitSpawnTest : MonoBehaviour
 
     public void SpawnShip()
     {
-        GameObject.Instantiate(prefab[Random.Range(0, prefab.Length)], waypoints[Random.Range(0,waypoints.Length)].transform);
+        var waypoint = waypoints[Random.Range(0,waypoints.Length)];
+        GameObject.Instantiate(prefab[Random.Range(0, prefab.Length)], waypoint.transform.position, waypoint.transform.rotation);
     }
 }
