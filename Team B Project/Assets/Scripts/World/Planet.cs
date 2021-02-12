@@ -17,11 +17,33 @@ public class Planet : MonoBehaviour
      * same time
      */
 
+
+    // Player control
     public enum controlEnum { neutral, player1, player2 };
     public controlEnum control;
 
+    
+    // Resources
+    public enum ResourceKind { metal, fuel };
+    public int[] resources;
+    public ResourceKind[] resourceKinds;
+
+
     private int curMetal;
     public int maxMetal;
+
+
+    struct Resource
+    {
+        public int amount;
+        public ResourceKind kind;
+
+        public Resource(int amount, ResourceKind kind)
+        {
+            this.amount = amount;
+            this.kind = kind;
+        }
+    }
 
     // order of resources in both arrays have to be the same with current implementation
     private int[] curResources;
