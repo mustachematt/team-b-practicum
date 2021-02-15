@@ -14,10 +14,6 @@ public class CameraControl : MonoBehaviour
     [SerializeField] int xLimit = 32;
     [SerializeField] int zLimit = 29;
     
-    private void Start()
-    {
-
-    }
     private void Update()
     {
         {
