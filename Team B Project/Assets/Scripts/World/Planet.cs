@@ -25,7 +25,7 @@ public class Planet : MonoBehaviour
     	Mountain = -metal +gas
     */
     public enum planetTypeEnum { neutral, gas, mountain, random };
-    public controlEnum control;
+    public planetTypeEnum planetType;
 
     // Player control
     public enum controlEnum { neutral, player1, player2 };
