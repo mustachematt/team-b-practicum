@@ -558,8 +558,8 @@ SpriteRenderer:
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 6, y: 4.51}
+  m_DrawMode: 2
+  m_Size: {x: 50, y: 50}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -574,7 +574,7 @@ Transform:
   m_GameObject: {fileID: 163144022}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.1, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1077,6 +1077,8 @@ MonoBehaviour:
   maxCamSize: 30
   zoomSpeed: 0.5
   speed: 15
+  xLimit: 32
+  zLimit: 29
 --- !u!114 &356949606
 MonoBehaviour:
   m_ObjectHideFlags: 0
