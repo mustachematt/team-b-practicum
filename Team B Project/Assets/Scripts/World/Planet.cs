@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Planet : MonoBehaviour
@@ -17,33 +18,28 @@ public class Planet : MonoBehaviour
      * same time
      */
 
-
     //Planet Types
     /*
     	Neutral = even gas/metal
     	Gas = +gas -metal
     	Mountain = -metal +gas
     */
+
+    // Planet type
     public enum planetTypeEnum { neutral, gas, mountain, random };
-    public controlEnum control;
+    public planetTypeEnum planetType;
 
     // Player control
     public enum controlEnum { neutral, player1, player2 };
     public controlEnum control;
 
     // Resources
-    public enum ResourceKind { metal, fuel };
-    public Resource[] resources;
-
-    private int curMetal;
-    public int maxMetal;
-    private int curFuel;
-    public int maxFuel;
-
-
+    public Resource[] resources = new Resource[2];
+    [Serializable]
     public struct Resource
     {
         public int amount;
+        public enum ResourceKind { metal, fuel };
         public ResourceKind kind;
 
         public Resource(int amount, ResourceKind kind)
@@ -60,8 +56,8 @@ public class Planet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        curResources = new int[] { curMetal };
-        maxResources = new int[] { maxMetal };
+        curResources = new int[] {};
+        maxResources = new int[] {};
     }
 
     // Update is called once per frame
