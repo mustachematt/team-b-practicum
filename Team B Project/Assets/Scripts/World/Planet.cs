@@ -18,19 +18,28 @@ public class Planet : MonoBehaviour
      */
 
 
+    //Planet Types
+    /*
+    	Neutral = even gas/metal
+    	Gas = +gas -metal
+    	Mountain = -metal +gas
+    */
+    public enum planetTypeEnum { neutral, gas, mountain, random };
+    public controlEnum control;
+
     // Player control
     public enum controlEnum { neutral, player1, player2 };
     public controlEnum control;
 
-    
     // Resources
     public enum ResourceKind { metal, fuel };
     public int[] resources;
     public ResourceKind[] resourceKinds;
 
-
     private int curMetal;
     public int maxMetal;
+    private int curFuel;
+    public int maxFuel;
 
 
     struct Resource
