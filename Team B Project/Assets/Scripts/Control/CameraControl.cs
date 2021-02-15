@@ -22,7 +22,6 @@ public class CameraControl : MonoBehaviour
     private void OnZoom(InputValue value)
     {
         var zoomDir = value.Get<Vector2>();
-        Debug.Log(zoomDir);
         if(zoomDir.y == 1f)
         {
             Camera.main.orthographicSize -= zoomSpeed;
