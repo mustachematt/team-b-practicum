@@ -25,15 +25,14 @@ public class Planet : MonoBehaviour
     
     // Resources
     public enum ResourceKind { metal, fuel };
-    public int[] resources;
-    public ResourceKind[] resourceKinds;
+    public Resource[] resources;
 
 
     private int curMetal;
     public int maxMetal;
 
 
-    struct Resource
+    public struct Resource
     {
         public int amount;
         public ResourceKind kind;
@@ -66,7 +65,7 @@ public class Planet : MonoBehaviour
             }
     }
 
-    void switchControl(controlEnum c)
+    private void switchControl(controlEnum c)
     {
         control = c;
     }
