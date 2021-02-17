@@ -10,11 +10,6 @@ public abstract class IPlayer : MonoBehaviour
     {
         get => _ownedPlanets.AsReadOnly();
     }
-    private List<object> _ownedStructures = new List<object>();
-    public IReadOnlyList<object> OwnedStructures
-    {
-        get => _ownedStructures.AsReadOnly();
-    }
     public void AddResources(int amount)
     {
         Resources += amount;
