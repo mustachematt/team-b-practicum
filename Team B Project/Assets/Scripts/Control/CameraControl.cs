@@ -17,12 +17,17 @@ public class CameraControl : MonoBehaviour
     private void Update()
     {
         {
+            var pos = Camera.main.transform.position;
             var newPos = Camera.main.transform.position + (new Vector3(directionX, 0, directionZ) * speed * Time.deltaTime);
             
-            if(newPos.x < xLimit && newPos.x > -xLimit 
-                && newPos.z < zLimit && newPos.z > -zLimit)
+            if(newPos.x < xLimit && newPos.x > -xLimit)
             {
-                Camera.main.transform.position = newPos;
+                Camera.main.transform.position = new Vector3(newPos.x, pos.y, pos.z);
+            }
+            pos = Camera.main.transform.position;
+            if (newPos.z < zLimit && newPos.z > -zLimit)
+            {
+                Camera.main.transform.position = new Vector3(pos.x, pos.y, newPos.z);
             }
         }   
     }
