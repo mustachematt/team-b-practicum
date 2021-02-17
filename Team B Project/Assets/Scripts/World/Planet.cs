@@ -31,7 +31,7 @@ public class Planet : MonoBehaviour
 
     // Building type
     public enum buildingTypeEnum { neutral, mine, factory };
-    public planetTypeEnum buildingType;
+    public buildingTypeEnum buildingType;
 
     // Player control
     public enum controlEnum { neutral, player1, player2 };
