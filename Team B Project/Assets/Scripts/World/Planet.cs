@@ -29,6 +29,10 @@ public class Planet : MonoBehaviour
     public enum planetTypeEnum { neutral, gas, mountain, random };
     public planetTypeEnum planetType;
 
+    // Building type
+    public enum buildingTypeEnum { neutral, mine, factory };
+    public planetTypeEnum buildingType;
+
     // Player control
     public enum controlEnum { neutral, player1, player2 };
     public controlEnum control;
