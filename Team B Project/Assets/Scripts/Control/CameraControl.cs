@@ -13,7 +13,7 @@ public class CameraControl : MonoBehaviour
     float directionZ = 0;
     [SerializeField] int xLimit = 32;
     [SerializeField] int zLimit = 29;
-    
+
     private void Update()
     {
         {
