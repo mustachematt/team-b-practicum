@@ -40,38 +40,39 @@ public class Planet : MonoBehaviour
     // Resources
     public Resource[] resources = new Resource[2];
     [Serializable]
-    public struct Resource
+    public class Resource
     {
-        public int amount;
+        public int currAmt; // the current amount of the resource on the planet
+        public int maxAmt; // the max amount of the resource on the planet
         public enum ResourceKind { metal, fuel };
         public ResourceKind kind;
 
-        public Resource(int amount, ResourceKind kind)
+        public Resource(int currAmt, ResourceKind kind)
         {
-            this.amount = amount;
+            this.currAmt = currAmt;
+            this.maxAmt = currAmt;
             this.kind = kind;
         }
     }
 
-    // order of resources in both arrays have to be the same with current implementation
-    private int[] curResources;
-    private int[] maxResources;
-
     // Start is called before the first frame update
     void Start()
     {
-        curResources = new int[] {};
-        maxResources = new int[] {};
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < maxResources.Length; ++i)
-            if (curResources[i] < maxResources[i])
+        foreach (Resource r in resources)
+        {
+            if (r.currAmt < r.maxAmt)
             {
-
+                // wait certain amount of seconds...
+                ++r.currAmt;
             }
+        }
+
     }
 
     private void switchControl(controlEnum c)
