@@ -283,11 +283,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &126678600
 SpriteRenderer:
@@ -328,7 +331,7 @@ SpriteRenderer:
   m_SortingLayerID: -467633327
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: a7ab09b1c0848d44e8dd570be227026b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -384,11 +387,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &373816448
 SpriteRenderer:
@@ -429,7 +435,7 @@ SpriteRenderer:
   m_SortingLayerID: -467633327
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 21796ebab03ecfd41865f5174897bcfc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -535,11 +541,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 2
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!1 &454741291
 GameObject:
@@ -606,11 +615,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 1
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &522413976
 SpriteRenderer:
@@ -721,11 +733,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &691174951
 SpriteRenderer:
@@ -766,7 +781,7 @@ SpriteRenderer:
   m_SortingLayerID: -467633327
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 852a52174e875154fa0900c42cf9470b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -808,11 +823,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 1
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &736899420
 SpriteRenderer:
@@ -923,11 +941,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &758101937
 SpriteRenderer:
@@ -968,7 +989,7 @@ SpriteRenderer:
   m_SortingLayerID: -467633327
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 21796ebab03ecfd41865f5174897bcfc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1010,11 +1031,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &794684753
 SpriteRenderer:
@@ -1055,7 +1079,7 @@ SpriteRenderer:
   m_SortingLayerID: -467633327
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: c2093d9b535aa1a4e96c4296af14d708, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1111,11 +1135,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 2
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &813494531
 SpriteRenderer:
@@ -1226,11 +1253,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &828408593
 SpriteRenderer:
@@ -1271,7 +1301,7 @@ SpriteRenderer:
   m_SortingLayerID: -467633327
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: a7ab09b1c0848d44e8dd570be227026b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1361,11 +1391,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &941987827
 SpriteRenderer:
@@ -1406,7 +1439,7 @@ SpriteRenderer:
   m_SortingLayerID: -467633327
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: a7ab09b1c0848d44e8dd570be227026b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1462,11 +1495,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &1002529415
 SpriteRenderer:
@@ -1507,7 +1543,7 @@ SpriteRenderer:
   m_SortingLayerID: -467633327
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 21796ebab03ecfd41865f5174897bcfc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1630,11 +1666,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 2
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &1042493810
 SpriteRenderer:
@@ -1745,11 +1784,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &1172415559
 SpriteRenderer:
@@ -1790,7 +1832,7 @@ SpriteRenderer:
   m_SortingLayerID: -467633327
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 852a52174e875154fa0900c42cf9470b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1846,11 +1888,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &1176951899
 SpriteRenderer:
@@ -1891,7 +1936,7 @@ SpriteRenderer:
   m_SortingLayerID: -467633327
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 852a52174e875154fa0900c42cf9470b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1947,11 +1992,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &1301622431
 SpriteRenderer:
@@ -1992,7 +2040,7 @@ SpriteRenderer:
   m_SortingLayerID: -467633327
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: a7ab09b1c0848d44e8dd570be227026b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2210,11 +2258,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &1520694092
 SpriteRenderer:
@@ -2255,7 +2306,7 @@ SpriteRenderer:
   m_SortingLayerID: -467633327
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 21796ebab03ecfd41865f5174897bcfc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2311,11 +2362,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &1530978842
 SpriteRenderer:
@@ -2356,7 +2410,7 @@ SpriteRenderer:
   m_SortingLayerID: -467633327
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 852a52174e875154fa0900c42cf9470b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2412,11 +2466,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &1610519659
 SpriteRenderer:
@@ -2457,7 +2514,7 @@ SpriteRenderer:
   m_SortingLayerID: -467633327
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: c2093d9b535aa1a4e96c4296af14d708, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2533,11 +2590,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 2
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &1817751643
 SpriteRenderer:
@@ -2634,11 +2694,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 1
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &1951038921
 SpriteRenderer:
@@ -2799,11 +2862,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 1
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!1 &2143791982
 GameObject:
@@ -2850,11 +2916,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetType: 0
+  buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 0
-  - amount: 0
+  - currAmt: 0
+    maxAmt: 0
     kind: 1
 --- !u!212 &2143791985
 SpriteRenderer:
@@ -2895,7 +2964,7 @@ SpriteRenderer:
   m_SortingLayerID: -467633327
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: c2093d9b535aa1a4e96c4296af14d708, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
