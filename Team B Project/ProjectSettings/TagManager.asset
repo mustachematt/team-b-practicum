@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - spawn
+  - testShip
+  - testShipEnemy
+  - Planet
+  - BasePlayer1
+  - BasePlayer2
+  - SpawnPlayer1
+  - SpawnPlayer2
   layers:
   - Default
   - TransparentFX
@@ -38,6 +46,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 693714481
+    locked: 0
+  - name: Planets
+    uniqueID: 3827333969
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
