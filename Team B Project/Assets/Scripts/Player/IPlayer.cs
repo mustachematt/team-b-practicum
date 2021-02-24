@@ -23,9 +23,5 @@ public abstract class IPlayer : MonoBehaviour
     {
         //Instantiate Ship Prefab, subtract resources
     }
-    public void BuildStructure(object planet, int structure)
-    {
-        // Add Structure to planet, add planet as owned by player
-    }
 
 }
