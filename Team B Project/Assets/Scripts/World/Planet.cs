@@ -22,7 +22,7 @@ public class Planet : MonoBehaviour
     /*
     	Neutral = even gas/metal
     	Gas = +gas -metal
-    	Mountain = -metal +gas
+    	Mountain = +metal -gas
     */
 
     // Planet type
