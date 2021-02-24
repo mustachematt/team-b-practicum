@@ -248,8 +248,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 2
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &35537233
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -330,8 +338,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 2
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &97953955
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -446,8 +462,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 0
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &102803370
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -623,8 +647,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 1
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &217916218
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -688,6 +720,7 @@ GameObject:
   - component: {fileID: 266527378}
   - component: {fileID: 266527377}
   - component: {fileID: 266527380}
+  - component: {fileID: 266527381}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -758,8 +791,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 266527380}
-        m_MethodName: SpawnShip
+      - m_Target: {fileID: 266527381}
+        m_MethodName: PurchaseShip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -821,6 +854,19 @@ MonoBehaviour:
   prefab:
   - {fileID: 6390367166743822167, guid: 6ce12599e009de242810656ac0069cc5, type: 3}
   - {fileID: 1088146771886139465, guid: 3e319b5c49f674b45875f1c49d6ff3c0, type: 3}
+--- !u!114 &266527381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266527375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38bbb87f05d01994790732d4b642b6e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ship: 0
 --- !u!1 &307288407
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,8 +941,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 0
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &309861185
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -991,8 +1045,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 0
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &339658033
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1168,8 +1230,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 1
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &484983052
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1264,8 +1334,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 2
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &525203680
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1403,8 +1481,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 0
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &790922087
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1499,8 +1585,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 1
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &815623449
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1655,8 +1749,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 0
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &1033564312
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1836,6 +1938,50 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1257646089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1257646091}
+  - component: {fileID: 1257646090}
+  m_Layer: 0
+  m_Name: Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1257646090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257646089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f1ce91c323987498b0507fde30af04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBase: {fileID: 1775745307}
+--- !u!4 &1257646091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257646089}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 815.3585, y: 436.2651, z: -20.59375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1409142091
 GameObject:
   m_ObjectHideFlags: 0
@@ -2209,8 +2355,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 0
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &1698589864
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2335,8 +2489,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 1
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &1799181269
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2512,8 +2674,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 2
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &1838253940
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2608,8 +2778,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 2
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &1958970826
 SpriteRenderer:
   m_ObjectHideFlags: 0

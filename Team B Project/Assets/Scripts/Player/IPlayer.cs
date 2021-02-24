@@ -6,6 +6,8 @@ public abstract class IPlayer : MonoBehaviour
 {
     public int Resources { get; private set; } = 0;
     private List<object> _ownedPlanets = new List<object>();
+    public GameObject playerBase;
+
     public IReadOnlyList<object> OwnedPlanets
     {
         get => _ownedPlanets.AsReadOnly();
@@ -19,9 +21,13 @@ public abstract class IPlayer : MonoBehaviour
 
     }
     //Player Actions
-    public void SpawnUnit(int unitType)
+    public void SpawnUnit(StarShipUtilities.shipType unitType/*, GameObject waypoint*/)
     {
         //Instantiate Ship Prefab, subtract resources
+        //resources -= shipPrefab.cost;
+        GameObject shipPrefab = StarShipUtilities.Instance.ShipDictionary[unitType];
+        GameObject ship = GameObject.Instantiate(shipPrefab, playerBase.transform.position, playerBase.transform.rotation);
+        //ship.StarShipScript.target = waypoint;
     }
     public void BuildStructure(object planet, int structure)
     {
