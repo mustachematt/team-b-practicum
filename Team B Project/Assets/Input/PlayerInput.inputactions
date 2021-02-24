@@ -1,39 +1,58 @@
 {
-    "name": "CameraMove",
+    "name": "PlayerInput",
     "maps": [
         {
-            "name": "Camera",
-            "id": "84e4c2ef-e15f-4c56-bd15-7614d4d28f1b",
+            "name": "Controls",
+            "id": "d53bbf82-a85c-4fd8-b855-535eb865443b",
             "actions": [
                 {
-                    "name": "PanVertical",
-                    "type": "Value",
-                    "id": "20313e55-9c11-48c8-a5f1-c748e50ebab5",
-                    "expectedControlType": "",
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "b5f7fc7b-0f3a-4665-8a1e-8545887a54ac",
+                    "expectedControlType": "Button",
                     "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Zoom",
+                    "type": "Value",
+                    "id": "e480c978-3969-4744-896e-0b428de6f83e",
+                    "expectedControlType": "Vector2",
+                    "processors": "NormalizeVector2",
                     "interactions": "Press"
                 },
                 {
                     "name": "PanHorizontal",
                     "type": "Value",
-                    "id": "6b2f59cf-c37c-4d70-8390-aeb91b20d141",
+                    "id": "0c3fd8dd-86bc-483f-a453-966819d0b169",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "Press"
                 },
                 {
-                    "name": "Zoom",
+                    "name": "PanVertical",
                     "type": "Value",
-                    "id": "1d52ed7e-cba6-4051-b48b-d145a848e6fc",
-                    "expectedControlType": "Vector2",
-                    "processors": "NormalizeVector2",
+                    "id": "a619dcdc-770d-4151-9dd8-a284a1aa5162",
+                    "expectedControlType": "",
+                    "processors": "",
                     "interactions": "Press"
                 }
             ],
             "bindings": [
                 {
+                    "name": "",
+                    "id": "4941f08b-3dfd-4a82-ad5e-bfffc743e414",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "1D Axis",
-                    "id": "1813fd11-ade2-465b-b050-648f7442fb96",
+                    "id": "a92e331c-4131-4b89-b603-ad36fd81d968",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
@@ -44,7 +63,7 @@
                 },
                 {
                     "name": "Negative",
-                    "id": "b4e0036a-6280-4c96-869c-3f9be6834750",
+                    "id": "ed1cb7ff-1a0f-4790-85da-631d88b9d52a",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
@@ -55,7 +74,7 @@
                 },
                 {
                     "name": "Positive",
-                    "id": "3d9c657e-c2bd-48ae-b5a9-cc42e29379ba",
+                    "id": "1e167f50-6d73-4e03-aa51-d2a036dee73a",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
@@ -66,7 +85,7 @@
                 },
                 {
                     "name": "1D Axis",
-                    "id": "9ed23608-6bc4-4e67-b4bb-17113eec89bb",
+                    "id": "8e021f8a-295a-4296-a097-075d1acb8665",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
@@ -77,7 +96,7 @@
                 },
                 {
                     "name": "negative",
-                    "id": "e0b40321-5341-470f-b08c-41e208dfa23d",
+                    "id": "c7758816-5896-4a47-a157-8c1cf2b7d6f3",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
@@ -88,7 +107,7 @@
                 },
                 {
                     "name": "positive",
-                    "id": "11d360a8-5a9c-4bce-bb55-7732688a8dec",
+                    "id": "6c99585b-ec22-406f-994c-35050f8b1b40",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
@@ -99,7 +118,7 @@
                 },
                 {
                     "name": "1D Axis",
-                    "id": "2bb67984-6ab3-4e93-9376-e637ede7e733",
+                    "id": "6b9bbf03-503c-4e37-9853-694a1d9b2525",
                     "path": "1DAxis(minValue=1,maxValue=-1)",
                     "interactions": "",
                     "processors": "",
@@ -110,7 +129,7 @@
                 },
                 {
                     "name": "Negative",
-                    "id": "e11fb4b6-b21d-4bba-b156-08f69a443b21",
+                    "id": "aa0e06d6-113e-40ab-8e29-13cf4b84dcb8",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
@@ -121,7 +140,7 @@
                 },
                 {
                     "name": "Positive",
-                    "id": "a6310612-30ce-43fd-adfa-2b2af939570f",
+                    "id": "cab1c21c-912c-453e-99b7-eca73402deca",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
@@ -132,7 +151,7 @@
                 },
                 {
                     "name": "1D Axis",
-                    "id": "3baa894c-3dd0-4777-bc5d-9b72c69d6463",
+                    "id": "6a1110b1-821b-475a-aa04-a1c0267f0775",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
@@ -143,7 +162,7 @@
                 },
                 {
                     "name": "negative",
-                    "id": "fba82a65-8d86-4613-9cff-318b3a26ff7e",
+                    "id": "6eba6495-fc5e-4dcb-b026-645dd73a956a",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
@@ -154,7 +173,7 @@
                 },
                 {
                     "name": "positive",
-                    "id": "8580fcd9-761b-4d60-a164-4947b8559f8f",
+                    "id": "d23dbfdb-18f3-4eff-a6e3-622bfa7dc3f9",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
@@ -165,7 +184,7 @@
                 },
                 {
                     "name": "",
-                    "id": "fc96eaca-343c-4572-98b3-5d4ba0c5bf69",
+                    "id": "25f314c5-922d-4447-80a5-6228db488636",
                     "path": "<Mouse>/scroll",
                     "interactions": "",
                     "processors": "",

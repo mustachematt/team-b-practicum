@@ -29,9 +29,5 @@ public abstract class IPlayer : MonoBehaviour
         GameObject ship = GameObject.Instantiate(shipPrefab, playerBase.transform.position, playerBase.transform.rotation);
         //ship.StarShipScript.target = waypoint;
     }
-    public void BuildStructure(object planet, int structure)
-    {
-        // Add Structure to planet, add planet as owned by player
-    }
 
 }

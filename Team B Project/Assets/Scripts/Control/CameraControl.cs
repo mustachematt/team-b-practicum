@@ -32,7 +32,7 @@ public class CameraControl : MonoBehaviour
         }   
     }
 
-    private void OnZoom(InputValue value)
+    public void OnZoom(InputValue value)
     {
         var zoomDir = value.Get<Vector2>();
         if(zoomDir.y == 1f)
@@ -48,11 +48,11 @@ public class CameraControl : MonoBehaviour
                 Camera.main.orthographicSize = maxCamSize;
         }
     }
-    private void OnPanHorizontal(InputValue value)
+    public void OnPanHorizontal(InputValue value)
     {
         directionX = value.Get<float>();
     }
-    private void OnPanVertical(InputValue value)
+    public void OnPanVertical(InputValue value)
     {
         directionZ = value.Get<float>();
     }
