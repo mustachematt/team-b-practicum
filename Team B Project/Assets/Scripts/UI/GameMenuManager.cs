@@ -24,9 +24,7 @@ public class GameMenuManager : MonoBehaviour
     void OnRightClick()
     {
         var mousePos = Mouse.current.position;
-
-        foreach (Button b in buttons)
-            b.GetComponent<RectTransform>().anchoredPosition = mousePos.ReadValue();
+        GetComponent<RectTransform>().position = mousePos.ReadValue();
 
         animator.SetTrigger("Appear");
     }
