@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+
 public class CameraControl : MonoBehaviour
 {
     [SerializeField] float minCamSize = 10f;
@@ -29,10 +31,11 @@ public class CameraControl : MonoBehaviour
             {
                 Camera.main.transform.position = new Vector3(pos.x, pos.y, newPos.z);
             }
-        }   
+        }
+        
     }
 
-    private void OnZoom(InputValue value)
+    public void OnZoom(InputValue value)
     {
         var zoomDir = value.Get<Vector2>();
         if(zoomDir.y == 1f)
@@ -48,12 +51,19 @@ public class CameraControl : MonoBehaviour
                 Camera.main.orthographicSize = maxCamSize;
         }
     }
-    private void OnPanHorizontal(InputValue value)
+    public void OnPanHorizontal(InputValue value)
     {
         directionX = value.Get<float>();
     }
-    private void OnPanVertical(InputValue value)
+    public void OnPanVertical(InputValue value)
     {
         directionZ = value.Get<float>();
     }
+    public void OnCameraSpeed(InputValue value)
+    {
+        if(value.Get<float>() > 0f) speed *=  2;
+        
+        else if(value.Get<float>() == 0.0f) speed /= 2;
+    }
+
 }

@@ -39,6 +39,8 @@ public class StartShipScript : MonoBehaviour
     }
 
     // Change UI according to the taken damage, return false if the ship is destoryed
+    // The bool value returned signals to the attacking ship that it has been destroyed
+    // will make it to where the attacking ship does not try to continue attacking a destroyed ship
     public bool takeDamage(int attack) {
         health -= attack;
         //slider.value = health;

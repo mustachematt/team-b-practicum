@@ -12,6 +12,7 @@ TagManager:
   - BasePlayer2
   - SpawnPlayer1
   - SpawnPlayer2
+  - AIPlayer
   layers:
   - Default
   - TransparentFX
