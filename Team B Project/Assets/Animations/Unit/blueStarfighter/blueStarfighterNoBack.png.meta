@@ -1,34 +1,34 @@
 fileFormatVersion: 2
-guid: 93ba3309fb1b4494386c789508dd91d1
+guid: 08f705445daa6f84c86e101e37f8a9da
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9134789268570924609
-    second: blueStarfighter_0
+      213: -4691022577467141489
+    second: blueStarfighterNoBack_0
   - first:
-      213: -2876090828869057096
-    second: blueStarfighter_1
+      213: -1670146108060672609
+    second: blueStarfighterNoBack_1
   - first:
-      213: 5427073988349265669
-    second: blueStarfighter_2
+      213: 2361044205905040174
+    second: blueStarfighterNoBack_2
   - first:
-      213: -9201031497057106516
-    second: blueStarfighter_3
+      213: 8478620966398429260
+    second: blueStarfighterNoBack_3
   - first:
-      213: 8027417108959073354
-    second: blueStarfighter_4
+      213: -1365142219242717520
+    second: blueStarfighterNoBack_4
   - first:
-      213: -326576877524832941
-    second: blueStarfighter_5
+      213: -4979645831324379743
+    second: blueStarfighterNoBack_5
   - first:
-      213: 677603095438591850
-    second: blueStarfighter_6
+      213: 5785710866292790224
+    second: blueStarfighterNoBack_6
   - first:
-      213: 5957340043962890089
-    second: blueStarfighter_7
+      213: -5980624742630586054
+    second: blueStarfighterNoBack_7
   - first:
-      213: 4476980834763514928
-    second: blueStarfighter_8
+      213: -2770682716588728612
+    second: blueStarfighterNoBack_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -114,13 +114,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: blueStarfighter_0
+      name: blueStarfighterNoBack_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1602
-        width: 678
-        height: 798
+        y: 1600
+        width: 680
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,20 +128,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 146683b017a45ce70800000000000000
-      internalID: 9134789268570924609
+      spriteID: f82dbb4e1d326eeb0800000000000000
+      internalID: -4691022577467141489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blueStarfighter_1
+      name: blueStarfighterNoBack_1
       rect:
         serializedVersion: 2
-        x: 678
-        y: 1602
-        width: 678
-        height: 798
+        x: 680
+        y: 1600
+        width: 680
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,20 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b5408b11a21618d0800000000000000
-      internalID: -2876090828869057096
+      spriteID: f9dda0aa6f272d8e0800000000000000
+      internalID: -1670146108060672609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blueStarfighter_2
+      name: blueStarfighterNoBack_2
       rect:
         serializedVersion: 2
-        x: 1356
-        y: 1602
-        width: 678
-        height: 798
+        x: 1360
+        y: 1600
+        width: 680
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,83 +170,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 507025dd907d05b40800000000000000
-      internalID: 5427073988349265669
+      spriteID: e23d6f7223d14c020800000000000000
+      internalID: 2361044205905040174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blueStarfighter_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 804
-        width: 678
-        height: 798
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ca50bb24a9e5f4080800000000000000
-      internalID: -9201031497057106516
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blueStarfighter_4
-      rect:
-        serializedVersion: 2
-        x: 678
-        y: 804
-        width: 678
-        height: 798
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a44166b545d176f60800000000000000
-      internalID: 8027417108959073354
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blueStarfighter_5
-      rect:
-        serializedVersion: 2
-        x: 1356
-        y: 804
-        width: 678
-        height: 798
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 35da6476f04c77bf0800000000000000
-      internalID: -326576877524832941
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: blueStarfighter_6
+      name: blueStarfighterNoBack_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 6
-        width: 678
-        height: 798
+        y: 800
+        width: 680
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,20 +191,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a67825adc64576900800000000000000
-      internalID: 677603095438591850
+      spriteID: c488b57e8dc1aa570800000000000000
+      internalID: 8478620966398429260
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blueStarfighter_7
+      name: blueStarfighterNoBack_4
       rect:
         serializedVersion: 2
-        x: 678
-        y: 6
-        width: 678
-        height: 798
+        x: 680
+        y: 800
+        width: 680
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,20 +212,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9673e96e439bca250800000000000000
-      internalID: 5957340043962890089
+      spriteID: 0be362a626a0e0de0800000000000000
+      internalID: -1365142219242717520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: blueStarfighter_8
+      name: blueStarfighterNoBack_5
       rect:
         serializedVersion: 2
-        x: 1356
-        y: 6
-        width: 678
-        height: 798
+        x: 1360
+        y: 800
+        width: 680
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,8 +233,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 034af42695e612e30800000000000000
-      internalID: 4476980834763514928
+      spriteID: 1a5d7acef7eb4eab0800000000000000
+      internalID: -4979645831324379743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blueStarfighterNoBack_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 680
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d3df7ef069fa4050800000000000000
+      internalID: 5785710866292790224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blueStarfighterNoBack_7
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 0
+        width: 680
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a398798bb7d800da0800000000000000
+      internalID: -5980624742630586054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blueStarfighterNoBack_8
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 0
+        width: 680
+        height: 800
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde1a6cbfbe8c89d0800000000000000
+      internalID: -2770682716588728612
       vertices: []
       indices: 
       edges: []
@@ -305,7 +305,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 902dae9147e16ab408a6b7f3a3fdaa81
+    spriteID: 7e2d7874f59b9c34abb4e39106a2c670
     internalID: 0
     vertices: []
     indices: 
