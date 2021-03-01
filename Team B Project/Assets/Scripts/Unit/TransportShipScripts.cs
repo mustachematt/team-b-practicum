@@ -59,10 +59,10 @@ public class Transport : StartShipScript
         int toDeposit = amount;//save old amount
         amount--;
         toDeposit = toDeposit - amount;//find difference between amounts and add corresponding amount to player
-        if (gameObject.CompareTag("testShip"))//find unit's owner
-            GameObject.FindGameObjectWithTag("Player").GetComponent<ControlledPlayer>().AddResources(toDeposit);
-        else if (gameObject.CompareTag("testShipEnemy"))
-            GameObject.FindGameObjectWithTag("AIPlayer").GetComponent<AIPlayer>().AddResources(toDeposit);
+     //   if (gameObject.CompareTag("testShip"))//find unit's owner
+     //       GameObject.FindGameObjectWithTag("Player").GetComponent<ControlledPlayer>().AddResources(toDeposit);
+     //   else if (gameObject.CompareTag("testShipEnemy"))
+     //       GameObject.FindGameObjectWithTag("AIPlayer").GetComponent<AIPlayer>().AddResources(toDeposit);
         if (amount == 0)
         {
             isTransportation = true;
