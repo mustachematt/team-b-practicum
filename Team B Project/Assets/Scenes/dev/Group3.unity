@@ -286,12 +286,8 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &126678600
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -592,12 +588,8 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &373816448
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -746,12 +738,8 @@ MonoBehaviour:
   buildingType: 0
   control: 2
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &437513829
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,12 +985,8 @@ MonoBehaviour:
   buildingType: 0
   control: 1
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &522413976
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1265,12 +1249,8 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &691174951
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1355,12 +1335,8 @@ MonoBehaviour:
   buildingType: 0
   control: 1
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &736899420
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1473,12 +1449,8 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &758101937
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1563,12 +1535,8 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &794684753
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1667,12 +1635,8 @@ MonoBehaviour:
   buildingType: 0
   control: 2
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &813494531
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1785,12 +1749,8 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &828408593
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1923,12 +1883,8 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &941987827
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2027,12 +1983,8 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &1002529415
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2198,12 +2150,8 @@ MonoBehaviour:
   buildingType: 0
   control: 2
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &1042493810
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2316,12 +2264,8 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &1172415559
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2420,12 +2364,8 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &1176951899
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2653,10 +2593,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 80b921c44e3e47d408a1f364cd5702a5, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.266
+  m_Pitch: 1.12
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -2746,7 +2686,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297267591}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2801,12 +2741,8 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &1301622431
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3228,12 +3164,8 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &1520694092
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3332,12 +3264,8 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &1530978842
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3436,12 +3364,8 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &1610519659
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3716,12 +3640,8 @@ MonoBehaviour:
   buildingType: 0
   control: 2
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &1817751643
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3820,12 +3740,8 @@ MonoBehaviour:
   buildingType: 0
   control: 1
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &1951038921
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4138,12 +4054,8 @@ MonoBehaviour:
   buildingType: 0
   control: 1
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &2086607322
 GameObject:
   m_ObjectHideFlags: 0
@@ -4270,12 +4182,8 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - currAmt: 0
-    maxAmt: 0
-    kind: 0
-  - currAmt: 0
-    maxAmt: 0
-    kind: 1
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &2143791985
 SpriteRenderer:
   m_ObjectHideFlags: 0
