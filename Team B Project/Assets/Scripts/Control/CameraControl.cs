@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+
 public class CameraControl : MonoBehaviour
 {
     [SerializeField] float minCamSize = 10f;
@@ -29,7 +31,8 @@ public class CameraControl : MonoBehaviour
             {
                 Camera.main.transform.position = new Vector3(pos.x, pos.y, newPos.z);
             }
-        }   
+        }
+        
     }
 
     public void OnZoom(InputValue value)
@@ -56,4 +59,11 @@ public class CameraControl : MonoBehaviour
     {
         directionZ = value.Get<float>();
     }
+    public void OnCameraSpeed(InputValue value)
+    {
+        if(value.Get<float>() > 0f) speed *=  2;
+        
+        else if(value.Get<float>() == 0.0f) speed /= 2;
+    }
+
 }
