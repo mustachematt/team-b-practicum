@@ -248,8 +248,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 2
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &35537233
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -330,8 +338,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 2
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &97953955
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -446,8 +462,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 0
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &102803370
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -623,8 +647,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 1
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &217916218
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -895,8 +927,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 0
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &309861185
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -991,8 +1031,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 0
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &339658033
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1168,8 +1216,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 1
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &484983052
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1264,8 +1320,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 2
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &525203680
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1403,8 +1467,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 0
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &790922087
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1499,8 +1571,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 1
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &815623449
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1655,8 +1735,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 0
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &1033564312
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2209,8 +2297,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 0
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &1698589864
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2335,8 +2431,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 1
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &1799181269
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2512,8 +2616,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 2
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &1838253940
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2608,8 +2720,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7d17b66eabd414b8fd95546a7a6578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetType: 0
+  buildingType: 0
   control: 2
-  maxMetal: 0
+  resources:
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
+  - currAmt: 0
+    maxAmt: 0
+    kind: 0
 --- !u!212 &1958970826
 SpriteRenderer:
   m_ObjectHideFlags: 0
