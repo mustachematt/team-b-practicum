@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//This is a player class
 public abstract class IPlayer : MonoBehaviour
 {
     public Dictionary<Planet.Resource.ResourceKind, Planet.Resource> Resources;
