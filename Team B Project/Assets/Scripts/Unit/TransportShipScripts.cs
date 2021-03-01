@@ -5,10 +5,9 @@ using UnityEngine;
 
 public class Transport : StartShipScript
 {
-    public enum ResourceType { M, F };              // Temporary resource type
-    public ResourceType resource = ResourceType.M;
+    //public enum ResourceType { M, F };              // Temporary resource type
+    public Resource resource;
     public int capacity = 5;
-    int amount;
     public bool isTransportation = true;            // Transport state call flyTo, or wait  for collect/deposit
     public GameObject depositPoint;
     public GameObject resourcePoint;
@@ -17,7 +16,7 @@ public class Transport : StartShipScript
     // Start is called before the first frame update
     void Start()
     {
-        amount = 0;
+        resource = new Resource(0, Resource.ResourceKind.metal)
         shipKind = shipType.Transport;
         health = armorStrength;
     }
@@ -56,13 +55,13 @@ public class Transport : StartShipScript
     // when trigger deposit point, resource point call this function every 1s. ps: Set isTransportation to false;
     void depositResource()
     {
-        int toDeposit = amount;//save old amount
-        amount--;
-        toDeposit = toDeposit - amount;//find difference between amounts and add corresponding amount to player
-     //   if (gameObject.CompareTag("testShip"))//find unit's owner
-     //       GameObject.FindGameObjectWithTag("Player").GetComponent<ControlledPlayer>().AddResources(toDeposit);
-     //   else if (gameObject.CompareTag("testShipEnemy"))
-     //       GameObject.FindGameObjectWithTag("AIPlayer").GetComponent<AIPlayer>().AddResources(toDeposit);
+        int toDeposit = resource.amount;//save old amount
+        resource.amount--;
+        toDeposit = toDeposit - resource.amount;//find difference between amounts and add corresponding amount to player
+        if (gameObject.CompareTag("testShip"))//find unit's owner
+            GameObject.FindGameObjectWithTag("Player").GetComponent<ControlledPlayer>().AddResources(resource);
+        else if (gameObject.CompareTag("testShipEnemy"))
+            GameObject.FindGameObjectWithTag("AIPlayer").GetComponent<AIPlayer>().AddResources(resource);
         if (amount == 0)
         {
             isTransportation = true;
