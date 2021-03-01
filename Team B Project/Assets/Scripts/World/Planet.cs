@@ -22,7 +22,7 @@ public class Planet : MonoBehaviour
     /*
     	Neutral = even gas/metal
     	Gas = +gas -metal
-    	Mountain = -metal +gas
+    	Mountain = +metal -gas
     */
 
     // Planet type
@@ -78,5 +78,11 @@ public class Planet : MonoBehaviour
     private void switchControl(controlEnum c)
     {
         control = c;
+    }
+
+    public void removeResources(int amount)//removes resources from planet equally
+    {
+        for(int i =0; i<resources.Length; ++i)//iterate through each index in resources
+            resources[i].currAmt -= amount/resources.Length;//remove amount/length for each index
     }
 }
