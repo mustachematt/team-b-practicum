@@ -5,7 +5,7 @@ using UnityEngine;
 //This is a player class
 public abstract class IPlayer : MonoBehaviour
 {
-    public Dictionary<Planet.Resource.ResourceKind, Planet.Resource> Resources;
+    public Dictionary<Resource.ResourceKind, Resource> Resources;
     private List<object> _ownedPlanets = new List<object>();
     public GameObject playerBase;
     public GameObject waypoint;
@@ -14,7 +14,7 @@ public abstract class IPlayer : MonoBehaviour
     {
         get => _ownedPlanets.AsReadOnly();
     }
-    public void AddResources(Planet.Resource amount)
+    public void AddResources(Resource amount)
     {
         Resources[amount.kind].currAmt += amount.currAmt;
     }
