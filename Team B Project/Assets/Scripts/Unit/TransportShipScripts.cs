@@ -16,7 +16,7 @@ public class Transport : StartShipScript
     // Start is called before the first frame update
     void Start()
     {
-        resource = new Resource(0, Resource.ResourceKind.metal)
+        resource = new Resource(0, Resource.ResourceKind.metal);
         shipKind = shipType.Transport;
         health = armorStrength;
     }
