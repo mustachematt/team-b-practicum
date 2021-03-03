@@ -14,11 +14,9 @@ public abstract class IPlayer : MonoBehaviour
     {
         get => _ownedPlanets.AsReadOnly();
     }
-<<<<<<< HEAD
+
+    
     public void AddResources(Resource resourceToAdd)
-=======
-    public void AddResources(Resource amount)
->>>>>>> 0730abfb9a5009e581ab2bf72881e8c8acba4be6
     {
         Resources[Resource.ResourceKind.metal].amount += resourceToAdd.amount;
     }
