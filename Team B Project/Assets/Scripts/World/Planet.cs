@@ -74,9 +74,9 @@ public class Planet : MonoBehaviour
         control = c;
     }
 
-    public void removeResources(int amount)//removes resources from planet equally
+    public void removeResources(Resource resourceToWithdraw)//removes resources from planet equally
     {
         for(int i =0; i<resources.Length; ++i)//iterate through each index in resources
-            resources[i].amount -= amount/resources.Length;//remove amount/length for each index
+            resources[i].amount -= resourceToWithdraw.amount / resources.Length;//remove amount/length for each index
     }
 }

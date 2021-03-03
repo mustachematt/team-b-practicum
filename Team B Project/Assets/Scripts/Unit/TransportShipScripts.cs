@@ -16,7 +16,7 @@ public class Transport : StartShipScript
     // Start is called before the first frame update
     void Start()
     {
-        resource = new Resource(0, Resource.ResourceKind.metal)
+        resource = new Resource(0, Resource.ResourceKind.metal);
         shipKind = shipType.Transport;
         health = armorStrength;
     }
@@ -40,11 +40,12 @@ public class Transport : StartShipScript
     // when trigger resource point, resource point call this function every 1s. ps: Set isTransportation to false;
     void collectResource()
     {
-        int toWithdraw = amount;//save old amount
-        amount++;
-        toWithdraw =amount- toWithdraw;//find difference between amounts and remove corresponding amount from planet
-        target.GetComponent<Planet>().removeResources(toWithdraw);
-        if (amount >= capacity)
+        int amountToWithdraw = resource.amount;//save old amount
+        resource.amount++;
+        amountToWithdraw = resource.amount- amountToWithdraw;//find difference between amounts and remove corresponding amount from planet
+        Resource resourceToWithdraw = new Resource(amountToWithdraw, Resource.ResourceKind.metal);
+        target.GetComponent<Planet>().removeResources(resourceToWithdraw);
+        if (resource.amount >= capacity)
         {
             isTransportation = true;
             target = depositPoint;
@@ -55,14 +56,15 @@ public class Transport : StartShipScript
     // when trigger deposit point, resource point call this function every 1s. ps: Set isTransportation to false;
     void depositResource()
     {
-        int toDeposit = resource.amount;//save old amount
+        int amountToDeposit = resource.amount;//save old amount
         resource.amount--;
-        toDeposit = toDeposit - resource.amount;//find difference between amounts and add corresponding amount to player
+        amountToDeposit = amountToDeposit - resource.amount;//find difference between amounts and add corresponding amount to player
+        Resource resourceToAdd = new Resource(amountToDeposit, Resource.ResourceKind.metal);
         if (gameObject.CompareTag("testShip"))//find unit's owner
-            GameObject.FindGameObjectWithTag("Player").GetComponent<ControlledPlayer>().AddResources(resource);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<ControlledPlayer>().AddResources(resourceToAdd);
         else if (gameObject.CompareTag("testShipEnemy"))
-            GameObject.FindGameObjectWithTag("AIPlayer").GetComponent<AIPlayer>().AddResources(resource);
-        if (amount == 0)
+            GameObject.FindGameObjectWithTag("AIPlayer").GetComponent<AIPlayer>().AddResources(resourceToAdd);
+        if (resource.amount == 0)
         {
             isTransportation = true;
             target = resourcePoint;
