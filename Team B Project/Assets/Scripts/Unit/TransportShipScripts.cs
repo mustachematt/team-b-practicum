@@ -43,7 +43,7 @@ public class Transport : StartShipScript
         int amountToWithdraw = resource.amount;//save old amount
         resource.amount++;
         amountToWithdraw = resource.amount- amountToWithdraw;//find difference between amounts and remove corresponding amount from planet
-        Resource resourceToWithdraw = new Resource(amountToWithdraw, Resource.ResourceKind.metal);
+        Resource resourceToWithdraw = new Resource(amountToWithdraw, Resource.ResourceKind.metal);//create resource to remove from planet
         target.GetComponent<Planet>().removeResources(resourceToWithdraw);
         if (resource.amount >= capacity)
         {
@@ -59,7 +59,7 @@ public class Transport : StartShipScript
         int amountToDeposit = resource.amount;//save old amount
         resource.amount--;
         amountToDeposit = amountToDeposit - resource.amount;//find difference between amounts and add corresponding amount to player
-        Resource resourceToAdd = new Resource(amountToDeposit, Resource.ResourceKind.metal);
+        Resource resourceToAdd = new Resource(amountToDeposit, Resource.ResourceKind.metal);//create resource to add to player
         if (gameObject.CompareTag("testShip"))//find unit's owner
             GameObject.FindGameObjectWithTag("Player").GetComponent<ControlledPlayer>().AddResources(resourceToAdd);
         else if (gameObject.CompareTag("testShipEnemy"))
