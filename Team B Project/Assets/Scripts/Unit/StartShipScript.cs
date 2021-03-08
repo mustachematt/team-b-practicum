@@ -10,11 +10,15 @@ public class StartShipScript : MonoBehaviour
     public shipType shipKind;
     public float aTime = 0;         // Attack timer
     public GameObject m_Obj;        // Itself
-    //public Slider slider;         // Health UI
+    public Slider healthSlider;         // Health UI
     public float maxSpeed;
-    public int armorStrength;       // Max health
+    public int armorStrength;           // Max health
     public int price;
-    public int health;              // Current health
+    public int health;                  // Current health
+    public GameObject owener;           // Who does the ship belong to
+    protected bool isPlayer;
+    public bool isFire = false;
+    public bool isCollecting = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,13 +27,15 @@ public class StartShipScript : MonoBehaviour
         maxSpeed = 3;
         armorStrength = 4;
         health = armorStrength;
+        healthSlider.value = health / armorStrength;
         price = 1;
+        isPlayer = (owener.tag == "SpawnPlayer1");
+        // Place holder for setting inital target
     }
 
     // Update is called once per frame
     void Update()
     {
-        flyTo(target.transform.position);
     }
 
     // Move to target
@@ -42,13 +48,15 @@ public class StartShipScript : MonoBehaviour
     // The bool value returned signals to the attacking ship that it has been destroyed
     // will make it to where the attacking ship does not try to continue attacking a destroyed ship
     public bool takeDamage(int attack) {
-        health -= attack;
-        //slider.value = health;
-        if (health <= 0)
+        int currentHealth = health - attack;
+        if (currentHealth <= 0)
         {
+            health = 0;
             destory();
             return false;
         }
+        health = currentHealth;
+        healthSlider.value = health / armorStrength;
         return true;
     }
 
