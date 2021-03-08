@@ -15,7 +15,7 @@ public class StartShipScript : MonoBehaviour
     public int armorStrength;           // Max health
     public int price;
     public int health;                  // Current health
-    public GameObject owener;           // Who does the ship belong to
+    public GameObject owner;           // Who does the ship belong to
     protected bool isPlayer;
     public bool isFire = false;
     public bool isCollecting = false;
@@ -29,7 +29,7 @@ public class StartShipScript : MonoBehaviour
         health = armorStrength;
         healthSlider.value = health / armorStrength;
         price = 1;
-        isPlayer = (owener.tag == "SpawnPlayer1");
+        isPlayer = (owner.tag == "SpawnPlayer1");
         // Place holder for setting inital target
     }
 
