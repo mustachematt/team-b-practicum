@@ -8,7 +8,6 @@ public abstract class Ship : MonoBehaviour
     public enum shipType { Attack, Transport };
     public shipType kind;
     public GameObject target;       //Initally hold enemy's base(Attack)/resource point(Transport).
-    public GameObject m_Obj;        // Itself
     public Slider healthSlider;         // Health UI
     public float maxSpeed;
     public int armorStrength;           // Max health
@@ -37,8 +36,8 @@ public abstract class Ship : MonoBehaviour
 
     // Move to target
     public void flyTo(Vector3 pos) {
-        Vector3 movePos = (target.transform.position - m_Obj.transform.position).normalized * maxSpeed;
-        m_Obj.GetComponent<Rigidbody>().MovePosition(movePos); 
+        //Vector3 movePos = (target.transform.position - gameObject.transform.position).normalized * maxSpeed;
+        //gameObject.GetComponent<Rigidbody>().MovePosition(movePos); 
     }
 
     // Change UI according to the taken damage, return false if the ship is destoryed
