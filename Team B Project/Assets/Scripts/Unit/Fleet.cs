@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Fleet : MonoBehaviour
 {
-    public List<StartShipScript> ships;
+    public List<Ship> ships;
     public enum controlEnum { neutral, player1, player2 };
-    public enum StarshipKind { };
 
     //void buyShip(StarshipKind kind)
 }

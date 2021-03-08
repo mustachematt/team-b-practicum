@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UnitPurchaseButtonTest : MonoBehaviour
 {
-    public StarShipUtilities.shipType ship;
+    public Ship.shipType ship;
     ControlledPlayer player = ControlledPlayer.Instance;
     // Start is called before the first frame update
     void Start()

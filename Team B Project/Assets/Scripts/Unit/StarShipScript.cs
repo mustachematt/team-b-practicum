@@ -3,25 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StartShipScript : MonoBehaviour
+public abstract class Ship : MonoBehaviour
 {
-    public enum shipType { Attack, Transport }; // Temporary ship type
+    public enum shipType { Attack, Transport };
+    public shipType kind;
     public GameObject target;       //Initally hold enemy's base(Attack)/resource point(Transport).
-    public shipType shipKind;
-    public float aTime = 0;         // Attack timer
     public GameObject m_Obj;        // Itself
     public Slider healthSlider;         // Health UI
     public float maxSpeed;
     public int armorStrength;           // Max health
     public int price;
     public int health;                  // Current health
-    public GameObject owener;           // Who does the ship belong to
+    public GameObject owner;           // Who does the ship belong to
     protected bool isPlayer;
     public bool isFire = false;
     public bool isCollecting = false;
 
-    // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         // Test 
         maxSpeed = 3;
@@ -29,12 +27,11 @@ public class StartShipScript : MonoBehaviour
         health = armorStrength;
         healthSlider.value = health / armorStrength;
         price = 1;
-        isPlayer = (owener.tag == "SpawnPlayer1");
+        isPlayer = (owner.tag == "SpawnPlayer1");
         // Place holder for setting inital target
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
     }
 
@@ -61,7 +58,7 @@ public class StartShipScript : MonoBehaviour
     }
 
     // The ship is destoryed. Change animation==>delete gameobject in dictionary==>delete gameobject
-    void destory() {
+    public void destory() {
         Destroy(m_Obj);
     }
 }
