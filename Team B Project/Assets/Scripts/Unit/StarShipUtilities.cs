@@ -7,7 +7,7 @@ using System.IO;
 public class StarShipUtilities : MonoBehaviour
 {
     public static StarShipUtilities Instance;
-    public Dictionary<Ship.shipType, GameObject> ShipDictionary = new Dictionary<Ship.shipType, GameObject>();
+    public Dictionary<Ship.shipType, Ship> ShipDictionary = new Dictionary<Ship.shipType, Ship>();
 
     void Start()
     {
@@ -21,7 +21,7 @@ public class StarShipUtilities : MonoBehaviour
         {
             var shipObject = Resources.Load(Path.Combine("Ships", "Prefabs", type.ToString())) as GameObject;
             if (shipObject != null)
-                ShipDictionary[type] = shipObject;
+                ShipDictionary[type] = shipObject.GetComponent<Ship>();
             else
                 continue;
             Debug.Log($"Enum Type: {type}");
