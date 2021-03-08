@@ -38,20 +38,15 @@ public class Planet : MonoBehaviour
     public controlEnum control;
 
     // Resources
-    public Resource[] resources = new Resource[2];
-    [Serializable]
-    public class Resource
-    {
-        public int currAmt; // the current amount of the resource on the planet
-        public int maxAmt; // the max amount of the resource on the planet
-        public enum ResourceKind { metal, fuel };
-        public ResourceKind kind;
+    public PlanetResource[] resources = new PlanetResource[2];
 
-        public Resource(int currAmt, ResourceKind kind)
+    [Serializable]
+    public class PlanetResource : Resource
+    {
+        public int maxAmt; // Max amount of the resource the planet can have
+        public PlanetResource(ResourceKind kind, int startingAmount, int maxAmount) : base(startingAmount, kind)
         {
-            this.currAmt = currAmt;
-            this.maxAmt = currAmt;
-            this.kind = kind;
+            this.maxAmt = maxAmount;
         }
     }
 
@@ -64,25 +59,24 @@ public class Planet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (Resource r in resources)
+        foreach (PlanetResource r in resources)
         {
-            if (r.currAmt < r.maxAmt)
+            if (r.amount < r.maxAmt)
             {
                 // wait certain amount of seconds...
-                ++r.currAmt;
+                ++r.amount;
             }
         }
-
     }
 
-    private void switchControl(controlEnum c)
+    private void SwitchControl(controlEnum c)
     {
         control = c;
     }
 
-    public void removeResources(int amount)//removes resources from planet equally
+    public void removeResources(Resource resourceToWithdraw)//removes resources from planet equally
     {
         for(int i =0; i<resources.Length; ++i)//iterate through each index in resources
-            resources[i].currAmt -= amount/resources.Length;//remove amount/length for each index
+            resources[i].amount -= resourceToWithdraw.amount / resources.Length;//remove amount/length for each index
     }
 }
