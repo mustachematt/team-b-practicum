@@ -8,6 +8,7 @@ public class StarShipUtilities : MonoBehaviour
     public enum shipType { test1, test2, test3 }
     public static StarShipUtilities Instance;
     public Dictionary<shipType, GameObject> ShipDictionary = new Dictionary<shipType, GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {

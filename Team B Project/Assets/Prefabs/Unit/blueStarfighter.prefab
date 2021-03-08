@@ -321,6 +321,7 @@ GameObject:
   - component: {fileID: 5638075363898649544}
   - component: {fileID: 5638075363898649550}
   - component: {fileID: 1403519139747097228}
+  - component: {fileID: 4912113604573180317}
   m_Layer: 0
   m_Name: blueStarfighter
   m_TagString: Untagged
@@ -434,6 +435,19 @@ MonoBehaviour:
   armorStrength: 0
   price: 0
   health: 0
+--- !u!135 &4912113604573180317
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5638075363898649547}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 50
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7926212198652964148
 GameObject:
   m_ObjectHideFlags: 0
