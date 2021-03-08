@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Transport : StartShipScript
+public class TransportShip : Ship
 {
     public enum ResourceType { M, F };              // Temporary resource type
     public ResourceType resource = ResourceType.M;
@@ -15,15 +15,16 @@ public class Transport : StartShipScript
     float resourceRange = 1f;
 
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
+        base.Start();
+
         amount = 0;
-        shipKind = shipType.Transport;
-        health = armorStrength;
+        kind = shipType.Transport;
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
         if (isTransportation)
             flyTo(target.transform.position);

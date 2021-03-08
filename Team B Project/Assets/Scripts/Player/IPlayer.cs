@@ -21,13 +21,13 @@ public abstract class IPlayer : MonoBehaviour
 
     }
     //Player Actions
-    public void SpawnUnit(StarShipUtilities.shipType unitType/*, GameObject waypoint*/)
+    public void SpawnUnit(Ship.shipType unitType/*, GameObject waypoint*/)
     {
         //Instantiate Ship Prefab, subtract resources
         //resources -= shipPrefab.cost;
         GameObject shipPrefab = StarShipUtilities.Instance.ShipDictionary[unitType];
         GameObject ship = GameObject.Instantiate(shipPrefab, playerBase.transform.position, playerBase.transform.rotation);
-        //ship.StarShipScript.target = waypoint;
+        //ship.Ship.target = waypoint;
     }
 
 }
