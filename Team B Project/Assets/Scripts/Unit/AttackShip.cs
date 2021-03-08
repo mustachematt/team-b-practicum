@@ -28,7 +28,7 @@ public class AttackShip : Ship
     public override void Update()
     {
         // Check if target is in range
-        float distance = (target.transform.position - m_Obj.transform.position).magnitude;
+        float distance = (target.transform.position - gameObject.transform.position).magnitude;
         if (distance <= attackRange)
             isFiring = true;
         else
@@ -60,8 +60,8 @@ public class AttackShip : Ship
         // Chane target to the closer one
         if (!isFiring)
         {
-            if ((target.transform.position - m_Obj.transform.position).magnitude
-                    < (collider.gameObject.transform.position - m_Obj.transform.position).magnitude)
+            if ((target.transform.position - gameObject.transform.position).magnitude
+                    < (collider.gameObject.transform.position - gameObject.transform.position).magnitude)
                 return;
             target = collider.gameObject;
             isFiring = true;
