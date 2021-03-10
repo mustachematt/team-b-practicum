@@ -269,7 +269,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.523
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -320,8 +320,8 @@ GameObject:
   - component: {fileID: 5638075363898649545}
   - component: {fileID: 5638075363898649544}
   - component: {fileID: 5638075363898649550}
-  - component: {fileID: 1403519139747097228}
-  - component: {fileID: 4912113604573180317}
+  - component: {fileID: 2303819843464203117}
+  - component: {fileID: 6543852192503613010}
   m_Layer: 0
   m_Name: blueStarfighter
   m_TagString: Untagged
@@ -414,7 +414,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1403519139747097228
+--- !u!114 &2303819843464203117
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -423,19 +423,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 5638075363898649547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b06b421860d22a4f846441165836d1e, type: 3}
+  m_Script: {fileID: 11500000, guid: c63b3c269ad7d7a47ae19268136b7048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kind: 0
   target: {fileID: 0}
-  shipKind: 0
-  aTime: 0
-  m_Obj: {fileID: 5638075363898649547}
   healthSlider: {fileID: 1626330258430683870}
   maxSpeed: 0
   armorStrength: 0
   price: 0
   health: 0
---- !u!135 &4912113604573180317
+  owner: {fileID: 0}
+  isFire: 0
+  isCollecting: 0
+  isFiring: 0
+  targetList: []
+  attackRange: 3
+  attackStrength: 3
+  attackSpeed: 3
+--- !u!135 &6543852192503613010
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -446,7 +452,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 50
+  m_Radius: 25
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7926212198652964148
 GameObject:
@@ -460,6 +466,7 @@ GameObject:
   - component: {fileID: 3291217252295832171}
   - component: {fileID: 8531895247826466578}
   - component: {fileID: 7523371191635537136}
+  - component: {fileID: 1041655779}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -484,7 +491,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.3, y: 4.7}
+  m_AnchoredPosition: {x: 0, y: 4.7}
   m_SizeDelta: {x: 9.258163, y: 1.4212971}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3291217252295832171
@@ -547,6 +554,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1041655779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7926212198652964148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5774e8cc3b1819347accf4627f4cd897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8333717141362747164
 GameObject:
   m_ObjectHideFlags: 0
