@@ -2,73 +2,56 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class TransportShip : Ship
 {
     //public enum ResourceType { M, F };              // Temporary resource type
     public Resource resource;
     public int capacity = 5;
-    public bool isTransportation = true;            // Transport state call flyTo, or wait  for collect/deposit
-    public GameObject depositPoint;
-    public GameObject resourcePoint;
-    float resourceRange = 1f;
-
+    protected bool returning = false;
+    protected GameObject destination;
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
         kind = shipType.Transport;
         resource = new Resource(0, Resource.ResourceKind.metal);
-        health = armorStrength;
+        SetDestination();
     }
 
+    private void SetDestination(bool returning = false)
+    {
+        if(!returning)
+        {
+            var Playerplanets = Resources.FindObjectsOfTypeAll<Planet>().Where(x => owner is ControlledPlayer ?
+                   x.control == Planet.controlEnum.player1 : x.control == Planet.controlEnum.player2);
+            var location = Playerplanets.ElementAt(1);
+            var pos = location.gameObject.transform.position;
+            navAgent.SetDestination(new Vector3(pos.x, gameObject.transform.position.y, pos.z));
+            destination = location.gameObject;
+        }
+        else
+        {
+
+        }
+
+    }
     // Update is called once per frame
     public override void Update()
     {
-        if (isTransportation)
-            flyTo(target.transform.position);
+        base.Update();
 
-        if (Mathf.Abs(target.transform.position.x - transform.position.x) < resourceRange && Mathf.Abs(target.transform.position.z - transform.position.z) < resourceRange) //if unit is close enough to target, stop moving and take the corresponding action
+        if(navAgent.remainingDistance < 1)
         {
-            isTransportation = false;
-            if (target == resourcePoint)//if seeking resources
-                collectResource();
-            else if (target == depositPoint)//if returning with resources
-                depositResource();
+            //Destination Reached
+            if(!returning)
+            {
+                Planet planet = destination.GetComponent<Planet>();
+                var acquiredResources = planet.removeResources(new Resource(capacity, resource.kind));
+                resource.amount += acquiredResources.amount;
+                SetDestination(true);
+            }
         }
     }
-
-    // when trigger resource point, resource point call this function every 1s. ps: Set isTransportation to false;
-    void collectResource()
-    {
-        int amountToWithdraw = resource.amount;//save old amount
-        resource.amount++;
-        amountToWithdraw = resource.amount- amountToWithdraw;//find difference between amounts and remove corresponding amount from planet
-        Resource resourceToWithdraw = new Resource(amountToWithdraw, Resource.ResourceKind.metal);//create resource to remove from planet
-        target.GetComponent<Planet>().removeResources(resourceToWithdraw);
-        if (resource.amount >= capacity)
-        {
-            isTransportation = true;
-            target = depositPoint;
-        }
-    }
-
-
-    // when trigger deposit point, resource point call this function every 1s. ps: Set isTransportation to false;
-    void depositResource()
-    {
-        int amountToDeposit = resource.amount;//save old amount
-        resource.amount--;
-        amountToDeposit = amountToDeposit - resource.amount;//find difference between amounts and add corresponding amount to player
-        Resource resourceToAdd = new Resource(amountToDeposit, Resource.ResourceKind.metal);//create resource to add to player
-        if (gameObject.CompareTag("testShip"))//find unit's owner
-            GameObject.FindGameObjectWithTag("Player").GetComponent<ControlledPlayer>().AddResources(resourceToAdd);
-        else if (gameObject.CompareTag("testShipEnemy"))
-            GameObject.FindGameObjectWithTag("AIPlayer").GetComponent<AIPlayer>().AddResources(resourceToAdd);
-        if (resource.amount == 0)
-        {
-            isTransportation = true;
-            target = resourcePoint;
-        }
-    }
+    
 }

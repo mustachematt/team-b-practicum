@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-
+using System.Linq;
 public class Planet : MonoBehaviour
 {
     /* 
@@ -74,9 +74,19 @@ public class Planet : MonoBehaviour
         control = c;
     }
 
-    public void removeResources(Resource resourceToWithdraw)//removes resources from planet equally
+    public Resource removeResources(Resource resourceToWithdraw)//removes resources from planet equally
     {
-        for(int i =0; i<resources.Length; ++i)//iterate through each index in resources
-            resources[i].amount -= resourceToWithdraw.amount / resources.Length;//remove amount/length for each index
+        Resource removed = new Resource(0, resourceToWithdraw.kind);
+        int amountToWithdraw = resourceToWithdraw.amount;
+        Resource resourceToExtract = resources.FirstOrDefault(x => x.kind == resourceToWithdraw.kind);
+        if(resourceToExtract != null)
+        {
+            while (resourceToExtract.amount > 0 && amountToWithdraw > 0)
+            {
+                removed.amount += 1;
+                amountToWithdraw -= 1;
+            }
+        }
+        return removed;
     }
 }

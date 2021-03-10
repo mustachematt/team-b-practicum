@@ -8,8 +8,10 @@ public class ControlledPlayer : IPlayer
 {
     public static ControlledPlayer Instance;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         Instance = this;
+        SpawnUnit(Ship.shipType.Transport);
     }
 }

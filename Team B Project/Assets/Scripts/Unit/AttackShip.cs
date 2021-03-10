@@ -34,10 +34,10 @@ public class AttackShip : Ship
         else
             isFiring = false;
 
-        if (isFiring)
-            attack();
-        else
-            flyTo(target.transform.position);
+    //    if (isFiring)
+    //        attack();
+    //    else
+    //        flyTo(target.transform.position);
     }
 
     //Detect enemy

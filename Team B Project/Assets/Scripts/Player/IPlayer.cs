@@ -21,7 +21,7 @@ public abstract class IPlayer : MonoBehaviour
         Resources[Resource.ResourceKind.metal].amount += resourceToAdd.amount;
     }
 
-    void Start()
+    protected virtual void Start()
     {
         Resources = new Dictionary<Resource.ResourceKind, Resource>();
         Resources[Resource.ResourceKind.metal] = new Resource(0, Resource.ResourceKind.metal);
@@ -40,7 +40,8 @@ public abstract class IPlayer : MonoBehaviour
         //Instantiate Ship Prefab, subtract resources
         GameObject shipPrefab = StarShipUtilities.Instance.ShipDictionary[unitType].gameObject;
         Resources[Resource.ResourceKind.metal].amount -= shipPrefab.GetComponent<Ship>().price;
-        GameObject ship = GameObject.Instantiate(shipPrefab, playerBase.transform.position, playerBase.transform.rotation);
+        Ship ship = GameObject.Instantiate(shipPrefab, playerBase.transform.position, playerBase.transform.rotation).GetComponent<Ship>();
+        ship.SetOwner(this);
         //ship.Ship.target = waypoint;
         //ship.GetComponent<StartShipScript>().target = waypoint;
     }
