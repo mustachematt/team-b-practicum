@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 1088146771886139458}
   - component: {fileID: 1088146771886139470}
   - component: {fileID: 1088146771886139469}
+  - component: {fileID: 2947153167510983503}
   m_Layer: 0
   m_Name: testShip
   m_TagString: testShip
@@ -165,3 +166,29 @@ NavMeshAgent:
   m_BaseOffset: 0.25
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2947153167510983503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088146771886139465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e537a08d6098e42a270cdd475f8641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 0
+  target: {fileID: 0}
+  healthSlider: {fileID: 0}
+  maxSpeed: 0
+  armorStrength: 0
+  price: 0
+  health: 0
+  owner: {fileID: 0}
+  isFire: 0
+  isCollecting: 0
+  capacity: 5
+  isTransportation: 1
+  depositPoint: {fileID: 0}
+  resourcePoint: {fileID: 0}
