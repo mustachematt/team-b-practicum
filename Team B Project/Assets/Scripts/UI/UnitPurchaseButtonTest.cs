@@ -14,7 +14,7 @@ public class UnitPurchaseButtonTest : MonoBehaviour
 
     public void PurchaseShip() 
     {
-        //if (player.Resources >= ship.cost) {
+        //if (player.Resources >= ship.price) {
         ControlledPlayer.Instance.SpawnUnit(ship);
         //}
     }
