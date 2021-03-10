@@ -19,9 +19,10 @@ public class TransportShip : Ship
         SetDestination();
     }
 
-    private void SetDestination(bool returning = false)
+    private void SetDestination(bool goHome = false)
     {
-        if(!returning)
+        returning = goHome;
+        if(!goHome)
         {
             var Playerplanets = Resources.FindObjectsOfTypeAll<Planet>().Where(x => owner is ControlledPlayer ?
                    x.control == Planet.controlEnum.player1 : x.control == Planet.controlEnum.player2);
@@ -32,24 +33,35 @@ public class TransportShip : Ship
         }
         else
         {
+            var pos = owner.playerBase.transform.position;
+            navAgent.SetDestination(new Vector3(pos.x, gameObject.transform.position.y, pos.z));
+            destination = owner.gameObject;
 
         }
 
     }
     // Update is called once per frame
-    public override void Update()
+    public void LateUpdate()
     {
-        base.Update();
 
-        if(navAgent.remainingDistance < 1)
+        if(Vector3.Distance(navAgent.destination, gameObject.transform.position) < 1)
         {
             //Destination Reached
             if(!returning)
             {
+                Debug.Log("Reached Planet");
                 Planet planet = destination.GetComponent<Planet>();
                 var acquiredResources = planet.removeResources(new Resource(capacity, resource.kind));
                 resource.amount += acquiredResources.amount;
                 SetDestination(true);
+            }
+            else
+            {
+                Debug.Log("Reached Player");
+                owner.AddResources(resource);
+                resource.amount = 0;
+                SetDestination(false);
+
             }
         }
     }

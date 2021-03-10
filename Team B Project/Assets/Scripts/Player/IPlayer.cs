@@ -18,7 +18,8 @@ public abstract class IPlayer : MonoBehaviour
     
     public void AddResources(Resource resourceToAdd)
     {
-        Resources[Resource.ResourceKind.metal].amount += resourceToAdd.amount;
+        Resources[resourceToAdd.kind].amount += resourceToAdd.amount;
+        Debug.Log("Resource Added. " + "New Amount: " + Resources[resourceToAdd.kind].amount);
     }
 
     protected virtual void Start()

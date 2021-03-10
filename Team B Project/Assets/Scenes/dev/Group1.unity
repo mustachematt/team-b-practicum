@@ -4144,9 +4144,9 @@ MonoBehaviour:
   buildingType: 0
   control: 1
   resources:
-  - amount: 0
+  - amount: 25
     kind: 0
-    maxAmt: 0
+    maxAmt: 50
   - amount: 0
     kind: 0
     maxAmt: 0
