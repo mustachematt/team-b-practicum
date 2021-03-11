@@ -55,7 +55,7 @@
                 },
                 {
                     "name": "RightClick",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "4d42fb61-075f-4467-94c5-e4daa870998f",
                     "expectedControlType": "Button",
                     "processors": "",

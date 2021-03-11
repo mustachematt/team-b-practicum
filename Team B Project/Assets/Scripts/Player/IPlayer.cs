@@ -8,7 +8,6 @@ public abstract class IPlayer : MonoBehaviour
     public Dictionary<Resource.ResourceKind, Resource> Resources;
     private List<object> _ownedPlanets = new List<object>();
     public GameObject playerBase;
-    public GameObject waypoint;
     protected static Planet[] _planets;
     public abstract List<Planet> OwnedPlanets();
 
