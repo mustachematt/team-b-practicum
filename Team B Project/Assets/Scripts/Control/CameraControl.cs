@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 
 public class CameraControl : MonoBehaviour
 {
-    public float edgeClearance = 2.5f;
     [SerializeField] float speed = 15f;
     
     [Header("Zoom Options")]
@@ -18,45 +17,41 @@ public class CameraControl : MonoBehaviour
     
     [Header("Screen  Size")]
     [Space]
-    [SerializeField] int xLimit = 32;
-    [SerializeField] int zLimit = 29;
+    [SerializeField] int xLimit;
+    [SerializeField] int zLimit;
     
-    private bool keyMoving;
-    private Vector3 edgeMove;
     private float directionZ = 0;
     private float directionX = 0;
+    
+    private float edgeDirx = 0;
+    private float edgeDirz = 0;
+
+    private Vector3 newPos;
+   
+    
     private void Update()
     {
+        var pos = Camera.main.transform.position;
+
+        if(directionX == 0 && directionZ == 0 )
         {
-            keyMoving = false;
-            //Vector3 mPOS = Input.mousePosition;
+            if(edgeDirx != 0 || edgeDirz != 0 ) newPos = Camera.main.transform.position + (new Vector3(edgeDirx, 0, edgeDirz) * speed * Time.deltaTime);
+        }
+        else if(directionX != 0 || directionZ != 0)
+        {
+            newPos = Camera.main.transform.position + (new Vector3(directionX, 0, directionZ) * speed * Time.deltaTime);
+        }
 
-            
-            var pos = Camera.main.transform.position;
-            var newPos = Camera.main.transform.position + (new Vector3(directionX, 0, directionZ) * speed * Time.deltaTime);
-            
-            if(newPos.x < xLimit && newPos.x > -xLimit)
-            {
-                keyMoving = true;
-                Camera.main.transform.position = new Vector3(newPos.x, pos.y, pos.z);
-            }
-            pos = Camera.main.transform.position;
-            if (newPos.z < zLimit && newPos.z > -zLimit)
-            {
-                keyMoving = true;
-                Camera.main.transform.position = new Vector3(pos.x, pos.y, newPos.z);
-            }
-            /*if(!keyMoving)
-            {
-                if(mPOS.x >= Screen.width - edgeClearance)
-                {
-                      edgeMove += Vector3.forward * speed * Time.deltaTime; 
-                }
-
-                Camera.main.transform.position = edgeMove;
-                
-            }
-            */
+        if(newPos.x < xLimit && newPos.x > -xLimit)
+        {
+            Camera.main.transform.position = new Vector3(newPos.x, pos.y, pos.z);
+        }
+        
+        pos = Camera.main.transform.position;
+        
+        if (newPos.z < zLimit && newPos.z > -zLimit)
+        {   
+            Camera.main.transform.position = new Vector3(pos.x, pos.y, newPos.z);
         }
         
     }
@@ -91,5 +86,20 @@ public class CameraControl : MonoBehaviour
         
         else if(value.Get<float>() == 0.0f) speed /= 2;
     }
+    public void OnMousePosition(InputValue value)
+    {
+        Vector2 mPOS = value.Get<Vector2>();
+        Vector2 viewPortPOS = Camera.main.ScreenToViewportPoint(mPOS);
+        
+        if(viewPortPOS.x < 0.025)edgeDirx = -1; 
+        else if(viewPortPOS.x > 0.975) edgeDirx = 1;    
+        else edgeDirx = 0;
+
+        if(viewPortPOS.y < 0.025) edgeDirz = -1;
+        else if(viewPortPOS.y > 0.975) edgeDirz = 1;
+        else edgeDirz = 0;
+        
+    }
+
 
 }

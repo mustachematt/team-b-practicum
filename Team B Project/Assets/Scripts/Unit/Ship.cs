@@ -14,7 +14,7 @@ public abstract class Ship : MonoBehaviour
     public Slider healthSlider;         // Health UI
     public float maxSpeed;
     public int armorStrength;           // Max health
-    public int price;
+    public int price; //this should be an array of 2 ints
     public int health;                  // Current health
     protected bool isPlayer;
     protected bool isFire = false;

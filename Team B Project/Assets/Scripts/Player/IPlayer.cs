@@ -16,18 +16,17 @@ public abstract class IPlayer : MonoBehaviour
     }
 
     
-    public void AddResources(Resource resourceToAdd)
-    {
-        Resources[resourceToAdd.kind].amount += resourceToAdd.amount;
-        Debug.Log("Resource Added. " + "New Amount: " + Resources[resourceToAdd.kind].amount);
-    }
-
-    protected virtual void Start()
+    public virtual void Awake()
     {
         Resources = new Dictionary<Resource.ResourceKind, Resource>();
         Resources[Resource.ResourceKind.metal] = new Resource(0, Resource.ResourceKind.metal);
         Resources[Resource.ResourceKind.fuel] = new Resource(0, Resource.ResourceKind.fuel);
     }
+    public void AddResources(Resource resourceToAdd)
+    {
+        Resources[resourceToAdd.kind].amount += resourceToAdd.amount;
+    }
+
 
     public virtual void Update()
     {
@@ -38,13 +37,16 @@ public abstract class IPlayer : MonoBehaviour
     public void SpawnUnit(Ship.shipType unitType/*, GameObject waypoint*/)
 
     {
-        //Instantiate Ship Prefab, subtract resources
         GameObject shipPrefab = StarShipUtilities.Instance.ShipDictionary[unitType].gameObject;
-        Resources[Resource.ResourceKind.metal].amount -= shipPrefab.GetComponent<Ship>().price;
-        Ship ship = GameObject.Instantiate(shipPrefab, playerBase.transform.position, playerBase.transform.rotation).GetComponent<Ship>();
-        ship.SetOwner(this);
+        //Instantiate Ship Prefab, subtract resources
+        if(Resources[Resource.ResourceKind.metal].amount >=shipPrefab.GetComponent<Ship>().price) //this needs to be changed to reflect
+        {
+            Resources[Resource.ResourceKind.metal].amount -= shipPrefab.GetComponent<Ship>().price;
+            GameObject ship = GameObject.Instantiate(shipPrefab, playerBase.transform.position, playerBase.transform.rotation);
+        }
+        else Debug.Log("Not enough resources");
         //ship.Ship.target = waypoint;
-        //ship.GetComponent<StartShipScript>().target = waypoint;
+        //ship.GetComponent<Ship>().target = waypoint;
     }
 
 }

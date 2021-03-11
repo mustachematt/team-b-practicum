@@ -11,7 +11,13 @@ public class ControlledPlayer : IPlayer
     protected override void Start()
     {
         base.Start();
-        Instance = this;
         SpawnUnit(Ship.shipType.Transport);
+    }
+
+    public override  void Awake()
+    {
+        base.Awake();
+        Instance = this;
+
     }
 }
