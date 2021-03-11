@@ -24,8 +24,7 @@ public abstract class IPlayer : MonoBehaviour
     }
     public void AddResources(Resource resourceToAdd)
     {
-        if(resourceToAdd.kind == Resource.ResourceKind.metal) Resources[Resource.ResourceKind.metal].amount += resourceToAdd.amount;
-        if(resourceToAdd.kind == Resource.ResourceKind.fuel) Resources[Resource.ResourceKind.fuel].amount += resourceToAdd.amount;
+        Resources[resourceToAdd.kind].amount += resourceToAdd.amount;
     }
 
 
