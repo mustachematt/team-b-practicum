@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class GameMenuManager : MonoBehaviour
 {
     public Button[] buttons;
+    public GameObject buyMenu;
     Animator animator;
 
     // Start is called before the first frame update
@@ -26,6 +27,7 @@ public class GameMenuManager : MonoBehaviour
         var mousePos = Mouse.current.position;
         GetComponent<RectTransform>().position = mousePos.ReadValue();
 
+        buyMenu.SetActive(false);
         animator.SetTrigger("Appear");
     }
 }
