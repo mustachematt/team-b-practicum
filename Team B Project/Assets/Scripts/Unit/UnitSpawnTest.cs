@@ -11,8 +11,8 @@ public class UnitSpawnTest : MonoBehaviour
     
     void Start()
     {
-        waypoints = GameObject.FindGameObjectsWithTag("SpawnPlayer1");
-        waypoints = waypoints.Concat(GameObject.FindGameObjectsWithTag("SpawnPlayer2")).ToArray();
+        waypoints = GameObject.FindGameObjectsWithTag("BasePlayer1");
+        waypoints = waypoints.Concat(GameObject.FindGameObjectsWithTag("BasePlayer2")).ToArray();
         Debug.Log("Hello" + waypoints.Length);
     }
 
@@ -25,7 +25,7 @@ public class UnitSpawnTest : MonoBehaviour
     public void SpawnShip()
     {
         var waypoint = waypoints[Random.Range(0,waypoints.Length)];
-        if (waypoint.CompareTag("SpawnPlayer2")) {
+        if (waypoint.CompareTag("BasePlayer2")) {
             GameObject.Instantiate(prefab[0], waypoint.transform.position, waypoint.transform.rotation);
         }
         else {

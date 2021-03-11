@@ -91,12 +91,12 @@ public class CameraControl : MonoBehaviour
         Vector2 mPOS = value.Get<Vector2>();
         Vector2 viewPortPOS = Camera.main.ScreenToViewportPoint(mPOS);
         
-        if(viewPortPOS.x < 0.15)edgeDirx = -1; 
-        else if(viewPortPOS.x > 0.85) edgeDirx = 1;    
+        if(viewPortPOS.x < 0.025)edgeDirx = -1; 
+        else if(viewPortPOS.x > 0.975) edgeDirx = 1;    
         else edgeDirx = 0;
 
-        if(viewPortPOS.y < 0.15) edgeDirz = -1;
-        else if(viewPortPOS.y > 0.85) edgeDirz = 1;
+        if(viewPortPOS.y < 0.025) edgeDirz = -1;
+        else if(viewPortPOS.y > 0.975) edgeDirz = 1;
         else edgeDirz = 0;
         
     }

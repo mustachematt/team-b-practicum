@@ -22,12 +22,18 @@ public class GameMenuManager : MonoBehaviour
 
     }
 
-    void OnRightClick()
+    public void OnRightClick()
     {
         var mousePos = Mouse.current.position;
         GetComponent<RectTransform>().position = mousePos.ReadValue();
 
         buyMenu.SetActive(false);
         animator.SetTrigger("Appear");
+    }
+
+    public void OpenShop()
+    {
+        buyMenu.SetActive(true);
+        animator.Play("GameMenuInactive");
     }
 }

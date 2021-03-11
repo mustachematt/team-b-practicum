@@ -8,8 +8,9 @@ public class ControlledPlayer : IPlayer
 {
     public static ControlledPlayer Instance;
 
-    private void Awake()
+    public override  void Awake()
     {
+        base.Awake();
         Instance = this;
     }
 }
