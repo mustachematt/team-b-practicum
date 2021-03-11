@@ -8,7 +8,7 @@ public class ControlledPlayer : IPlayer
 {
     public static ControlledPlayer Instance;
 
-    private void Start()
+    private void Awake()
     {
         Instance = this;
     }
