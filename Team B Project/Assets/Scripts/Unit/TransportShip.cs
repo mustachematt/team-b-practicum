@@ -22,11 +22,17 @@ public class TransportShip : Ship
     private void SetDestination(bool goHome = false)
     {
         returning = goHome;
-        if(!goHome)
+        if (!goHome)
         {
-            var Playerplanets = Resources.FindObjectsOfTypeAll<Planet>().Where(x => owner is ControlledPlayer ?
-                   x.control == Planet.controlEnum.player1 : x.control == Planet.controlEnum.player2);
-            var location = Playerplanets.ElementAt(1);
+            var Playerplanets = owner.OwnedPlanets();
+            var viablePlanets = Playerplanets.Where(x => x.resources.Any(y => y.kind == resource.kind)).ToList();
+            viablePlanets.Sort(delegate (Planet x, Planet y)
+            {
+                return y.PlanetResourcesAsDictionary[resource.kind].amount.CompareTo(x.PlanetResourcesAsDictionary[resource.kind].amount);
+                  
+            });
+
+            var location = viablePlanets.First();
             var pos = location.gameObject.transform.position;
             navAgent.SetDestination(new Vector3(pos.x, gameObject.transform.position.y, pos.z));
             destination = location.gameObject;
@@ -44,12 +50,12 @@ public class TransportShip : Ship
     public void LateUpdate()
     {
 
-        if(Vector3.Distance(navAgent.destination, gameObject.transform.position) < 1)
+        if (Vector3.Distance(navAgent.destination, gameObject.transform.position) < 1)
         {
             //Destination Reached
-            if(!returning)
+            if (!returning)
             {
-                Debug.Log("Reached Planet");
+              //  Debug.Log("Reached Planet");
                 Planet planet = destination.GetComponent<Planet>();
                 var acquiredResources = planet.removeResources(new Resource(capacity, resource.kind));
                 resource.amount += acquiredResources.amount;
@@ -57,7 +63,7 @@ public class TransportShip : Ship
             }
             else
             {
-                Debug.Log("Reached Player");
+             //   Debug.Log("Reached Player");
                 owner.AddResources(resource);
                 resource.amount = 0;
                 SetDestination(false);
@@ -65,5 +71,5 @@ public class TransportShip : Ship
             }
         }
     }
-    
+
 }

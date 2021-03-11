@@ -39,7 +39,11 @@ public class Planet : MonoBehaviour
 
     // Resources
     public PlanetResource[] resources = new PlanetResource[2];
-
+    private Dictionary<Resource.ResourceKind, Resource> _planetResourcesAsDictionary = new Dictionary<Resource.ResourceKind, Resource>();
+    public IReadOnlyDictionary<Resource.ResourceKind, Resource> PlanetResourcesAsDictionary
+    {
+        get => _planetResourcesAsDictionary;
+    }
     [Serializable]
     public class PlanetResource : Resource
     {
@@ -49,7 +53,12 @@ public class Planet : MonoBehaviour
             this.maxAmt = maxAmount;
         }
     }
-
+    private void Awake()
+    {
+        foreach (Resource planetResource in resources)
+            if(!_planetResourcesAsDictionary.ContainsKey(planetResource.kind))
+            _planetResourcesAsDictionary.Add(planetResource.kind, planetResource);
+    }
     // Start is called before the first frame update
     void Start()
     {

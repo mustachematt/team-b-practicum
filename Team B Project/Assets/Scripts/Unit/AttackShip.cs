@@ -27,6 +27,7 @@ public class AttackShip : Ship
 
     public override void Update()
     {
+        base.Update();
         // Check if target is in range
         float distance = (target.transform.position - gameObject.transform.position).magnitude;
         if (distance <= attackRange)

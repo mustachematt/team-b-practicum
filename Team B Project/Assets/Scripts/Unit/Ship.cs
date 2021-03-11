@@ -20,18 +20,21 @@ public abstract class Ship : MonoBehaviour
     protected bool isFire = false;
     protected bool isCollecting = false;
     protected NavMeshAgent navAgent;
-    public virtual void Start()
+    public virtual void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
+    }
+    public virtual void Start()
+    {
         // Test 
-        maxSpeed = 3;
-        armorStrength = 4;
-        health = armorStrength;
+        //All of these fields should be set in the editor
+    //    maxSpeed = 3;
+     //   armorStrength = 4;
+     //   health = armorStrength;
     //    healthSlider.value = health / armorStrength;
-        price = 1;
+      //  price = 1;
         isPlayer = owner is ControlledPlayer;
-        Debug.Log(owner.GetType());
-        // Place holder for setting inital target
+     //   Debug.Log(owner.GetType());
     }
 
     public virtual void Update()
