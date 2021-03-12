@@ -7,8 +7,23 @@ using UnityEngine.UI;
 public class PauseMenuManager : MonoBehaviour
 {
 
+    // root gameobject of the pause menu used to toggle activation
     public GameObject pauseMenu;
+    // used to pull functions from the pausecontrol script
     public PauseControl pauseControl;
+    // slider component for mouse sensitivity
+    public Slider mouseSensitivitySlider;
+    // slider component for master volume
+    public Slider masterVolumeSlider;
+    // slider component for sound volume
+    public Slider soundVolumeSlider;
+    // slider component for music volume
+    public Slider musicVolumeSlider;
+    // button component for going to main menu
+    public Button leaveGame;
+    // button component for closing the paue menu
+    public Button closeMenu;
+
 
 
     /* WHAT WILL BE ON THE PAUSE MENU
@@ -50,5 +65,10 @@ public class PauseMenuManager : MonoBehaviour
         {
             //
         }
+    }
+
+    void OnMouseSensitivityChanged(float newValue)
+    {
+
     }
 }

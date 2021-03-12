@@ -27,6 +27,7 @@ public class AttackShip : Ship
 
     public override void Update()
     {
+        base.Update();
         // Check if target is in range
         float distance = (target.transform.position - gameObject.transform.position).magnitude;
         if (distance <= attackRange)
@@ -34,10 +35,10 @@ public class AttackShip : Ship
         else
             isFiring = false;
 
-        if (isFiring)
-            attack();
-        else
-            flyTo(target.transform.position);
+    //    if (isFiring)
+    //        attack();
+    //    else
+    //        flyTo(target.transform.position);
     }
 
     //Detect enemy
