@@ -43,28 +43,13 @@ public class PauseMenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pauseMenu.SetActive(false);
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    public void ClosePauseMenu()
-    {
-        SetPauseActive(false);
-    }
-
-    void SetPauseActive(bool active)
-    {
-        pauseMenu.SetActive(active);
-
-        if(pauseMenu.activeSelf)
-        {
-            //
-        }
     }
 
     void OnMouseSensitivityChanged(float newValue)
