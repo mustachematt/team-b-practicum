@@ -37,4 +37,9 @@ public class GameMenuManager : MonoBehaviour
         GetComponent<RectTransform>().position = mousePos.ReadValue();
         OpenMenu();
     }
+    public void OpenShop()
+    {
+        buyMenu.SetActive(true);
+        animator.Play("GameMenuInactive");
+    }
 }
