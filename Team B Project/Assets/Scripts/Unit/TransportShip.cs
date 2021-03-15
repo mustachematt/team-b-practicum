@@ -50,7 +50,7 @@ public class TransportShip : Ship
     public void LateUpdate()
     {
 
-        if (Vector3.Distance(navAgent.destination, gameObject.transform.position) < 1)
+        if (Vector3.Distance(navAgent.destination, gameObject.transform.position) < 3)
         {
             //Destination Reached
             if (!returning)
