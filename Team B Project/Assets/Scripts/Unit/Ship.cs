@@ -62,6 +62,7 @@ public abstract class Ship : MonoBehaviour
 
     // The ship is destoryed. Change animation==>delete gameobject in dictionary==>delete gameobject
     public void DestroyShip() {
-        Destroy(this);
+        Destroy(gameObject);
     }
+
 }
