@@ -94,6 +94,7 @@ public class Planet : MonoBehaviour
             {
                 removed.amount += 1;
                 amountToWithdraw -= 1;
+                resourceToExtract.amount -= 1;
             }
         }
         return removed;
