@@ -17,8 +17,6 @@ public abstract class Ship : MonoBehaviour
     public int price; //this should be an array of 2 ints
     public int health;                  // Current health
     protected bool isPlayer;
-    protected bool isFire = false;
-    protected bool isCollecting = false;
     protected NavMeshAgent navAgent;
     public virtual void Awake()
     {
@@ -62,6 +60,6 @@ public abstract class Ship : MonoBehaviour
 
     // The ship is destoryed. Change animation==>delete gameobject in dictionary==>delete gameobject
     public void DestroyShip() {
-        Destroy(this);
+        Destroy(gameObject);
     }
 }
