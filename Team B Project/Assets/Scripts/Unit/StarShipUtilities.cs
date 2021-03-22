@@ -9,10 +9,14 @@ public class StarShipUtilities : MonoBehaviour
     public static StarShipUtilities Instance;
     public Dictionary<Ship.shipType, Ship> ShipDictionary = new Dictionary<Ship.shipType, Ship>();
 
-    void Start()
+    private void Awake()
     {
         Instance = this;
         BuildShipDictionary();
+    }
+    void Start()
+    {
+
     }
 
     private void BuildShipDictionary()
