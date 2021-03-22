@@ -1371,7 +1371,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 234015007}
   m_HandleRect: {fileID: 234015006}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3419,6 +3419,7 @@ GameObject:
   - component: {fileID: 522413977}
   - component: {fileID: 522413976}
   - component: {fileID: 522413975}
+  - component: {fileID: 522413978}
   m_Layer: 0
   m_Name: Player1Planet3
   m_TagString: Planet
@@ -3512,6 +3513,25 @@ Transform:
   m_Father: {fileID: 1776483395}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!95 &522413978
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522413974}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 943f66c41f42a4a9cbb1d02a4d1ee123, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &583246901
 GameObject:
   m_ObjectHideFlags: 0
@@ -3965,6 +3985,7 @@ GameObject:
   - component: {fileID: 736899421}
   - component: {fileID: 736899420}
   - component: {fileID: 736899419}
+  - component: {fileID: 736899422}
   m_Layer: 0
   m_Name: Player1Planet2
   m_TagString: Planet
@@ -4058,6 +4079,25 @@ Transform:
   m_Father: {fileID: 1776483395}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!95 &736899422
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736899418}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a51ea928eceb64699b742d0a1acbbaac, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &758101934
 GameObject:
   m_ObjectHideFlags: 0
@@ -4376,6 +4416,7 @@ GameObject:
   - component: {fileID: 813494532}
   - component: {fileID: 813494531}
   - component: {fileID: 813494530}
+  - component: {fileID: 813494533}
   m_Layer: 0
   m_Name: Player2Planet1
   m_TagString: Planet
@@ -4469,6 +4510,25 @@ Transform:
   m_Father: {fileID: 30994571}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!95 &813494533
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813494529}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 93911f03740b240b7a05ac12dbb1e2d3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &816191133
 GameObject:
   m_ObjectHideFlags: 0
@@ -5709,6 +5769,7 @@ GameObject:
   - component: {fileID: 1042493811}
   - component: {fileID: 1042493810}
   - component: {fileID: 1042493809}
+  - component: {fileID: 1042493812}
   m_Layer: 0
   m_Name: Player2Planet2
   m_TagString: Planet
@@ -5802,6 +5863,25 @@ Transform:
   m_Father: {fileID: 30994571}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!95 &1042493812
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042493808}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2f2c2b476ab8448629a319b41ec0564d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1044429061
 GameObject:
   m_ObjectHideFlags: 0
@@ -8752,8 +8832,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 470818014}
   m_HandleRect: {fileID: 470818013}
   m_Direction: 2
-  m_Value: 0.9999982
-  m_Size: 0.9433332
+  m_Value: 1.0000018
+  m_Size: 0.94333345
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10690,6 +10770,7 @@ GameObject:
   - component: {fileID: 1817751644}
   - component: {fileID: 1817751643}
   - component: {fileID: 1817751642}
+  - component: {fileID: 1817751645}
   m_Layer: 0
   m_Name: Player2Planet3
   m_TagString: Planet
@@ -10783,6 +10864,25 @@ Transform:
   m_Father: {fileID: 30994571}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!95 &1817751645
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817751641}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 41338d0809e0b4feb9ec30a2e30ed2e5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1825137684
 GameObject:
   m_ObjectHideFlags: 0
@@ -11126,6 +11226,7 @@ GameObject:
   - component: {fileID: 1951038922}
   - component: {fileID: 1951038921}
   - component: {fileID: 1951038920}
+  - component: {fileID: 1951038923}
   m_Layer: 0
   m_Name: Player1Planet1
   m_TagString: Planet
@@ -11219,6 +11320,25 @@ Transform:
   m_Father: {fileID: 1776483395}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!95 &1951038923
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951038919}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bd074bb0c917a42fe9b8fd0bbfcd06f0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1958323158
 GameObject:
   m_ObjectHideFlags: 0

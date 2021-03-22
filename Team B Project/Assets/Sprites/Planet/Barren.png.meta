@@ -1,142 +1,142 @@
 fileFormatVersion: 2
-guid: 0739cd5f0682c4080bb067f22cd3e815
+guid: 1f475c2cc0bb0440880376ca9dd83a4b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5536847731309634874
-    second: 3831099870 (1)_0
+      213: -3209669967551346782
+    second: Barren_0
   - first:
-      213: -3745084374209377684
-    second: 3831099870 (1)_1
+      213: -2272347825511041220
+    second: Barren_1
   - first:
-      213: 5588315612538522608
-    second: 3831099870 (1)_2
+      213: 6285570585451090351
+    second: Barren_2
   - first:
-      213: 6878835685006116233
-    second: 3831099870 (1)_3
+      213: -8980640071307766825
+    second: Barren_3
   - first:
-      213: -8591772449488764335
-    second: 3831099870 (1)_4
+      213: -3879854061460126734
+    second: Barren_4
   - first:
-      213: -4069737144103335270
-    second: 3831099870 (1)_5
+      213: -3990379937038668482
+    second: Barren_5
   - first:
-      213: -7321840930228278990
-    second: 3831099870 (1)_6
+      213: -4231442905476189662
+    second: Barren_6
   - first:
-      213: -3866643570222270237
-    second: 3831099870 (1)_7
+      213: -7179628561911841317
+    second: Barren_7
   - first:
-      213: -3237865036864967526
-    second: 3831099870 (1)_8
+      213: 2578386645766818195
+    second: Barren_8
   - first:
-      213: 4938583172464974362
-    second: 3831099870 (1)_9
+      213: -2226869469328372271
+    second: Barren_9
   - first:
-      213: 6475471860221378972
-    second: 3831099870 (1)_10
+      213: 8255623855203183919
+    second: Barren_10
   - first:
-      213: 6664412243079978598
-    second: 3831099870 (1)_11
+      213: -3590251660077232005
+    second: Barren_11
   - first:
-      213: -1181751724306106139
-    second: 3831099870 (1)_12
+      213: -8461099785076359613
+    second: Barren_12
   - first:
-      213: 8047359973360194948
-    second: 3831099870 (1)_13
+      213: 4835782214702664066
+    second: Barren_13
   - first:
-      213: -8646554875500552453
-    second: 3831099870 (1)_14
+      213: -6444828434519125662
+    second: Barren_14
   - first:
-      213: 4091754086444980419
-    second: 3831099870 (1)_15
+      213: -5456063143818043828
+    second: Barren_15
   - first:
-      213: -7444521887470941469
-    second: 3831099870 (1)_16
+      213: 5238926340514410424
+    second: Barren_16
   - first:
-      213: 6475533828120976749
-    second: 3831099870 (1)_17
+      213: 2882457243164246392
+    second: Barren_17
   - first:
-      213: 561947285263765589
-    second: 3831099870 (1)_18
+      213: 2212757799273091379
+    second: Barren_18
   - first:
-      213: 797967352884074003
-    second: 3831099870 (1)_19
+      213: -6029648687311108516
+    second: Barren_19
   - first:
-      213: -7753120446634657069
-    second: 3831099870 (1)_20
+      213: -775819831986005879
+    second: Barren_20
   - first:
-      213: -4803479522682187416
-    second: 3831099870 (1)_21
+      213: -2320850832416580712
+    second: Barren_21
   - first:
-      213: -7782722604835534393
-    second: 3831099870 (1)_22
+      213: -7865227358110687259
+    second: Barren_22
   - first:
-      213: 6155097867902325045
-    second: 3831099870 (1)_23
+      213: 4660287080436630290
+    second: Barren_23
   - first:
-      213: 6742092575765907881
-    second: 3831099870 (1)_24
+      213: -5517256544001140057
+    second: Barren_24
   - first:
-      213: 2818760951912235614
-    second: 3831099870 (1)_25
+      213: -6815347363957202854
+    second: Barren_25
   - first:
-      213: 2329099126136202597
-    second: 3831099870 (1)_26
+      213: 8560852596196012348
+    second: Barren_26
   - first:
-      213: -7166144671186418030
-    second: 3831099870 (1)_27
+      213: 5640698635792371608
+    second: Barren_27
   - first:
-      213: -9173934737497971703
-    second: 3831099870 (1)_28
+      213: 6653362927217865927
+    second: Barren_28
   - first:
-      213: -1725867879289443388
-    second: 3831099870 (1)_29
+      213: -5696776178890007944
+    second: Barren_29
   - first:
-      213: -6293154666323906805
-    second: 3831099870 (1)_30
+      213: -8569663758683714918
+    second: Barren_30
   - first:
-      213: -4266164874579954320
-    second: 3831099870 (1)_31
+      213: 188836205302073146
+    second: Barren_31
   - first:
-      213: 7108696261991615587
-    second: 3831099870 (1)_32
+      213: 5792303854389349864
+    second: Barren_32
   - first:
-      213: -3622638688345465199
-    second: 3831099870 (1)_33
+      213: -2858083782362404371
+    second: Barren_33
   - first:
-      213: 9085986030792601973
-    second: 3831099870 (1)_34
+      213: -2051050675016597728
+    second: Barren_34
   - first:
-      213: 2602921836922666662
-    second: 3831099870 (1)_35
+      213: -1604583919253333590
+    second: Barren_35
   - first:
-      213: -5454626714188357233
-    second: 3831099870 (1)_36
+      213: -4881464298833123134
+    second: Barren_36
   - first:
-      213: -4787844348401168667
-    second: 3831099870 (1)_37
+      213: 1315413046422242507
+    second: Barren_37
   - first:
-      213: -2313366569033977334
-    second: 3831099870 (1)_38
+      213: -6093267756209155215
+    second: Barren_38
   - first:
-      213: -3436253286191788810
-    second: 3831099870 (1)_39
+      213: -4503416899148681846
+    second: Barren_39
   - first:
-      213: 2393008587469292420
-    second: 3831099870 (1)_40
+      213: 2003652422375318027
+    second: Barren_40
   - first:
-      213: -6161496353448094352
-    second: 3831099870 (1)_41
+      213: -9197519810122944555
+    second: Barren_41
   - first:
-      213: -7016095397803036796
-    second: 3831099870 (1)_42
+      213: 5366616197868941476
+    second: Barren_42
   - first:
-      213: 5942169253941010824
-    second: 3831099870 (1)_43
+      213: 6110264723354620947
+    second: Barren_43
   - first:
-      213: -4803018409180100320
-    second: 3831099870 (1)_44
+      213: 8158589791146866750
+    second: Barren_44
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -222,7 +222,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3831099870 (1)_0
+      name: Barren_0
       rect:
         serializedVersion: 2
         x: 0
@@ -236,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3563281da5d6dc40800000000000000
-      internalID: 5536847731309634874
+      spriteID: 2a7ccd98b26f473d0800000000000000
+      internalID: -3209669967551346782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_1
+      name: Barren_1
       rect:
         serializedVersion: 2
         x: 45
@@ -257,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6a426d9a99c60cc0800000000000000
-      internalID: -3745084374209377684
+      spriteID: c37784e21bff670e0800000000000000
+      internalID: -2272347825511041220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_2
+      name: Barren_2
       rect:
         serializedVersion: 2
         x: 90
@@ -278,14 +278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fbc022017fad8d40800000000000000
-      internalID: 5588315612538522608
+      spriteID: fa1d4742525da3750800000000000000
+      internalID: 6285570585451090351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_3
+      name: Barren_3
       rect:
         serializedVersion: 2
         x: 135
@@ -299,14 +299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98502112c98867f50800000000000000
-      internalID: 6878835685006116233
+      spriteID: 7d3df06cf6b5e5380800000000000000
+      internalID: -8980640071307766825
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_4
+      name: Barren_4
       rect:
         serializedVersion: 2
         x: 180
@@ -320,14 +320,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1520c357a74e3c880800000000000000
-      internalID: -8591772449488764335
+      spriteID: 2f30056994df72ac0800000000000000
+      internalID: -3879854061460126734
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_5
+      name: Barren_5
       rect:
         serializedVersion: 2
         x: 225
@@ -341,14 +341,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9a028c31a36587c0800000000000000
-      internalID: -4069737144103335270
+      spriteID: e3de6f5d6925f98c0800000000000000
+      internalID: -3990379937038668482
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_6
+      name: Barren_6
       rect:
         serializedVersion: 2
         x: 270
@@ -362,14 +362,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 239e3db7778936a90800000000000000
-      internalID: -7321840930228278990
+      spriteID: 222bebbb815e645c0800000000000000
+      internalID: -4231442905476189662
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_7
+      name: Barren_7
       rect:
         serializedVersion: 2
         x: 315
@@ -383,14 +383,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e87ad3c82ce65ac0800000000000000
-      internalID: -3866643570222270237
+      spriteID: bddfefbbcd5dc5c90800000000000000
+      internalID: -7179628561911841317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_8
+      name: Barren_8
       rect:
         serializedVersion: 2
         x: 360
@@ -404,14 +404,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9ca10767eac013d0800000000000000
-      internalID: -3237865036864967526
+      spriteID: 399ca825ef448c320800000000000000
+      internalID: 2578386645766818195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_9
+      name: Barren_9
       rect:
         serializedVersion: 2
         x: 405
@@ -425,14 +425,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1a1f78ca3f598440800000000000000
-      internalID: 4938583172464974362
+      spriteID: 1dd058f14029811e0800000000000000
+      internalID: -2226869469328372271
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_10
+      name: Barren_10
       rect:
         serializedVersion: 2
         x: 450
@@ -446,14 +446,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c91888d295f7dd950800000000000000
-      internalID: 6475471860221378972
+      spriteID: f2d60a8f72ed19270800000000000000
+      internalID: 8255623855203183919
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_11
+      name: Barren_11
       rect:
         serializedVersion: 2
         x: 495
@@ -467,14 +467,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66edb8120afbc7c50800000000000000
-      internalID: 6664412243079978598
+      spriteID: b7017da132ddc2ec0800000000000000
+      internalID: -3590251660077232005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_12
+      name: Barren_12
       rect:
         serializedVersion: 2
         x: 540
@@ -488,14 +488,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e877046113999fe0800000000000000
-      internalID: -1181751724306106139
+      spriteID: 34eb3650392249a80800000000000000
+      internalID: -8461099785076359613
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_13
+      name: Barren_13
       rect:
         serializedVersion: 2
         x: 585
@@ -509,14 +509,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 485d4df4247fdaf60800000000000000
-      internalID: 8047359973360194948
+      spriteID: 289018e9d462c1340800000000000000
+      internalID: 4835782214702664066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_14
+      name: Barren_14
       rect:
         serializedVersion: 2
         x: 630
@@ -530,14 +530,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfe1ed2f624410880800000000000000
-      internalID: -8646554875500552453
+      spriteID: 261962a5fae5f86a0800000000000000
+      internalID: -6444828434519125662
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_15
+      name: Barren_15
       rect:
         serializedVersion: 2
         x: 675
@@ -551,14 +551,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c85ece99a4d8c830800000000000000
-      internalID: 4091754086444980419
+      spriteID: c4edf986a7b2844b0800000000000000
+      internalID: -5456063143818043828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_16
+      name: Barren_16
       rect:
         serializedVersion: 2
         x: 720
@@ -572,14 +572,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ea8cae39cebfa890800000000000000
-      internalID: -7444521887470941469
+      spriteID: 8bf6ccaefb764b840800000000000000
+      internalID: 5238926340514410424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_17
+      name: Barren_17
       rect:
         serializedVersion: 2
         x: 765
@@ -593,14 +593,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6d1d2435b7bdd950800000000000000
-      internalID: 6475533828120976749
+      spriteID: 8718e0b379b800820800000000000000
+      internalID: 2882457243164246392
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_18
+      name: Barren_18
       rect:
         serializedVersion: 2
         x: 810
@@ -614,14 +614,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55054a024107cc700800000000000000
-      internalID: 561947285263765589
+      spriteID: 331d5a7ae7b45be10800000000000000
+      internalID: 2212757799273091379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_19
+      name: Barren_19
       rect:
         serializedVersion: 2
         x: 855
@@ -635,14 +635,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31693036413f21b00800000000000000
-      internalID: 797967352884074003
+      spriteID: c56cb602772625ca0800000000000000
+      internalID: -6029648687311108516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_20
+      name: Barren_20
       rect:
         serializedVersion: 2
         x: 900
@@ -656,14 +656,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3daf5851802676490800000000000000
-      internalID: -7753120446634657069
+      spriteID: 98855c829fbbb35f0800000000000000
+      internalID: -775819831986005879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_21
+      name: Barren_21
       rect:
         serializedVersion: 2
         x: 945
@@ -677,14 +677,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8615aa4f2dc965db0800000000000000
-      internalID: -4803479522682187416
+      spriteID: 89bd32dd67eaacfd0800000000000000
+      internalID: -2320850832416580712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_22
+      name: Barren_22
       rect:
         serializedVersion: 2
         x: 990
@@ -698,14 +698,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c9006986073ef390800000000000000
-      internalID: -7782722604835534393
+      spriteID: 5efd02ab36919d290800000000000000
+      internalID: -7865227358110687259
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_23
+      name: Barren_23
       rect:
         serializedVersion: 2
         x: 1035
@@ -719,14 +719,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 531151656ec4b6550800000000000000
-      internalID: 6155097867902325045
+      spriteID: 21384cc886aaca040800000000000000
+      internalID: 4660287080436630290
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_24
+      name: Barren_24
       rect:
         serializedVersion: 2
         x: 1080
@@ -740,14 +740,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a9435df979b09d50800000000000000
-      internalID: 6742092575765907881
+      spriteID: 7aadc18a764ce63b0800000000000000
+      internalID: -5517256544001140057
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_25
+      name: Barren_25
       rect:
         serializedVersion: 2
         x: 1125
@@ -761,14 +761,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e52887db6204e1720800000000000000
-      internalID: 2818760951912235614
+      spriteID: a50af668ea50b61a0800000000000000
+      internalID: -6815347363957202854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_26
+      name: Barren_26
       rect:
         serializedVersion: 2
         x: 1170
@@ -782,14 +782,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 565650ca05f925020800000000000000
-      internalID: 2329099126136202597
+      spriteID: c317eb234124ec670800000000000000
+      internalID: 8560852596196012348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_27
+      name: Barren_27
       rect:
         serializedVersion: 2
         x: 1215
@@ -803,14 +803,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29600e0b36dbc8c90800000000000000
-      internalID: -7166144671186418030
+      spriteID: 89f4f670689c74e40800000000000000
+      internalID: 5640698635792371608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_28
+      name: Barren_28
       rect:
         serializedVersion: 2
         x: 1260
@@ -824,14 +824,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90421da36f2afa080800000000000000
-      internalID: -9173934737497971703
+      spriteID: 7c4f29ec45e755c50800000000000000
+      internalID: 6653362927217865927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_29
+      name: Barren_29
       rect:
         serializedVersion: 2
         x: 1305
@@ -845,14 +845,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cb22bdce4c7c08e0800000000000000
-      internalID: -1725867879289443388
+      spriteID: 87a9a548f3cf0f0b0800000000000000
+      internalID: -5696776178890007944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_30
+      name: Barren_30
       rect:
         serializedVersion: 2
         x: 1350
@@ -866,14 +866,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0feb2d6c293aa8a0800000000000000
-      internalID: -6293154666323906805
+      spriteID: a9a4e1b2730721980800000000000000
+      internalID: -8569663758683714918
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_31
+      name: Barren_31
       rect:
         serializedVersion: 2
         x: 1395
@@ -887,14 +887,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 075b96156a98bc4c0800000000000000
-      internalID: -4266164874579954320
+      spriteID: a3743c93781ee9200800000000000000
+      internalID: 188836205302073146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_32
+      name: Barren_32
       rect:
         serializedVersion: 2
         x: 1440
@@ -908,14 +908,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36c4828369927a260800000000000000
-      internalID: 7108696261991615587
+      spriteID: 8edc008aaa5626050800000000000000
+      internalID: 5792303854389349864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_33
+      name: Barren_33
       rect:
         serializedVersion: 2
         x: 1485
@@ -929,14 +929,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19ed4977e4dc9bdc0800000000000000
-      internalID: -3622638688345465199
+      spriteID: de9ebf551fb0658d0800000000000000
+      internalID: -2858083782362404371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_34
+      name: Barren_34
       rect:
         serializedVersion: 2
         x: 1530
@@ -950,14 +950,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 571fd87c728e71e70800000000000000
-      internalID: 9085986030792601973
+      spriteID: 02f7f4b27443983e0800000000000000
+      internalID: -2051050675016597728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_35
+      name: Barren_35
       rect:
         serializedVersion: 2
         x: 1575
@@ -971,14 +971,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6aef1ebae9f6f1420800000000000000
-      internalID: 2602921836922666662
+      spriteID: aa9d9984d6f5bb9e0800000000000000
+      internalID: -1604583919253333590
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_36
+      name: Barren_36
       rect:
         serializedVersion: 2
         x: 1620
@@ -992,14 +992,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f81627e37e54d44b0800000000000000
-      internalID: -5454626714188357233
+      spriteID: 2c8ec44551e814cb0800000000000000
+      internalID: -4881464298833123134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_37
+      name: Barren_37
       rect:
         serializedVersion: 2
         x: 1665
@@ -1013,14 +1013,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5eecfa5aee82e8db0800000000000000
-      internalID: -4787844348401168667
+      spriteID: bc489e44239414210800000000000000
+      internalID: 1315413046422242507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_38
+      name: Barren_38
       rect:
         serializedVersion: 2
         x: 1710
@@ -1034,14 +1034,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a023779bc5545efd0800000000000000
-      internalID: -2313366569033977334
+      spriteID: 173dfcd524d507ba0800000000000000
+      internalID: -6093267756209155215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_39
+      name: Barren_39
       rect:
         serializedVersion: 2
         x: 1755
@@ -1055,14 +1055,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fc054e97d9ff40d0800000000000000
-      internalID: -3436253286191788810
+      spriteID: a8d60cab036a081c0800000000000000
+      internalID: -4503416899148681846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_40
+      name: Barren_40
       rect:
         serializedVersion: 2
         x: 1800
@@ -1076,14 +1076,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4830190b1aca53120800000000000000
-      internalID: 2393008587469292420
+      spriteID: b02280923476ecb10800000000000000
+      internalID: 2003652422375318027
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_41
+      name: Barren_41
       rect:
         serializedVersion: 2
         x: 1845
@@ -1097,14 +1097,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0759cd726b7fd7aa0800000000000000
-      internalID: -6161496353448094352
+      spriteID: 5dfe0079678db5080800000000000000
+      internalID: -9197519810122944555
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_42
+      name: Barren_42
       rect:
         serializedVersion: 2
         x: 1890
@@ -1118,14 +1118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48f62b79862d1ae90800000000000000
-      internalID: -7016095397803036796
+      spriteID: 4a0f5d79ffc0a7a40800000000000000
+      internalID: 5366616197868941476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_43
+      name: Barren_43
       rect:
         serializedVersion: 2
         x: 1935
@@ -1139,14 +1139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 881e6681473d67250800000000000000
-      internalID: 5942169253941010824
+      spriteID: 314172f64650cc450800000000000000
+      internalID: 6110264723354620947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3831099870 (1)_44
+      name: Barren_44
       rect:
         serializedVersion: 2
         x: 1980
@@ -1160,8 +1160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 029882f4430485db0800000000000000
-      internalID: -4803018409180100320
+      spriteID: e38ff616032293170800000000000000
+      internalID: 8158589791146866750
       vertices: []
       indices: 
       edges: []
@@ -1169,7 +1169,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 56bea22cf2eea48589beeda768f34ba8
+    spriteID: 6f01969741b15419c8668a3504960432
     internalID: 0
     vertices: []
     indices: 
