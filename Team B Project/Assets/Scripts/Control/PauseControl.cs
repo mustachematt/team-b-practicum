@@ -16,14 +16,14 @@ public class PauseControl : MonoBehaviour
         else
             ResumeGame();
     }
-    void PauseGame()
+    public void PauseGame()
     {
         _paused = true;
         Time.timeScale = 0f;
         GameWasPaused?.Invoke();
         pauseMenu.SetActive(true);
     }
-    void ResumeGame()
+    public void ResumeGame()
     {
         _paused = false;
         Time.timeScale = 1f;

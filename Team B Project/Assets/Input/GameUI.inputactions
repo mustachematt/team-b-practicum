@@ -1,0 +1,33 @@
+{
+    "name": "GameUI",
+    "maps": [
+        {
+            "name": "GameMenu",
+            "id": "028669e0-6511-4a22-8df0-74f9246a57d9",
+            "actions": [
+                {
+                    "name": "RightClick",
+                    "type": "Button",
+                    "id": "1601e082-b9e5-4772-a8c6-c888434a0634",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cbbb4e48-f63c-47a7-9681-e5eeb106e55c",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
