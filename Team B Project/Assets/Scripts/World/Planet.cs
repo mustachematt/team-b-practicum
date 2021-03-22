@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-
+using System.Linq;
 public class Planet : MonoBehaviour
 {
     /* 
@@ -38,23 +38,27 @@ public class Planet : MonoBehaviour
     public controlEnum control;
 
     // Resources
-    public Resource[] resources = new Resource[2];
-    [Serializable]
-    public class Resource
+    public PlanetResource[] resources = new PlanetResource[2];
+    private Dictionary<Resource.ResourceKind, Resource> _planetResourcesAsDictionary = new Dictionary<Resource.ResourceKind, Resource>();
+    public IReadOnlyDictionary<Resource.ResourceKind, Resource> PlanetResourcesAsDictionary
     {
-        public int currAmt; // the current amount of the resource on the planet
-        public int maxAmt; // the max amount of the resource on the planet
-        public enum ResourceKind { metal, fuel };
-        public ResourceKind kind;
-
-        public Resource(int currAmt, ResourceKind kind)
+        get => _planetResourcesAsDictionary;
+    }
+    [Serializable]
+    public class PlanetResource : Resource
+    {
+        public int maxAmt; // Max amount of the resource the planet can have
+        public PlanetResource(ResourceKind kind, int startingAmount, int maxAmount) : base(startingAmount, kind)
         {
-            this.currAmt = currAmt;
-            this.maxAmt = currAmt;
-            this.kind = kind;
+            this.maxAmt = maxAmount;
         }
     }
-
+    private void Awake()
+    {
+        foreach (Resource planetResource in resources)
+            if(!_planetResourcesAsDictionary.ContainsKey(planetResource.kind))
+            _planetResourcesAsDictionary.Add(planetResource.kind, planetResource);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -64,25 +68,34 @@ public class Planet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (Resource r in resources)
+        foreach (PlanetResource r in resources)
         {
-            if (r.currAmt < r.maxAmt)
+            if (r.amount < r.maxAmt)
             {
                 // wait certain amount of seconds...
-                ++r.currAmt;
+                ++r.amount;
             }
         }
-
     }
 
-    private void switchControl(controlEnum c)
+    private void SwitchControl(controlEnum c)
     {
         control = c;
     }
 
-    public void removeResources(int amount)//removes resources from planet equally
+    public Resource removeResources(Resource resourceToWithdraw)//removes resources from planet equally
     {
-        for(int i =0; i<resources.Length; ++i)//iterate through each index in resources
-            resources[i].currAmt -= amount/resources.Length;//remove amount/length for each index
+        Resource removed = new Resource(0, resourceToWithdraw.kind);
+        int amountToWithdraw = resourceToWithdraw.amount;
+        Resource resourceToExtract = resources.FirstOrDefault(x => x.kind == resourceToWithdraw.kind);
+        if(resourceToExtract != null)
+        {
+            while (resourceToExtract.amount > 0 && amountToWithdraw > 0)
+            {
+                removed.amount += 1;
+                amountToWithdraw -= 1;
+            }
+        }
+        return removed;
     }
 }

@@ -3,26 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.IO;
+
 public class StarShipUtilities : MonoBehaviour
 {
-    public enum shipType { test1, test2, test3 }
     public static StarShipUtilities Instance;
-    public Dictionary<shipType, GameObject> ShipDictionary = new Dictionary<shipType, GameObject>();
+    public Dictionary<Ship.shipType, Ship> ShipDictionary = new Dictionary<Ship.shipType, Ship>();
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         Instance = this;
         BuildShipDictionary();
     }
+    void Start()
+    {
+
+    }
 
     private void BuildShipDictionary()
     {
-        foreach(shipType type in Enum.GetValues(typeof(shipType)))
+        foreach(Ship.shipType type in Enum.GetValues(typeof(Ship.shipType)))
         {
             var shipObject = Resources.Load(Path.Combine("Ships", "Prefabs", type.ToString())) as GameObject;
             if (shipObject != null)
-                ShipDictionary[type] = shipObject;
+                ShipDictionary[type] = shipObject.GetComponent<Ship>();
             else
                 continue;
             Debug.Log($"Enum Type: {type}");
@@ -32,10 +35,5 @@ public class StarShipUtilities : MonoBehaviour
                 Debug.Log($"Child Name: {child.gameObject.name}");
             }
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
