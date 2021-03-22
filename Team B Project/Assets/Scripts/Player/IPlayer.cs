@@ -1,32 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 //This is a player class
 public abstract class IPlayer : MonoBehaviour
 {
     public Dictionary<Resource.ResourceKind, Resource> Resources;
     private List<object> _ownedPlanets = new List<object>();
     public GameObject playerBase;
-    public GameObject waypoint;
+    protected static Planet[] _planets;
+    public abstract List<Planet> OwnedPlanets();
 
-    public IReadOnlyList<object> OwnedPlanets
+    protected virtual void Start()
     {
-        get => _ownedPlanets.AsReadOnly();
+        SpawnUnit(Ship.shipType.Transport);
+        if (_planets == null)
+            _planets = UnityEngine.Resources.FindObjectsOfTypeAll<Planet>();
     }
-
-    
-    public void AddResources(Resource resourceToAdd)
-    {
-        Resources[Resource.ResourceKind.metal].amount += resourceToAdd.amount;
-    }
-
-    void Start()
+    public virtual void Awake()
     {
         Resources = new Dictionary<Resource.ResourceKind, Resource>();
-        Resources[Resource.ResourceKind.metal] = new Resource(0, Resource.ResourceKind.metal);
+        Resources[Resource.ResourceKind.metal] = new Resource(100, Resource.ResourceKind.metal);
         Resources[Resource.ResourceKind.fuel] = new Resource(0, Resource.ResourceKind.fuel);
     }
+    public void AddResources(Resource resourceToAdd)
+    {
+        Resources[resourceToAdd.kind].amount += resourceToAdd.amount;
+    }
+
 
     public virtual void Update()
     {
@@ -37,12 +38,17 @@ public abstract class IPlayer : MonoBehaviour
     public void SpawnUnit(Ship.shipType unitType/*, GameObject waypoint*/)
 
     {
-        //Instantiate Ship Prefab, subtract resources
         GameObject shipPrefab = StarShipUtilities.Instance.ShipDictionary[unitType].gameObject;
-        Resources[Resource.ResourceKind.metal].amount -= shipPrefab.GetComponent<Ship>().price;
-        GameObject ship = GameObject.Instantiate(shipPrefab, playerBase.transform.position, playerBase.transform.rotation);
+        //Instantiate Ship Prefab, subtract resources
+        if(Resources[Resource.ResourceKind.metal].amount >=shipPrefab.GetComponent<Ship>().price) //this needs to be changed to reflect
+        {
+            Resources[Resource.ResourceKind.metal].amount -= shipPrefab.GetComponent<Ship>().price;
+            GameObject ship = GameObject.Instantiate(shipPrefab, playerBase.transform.position, playerBase.transform.rotation);
+            ship.GetComponent<Ship>().SetOwner(this);
+        }
+        else Debug.Log("Not enough resources");
         //ship.Ship.target = waypoint;
-        //ship.GetComponent<StartShipScript>().target = waypoint;
+        //ship.GetComponent<Ship>().target = waypoint;
     }
 
 }
