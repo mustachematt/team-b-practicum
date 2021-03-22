@@ -21,25 +21,13 @@ public class GameMenuManager : MonoBehaviour
     {
 
     }
-    public void OpenMenu()
-    {
-        buyMenu.SetActive(false);
-        animator.SetTrigger("Appear");
-    }
-    public void CloseMenu()
-    {
-        buyMenu.SetActive(true);
-        animator.Play("GameMenuInactive");
-    }
-    public void OnRightClick()
+
+    void OnRightClick()
     {
         var mousePos = Mouse.current.position;
         GetComponent<RectTransform>().position = mousePos.ReadValue();
-        OpenMenu();
-    }
-    public void OpenShop()
-    {
-        buyMenu.SetActive(true);
-        animator.Play("GameMenuInactive");
+
+        buyMenu.SetActive(false);
+        animator.SetTrigger("Appear");
     }
 }

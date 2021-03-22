@@ -12,11 +12,6 @@ public class AttackShip : Ship
 
     private float attackTimer;
 
-
-    // 3 is too small for attackRange, use attackRange(3) to calculate points of balance and use (attackRange * sale) to set actrally attack range 
-    private float attackScale = 3;
-    private int nextTarget;
-
     public override void Start()
     {
         base.Start();
@@ -28,85 +23,74 @@ public class AttackShip : Ship
         attackStrength = 3;
         attackSpeed = 3;
         attackTimer = 0;
-        if (transform.parent.GetComponent<Fleet>().enemyList.Contains(target))
-            return;
-        transform.parent.GetComponent<Fleet>().enemyList.Add(target);
     }
 
     public override void Update()
     {
-        base.Update();
-        // Check if all enemies clear
-        if (transform.parent.GetComponent<Fleet>().enemyList.Count == 0 && !target)
-            return;
-        nextTarget = transform.parent.GetComponent<Fleet>().enemyList.Count - 1;
-        // Check if target is destory
-        if (!target)
-        {
-            if (transform.parent.GetComponent<Fleet>().enemyList.Count != 0)
-            {
-                nextTarget = transform.parent.GetComponent<Fleet>().enemyList.Count - 1;
-                target = transform.parent.GetComponent<Fleet>().enemyList[nextTarget];
-            }
-        }
-        if (!target)
-            return;
         // Check if target is in range
         float distance = (target.transform.position - gameObject.transform.position).magnitude;
         if (distance <= attackRange)
-            attack();
-        
-    }
+            isFiring = true;
+        else
+            isFiring = false;
 
+        if (isFiring)
+            attack();
+        else
+            flyTo(target.transform.position);
+    }
 
     //Detect enemy
     public void OnTriggerEnter(Collider collider)
     {
-        Ship ship;
-        if (collider.gameObject.TryGetComponent(out ship) == true)
-            if (collider.transform.parent != transform.parent)     // If collider is enemy
+        if (isPlayer)
+            if (collider.gameObject.tag == "SpawnPlayer2")     // If collider is enemy
             {
                 // Add collider to enemyList
-                if (transform.parent.GetComponent<Fleet>().enemyList.Contains(collider.gameObject))
-                    return;
-                transform.parent.GetComponent<Fleet>().enemyList.Add(collider.gameObject);
-
-                // Chose the closest enemy
-                if (!isFiring)
-                {
-                    if ((transform.position - target.transform.position).magnitude > (transform.position - collider.transform.position).magnitude)
-                        target = collider.gameObject;
-                }
+                //owener.GetComponent<IPlayer>().enemyList.Add(collider.gameObject);
             }
 
-        if (collider.gameObject.TryGetComponent(out ship) == false)
-            if (collider.transform.parent != transform.parent)     // If collider is enemy
+        if (!isPlayer)
+            if (collider.gameObject.tag == "SpawnPlayer1")     // If collider is enemy
             {
                 // Add collider to enemyList
-                if (transform.parent.GetComponent<Fleet>().enemyList.Contains(collider.gameObject))
-                    return;
-                transform.parent.GetComponent<Fleet>().enemyList.Add(collider.gameObject);
-
-                // Chose the closest enemy
-                if (!isFiring)
-                {
-                    if ((transform.position - target.transform.position).magnitude > (transform.position - collider.transform.position).magnitude)
-                        target = collider.gameObject;
-                }
+                //owener.GetComponent<AIPlayer>().enemyList.Add(collider.gameObject);
             }
+
+        // Chane target to the closer one
+        if (!isFiring)
+        {
+            if ((target.transform.position - gameObject.transform.position).magnitude
+                    < (collider.gameObject.transform.position - gameObject.transform.position).magnitude)
+                return;
+            target = collider.gameObject;
+            isFiring = true;
+        }
     }
 
 
-    void attack()
-    {
-        isFiring = true;
+    void attack() {
         attackTimer += Time.deltaTime;
-        if (attackTimer >=  attackSpeed)
+        if (attackTimer >= attackSpeed)
         {
-            if (!target.GetComponent<Ship>().takeDamage(attackStrength))               // Target destoryed, remove destoryed targer from enemyList
-                transform.parent.GetComponent<Fleet>().enemyList.Remove(target);
+            if (!target.GetComponent<Ship>().takeDamage(attackStrength))// Target destoryed
+            {/*
+                // Remove destoryed targer from enemyList and set new target
+                if (isPlayer)
+                    owener.GetComponent<IPlayer>().enemyList.Remove(target);
+                    if ( owener.GetComponent<IPlayer>().enemyList.Count == 0)
+                       isFiring = false;                                                              // All target clear
+                    else
+                       target = targetList[owener.GetComponent<IPlayer>().enemyList.Count - 1];     // Set target from enemyList
+                else
+                    owener.GetComponent<AIPlayer>().enemyList.Remove(target);
+                    if ( owener.GetComponent<AIPlayer>().enemyList.Count == 0)
+                       isFiring = false;                                                              // All target clear
+                   else
+                       target = targetList[owener.GetComponent<AIPlayer>().enemyList.Count - 1];     // Set target from enemyList
+             */
+            }
             attackTimer = 0;
-            isFiring = false;
         }
     }
 }
