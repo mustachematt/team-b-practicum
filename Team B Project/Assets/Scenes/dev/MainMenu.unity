@@ -250,7 +250,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 47.86, y: -64.44}
+  m_AnchoredPosition: {x: -10, y: -64.44}
   m_SizeDelta: {x: 188.63373, y: 69.757324}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &408577828
@@ -456,7 +456,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 33.542, y: 70}
+  m_AnchoredPosition: {x: -10.317986, y: 62}
   m_SizeDelta: {x: 385.3501, y: 94.60153}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &583795952
@@ -478,7 +478,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 05cd05f6f842749449fc43b723fa7b3b, type: 3}
+  m_Texture: {fileID: 2800000, guid: 0efa51314c0dc48479564fc5355a47aa, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -506,7 +506,7 @@ GameObject:
   - component: {fileID: 691148731}
   - component: {fileID: 691148730}
   m_Layer: 5
-  m_Name: PlayButton (1)
+  m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -530,7 +530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 47.86, y: -140}
+  m_AnchoredPosition: {x: -9.999985, y: -140}
   m_SizeDelta: {x: 188.63373, y: 69.757324}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &691148730
