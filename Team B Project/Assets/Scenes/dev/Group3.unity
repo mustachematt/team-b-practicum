@@ -3469,6 +3469,7 @@ GameObject:
   - component: {fileID: 522413977}
   - component: {fileID: 522413976}
   - component: {fileID: 522413975}
+  - component: {fileID: 522413978}
   m_Layer: 0
   m_Name: Player1Planet3
   m_TagString: Planet
@@ -3562,6 +3563,25 @@ Transform:
   m_Father: {fileID: 1776483395}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!95 &522413978
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522413974}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2cfb72ca373e84a6588794c54d8e12f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &583246901
 GameObject:
   m_ObjectHideFlags: 0
@@ -3940,6 +3960,7 @@ GameObject:
   - component: {fileID: 736899421}
   - component: {fileID: 736899420}
   - component: {fileID: 736899419}
+  - component: {fileID: 736899422}
   m_Layer: 0
   m_Name: Player1Planet2
   m_TagString: Planet
@@ -4033,6 +4054,25 @@ Transform:
   m_Father: {fileID: 1776483395}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!95 &736899422
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736899418}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: adbc8336a44df48bdb2a625b7e544d47, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &751865743
 GameObject:
   m_ObjectHideFlags: 0
@@ -4507,6 +4547,7 @@ GameObject:
   - component: {fileID: 813494532}
   - component: {fileID: 813494531}
   - component: {fileID: 813494530}
+  - component: {fileID: 813494533}
   m_Layer: 0
   m_Name: Player2Planet1
   m_TagString: Planet
@@ -4600,6 +4641,25 @@ Transform:
   m_Father: {fileID: 30994571}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!95 &813494533
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813494529}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 21fa3b96d18404ee49993e67ffb244dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &816191133
 GameObject:
   m_ObjectHideFlags: 0
@@ -5609,6 +5669,7 @@ GameObject:
   - component: {fileID: 1042493811}
   - component: {fileID: 1042493810}
   - component: {fileID: 1042493809}
+  - component: {fileID: 1042493812}
   m_Layer: 0
   m_Name: Player2Planet2
   m_TagString: Planet
@@ -5702,6 +5763,25 @@ Transform:
   m_Father: {fileID: 30994571}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!95 &1042493812
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042493808}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 450d6d5323a634d95a4a1ea8536cc97f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1044429061
 GameObject:
   m_ObjectHideFlags: 0
@@ -10470,6 +10550,7 @@ GameObject:
   - component: {fileID: 1817751644}
   - component: {fileID: 1817751643}
   - component: {fileID: 1817751642}
+  - component: {fileID: 1817751645}
   m_Layer: 0
   m_Name: Player2Planet3
   m_TagString: Planet
@@ -10563,6 +10644,25 @@ Transform:
   m_Father: {fileID: 30994571}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!95 &1817751645
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817751641}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 83fcdfeff383c4cea831a2e76b0aefab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1825137684
 GameObject:
   m_ObjectHideFlags: 0
@@ -10940,6 +11040,7 @@ GameObject:
   - component: {fileID: 1951038922}
   - component: {fileID: 1951038921}
   - component: {fileID: 1951038920}
+  - component: {fileID: 1951038923}
   m_Layer: 0
   m_Name: Player1Planet1
   m_TagString: Planet
@@ -11033,6 +11134,25 @@ Transform:
   m_Father: {fileID: 1776483395}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!95 &1951038923
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951038919}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6db6b3a421b894a6c9b5bc194bb529c4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1958323158
 GameObject:
   m_ObjectHideFlags: 0
