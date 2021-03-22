@@ -6,52 +6,31 @@ using UnityEngine.InputSystem;
 
 public class CameraControl : MonoBehaviour
 {
-    [SerializeField] float speed = 15f;
-    
-    [Header("Zoom Options")]
-    [Space]
     [SerializeField] float minCamSize = 10f;
     [SerializeField] float maxCamSize = 30f;
     [SerializeField] float zoomSpeed = 0.5f;
     //This is used to control the camera panning.
-    
-    [Header("Screen  Size")]
-    [Space]
-    [SerializeField] int xLimit;
-    [SerializeField] int zLimit;
-    
-    private float directionZ = 0;
-    private float directionX = 0;
-    
-    private float edgeDirx = 0;
-    private float edgeDirz = 0;
+    [SerializeField] float speed = 15f;
+    float directionX = 0;
+    float directionZ = 0;
+    [SerializeField] int xLimit = 32;
+    [SerializeField] int zLimit = 29;
 
-    private Vector3 newPos;
-   
-    
     private void Update()
     {
-        var pos = Camera.main.transform.position;
-
-        if(directionX == 0 && directionZ == 0 )
         {
-            if(edgeDirx != 0 || edgeDirz != 0 ) newPos = Camera.main.transform.position + (new Vector3(edgeDirx, 0, edgeDirz) * speed * Time.deltaTime);
-        }
-        else if(directionX != 0 || directionZ != 0)
-        {
-            newPos = Camera.main.transform.position + (new Vector3(directionX, 0, directionZ) * speed * Time.deltaTime);
-        }
-
-        if(newPos.x < xLimit && newPos.x > -xLimit)
-        {
-            Camera.main.transform.position = new Vector3(newPos.x, pos.y, pos.z);
-        }
-        
-        pos = Camera.main.transform.position;
-        
-        if (newPos.z < zLimit && newPos.z > -zLimit)
-        {   
-            Camera.main.transform.position = new Vector3(pos.x, pos.y, newPos.z);
+            var pos = Camera.main.transform.position;
+            var newPos = Camera.main.transform.position + (new Vector3(directionX, 0, directionZ) * speed * Time.deltaTime);
+            
+            if(newPos.x < xLimit && newPos.x > -xLimit)
+            {
+                Camera.main.transform.position = new Vector3(newPos.x, pos.y, pos.z);
+            }
+            pos = Camera.main.transform.position;
+            if (newPos.z < zLimit && newPos.z > -zLimit)
+            {
+                Camera.main.transform.position = new Vector3(pos.x, pos.y, newPos.z);
+            }
         }
         
     }
@@ -86,20 +65,5 @@ public class CameraControl : MonoBehaviour
         
         else if(value.Get<float>() == 0.0f) speed /= 2;
     }
-    public void OnMousePosition(InputValue value)
-    {
-        Vector2 mPOS = value.Get<Vector2>();
-        Vector2 viewPortPOS = Camera.main.ScreenToViewportPoint(mPOS);
-        
-        if(viewPortPOS.x < 0.025)edgeDirx = -1; 
-        else if(viewPortPOS.x > 0.975) edgeDirx = 1;    
-        else edgeDirx = 0;
-
-        if(viewPortPOS.y < 0.025) edgeDirz = -1;
-        else if(viewPortPOS.y > 0.975) edgeDirz = 1;
-        else edgeDirz = 0;
-        
-    }
-
 
 }
