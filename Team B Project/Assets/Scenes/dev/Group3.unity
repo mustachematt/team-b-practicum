@@ -2590,11 +2590,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
 <<<<<<< HEAD
-<<<<<<< HEAD
 --- !u!1 &372684836
 =======
-=======
->>>>>>> parent of 3469a44 (Pause menu value changes)
 --- !u!1 &368203693
 >>>>>>> parent of 3469a44 (Pause menu value changes)
 GameObject:
