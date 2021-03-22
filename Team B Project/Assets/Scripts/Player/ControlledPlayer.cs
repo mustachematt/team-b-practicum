@@ -8,8 +8,20 @@ public class ControlledPlayer : IPlayer
 {
     public static ControlledPlayer Instance;
 
-    private void Awake()
+    public override List<Planet> OwnedPlanets()
     {
-        Instance = this;
+        return _planets.Where(x => x.control == Planet.controlEnum.player1).ToList();
     }
+    protected override void Start()
+    {
+        base.Start();
+    }
+
+    public override void Awake()
+    {
+        base.Awake();
+        Instance = this;
+
+    }
+
 }
