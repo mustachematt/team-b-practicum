@@ -5,6 +5,7 @@ using UnityEngine;
 public class Fleet : MonoBehaviour
 {
     public List<Ship> ships;
+    public List<GameObject> enemyList;
     public enum controlEnum { neutral, player1, player2 };
 
     //void buyShip(StarshipKind kind)
