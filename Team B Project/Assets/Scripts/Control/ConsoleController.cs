@@ -16,7 +16,7 @@ public class ConsoleController : MonoBehaviour
     {
 
     }
-    void CheckInput(Key key)
+    void CheckInput()
     {
        // Debug.Log(key);
         if (Keyboard.current[konami[konamiIndex]].wasPressedThisFrame)
@@ -28,7 +28,7 @@ public class ConsoleController : MonoBehaviour
             konamiIndex = 0;
             Konami();
         }
-        if (key == Key.Backquote)
+        if (Keyboard.current.backquoteKey.wasPressedThisFrame)
         {
             ActivateConsole();
         }
@@ -52,12 +52,15 @@ public class ConsoleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach(Key key in Enum.GetValues(typeof(Key)))
-        {
-            if (key == Key.None || key == Key.IMESelected || key == Key.PrintScreen) continue;
-            if (Keyboard.current[key].wasPressedThisFrame)
-                CheckInput(key);
-        }
+     //   foreach(Key key in Enum.GetValues(typeof(Key)))
+     //   {
+     //       if (key == Key.None || key == Key.IMESelected || key == Key.PrintScreen) continue;
+     //       if (Keyboard.current[key].wasPressedThisFrame)
+     //           CheckInput();
+     //   }
+        if (Keyboard.current.anyKey.wasPressedThisFrame)
+            if(!Keyboard.current.printScreenKey.wasPressedThisFrame)
+                CheckInput();
 
     }
 }
