@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 //This is a player class
+[RequireComponent(typeof(Fleet))]
 public abstract class IPlayer : MonoBehaviour
 {
     public Dictionary<Resource.ResourceKind, Resource> Resources;
     private List<object> _ownedPlanets = new List<object>();
     public GameObject playerBase;
+    [System.NonSerialized]
+    public Fleet Fleet;
     protected static Planet[] _planets;
     public abstract List<Planet> OwnedPlanets();
 
@@ -22,6 +25,7 @@ public abstract class IPlayer : MonoBehaviour
         Resources = new Dictionary<Resource.ResourceKind, Resource>();
         Resources[Resource.ResourceKind.metal] = new Resource(100, Resource.ResourceKind.metal);
         Resources[Resource.ResourceKind.fuel] = new Resource(0, Resource.ResourceKind.fuel);
+        Fleet = GetComponent<Fleet>();
     }
     public void AddResources(Resource resourceToAdd)
     {
@@ -43,10 +47,11 @@ public abstract class IPlayer : MonoBehaviour
         if(Resources[Resource.ResourceKind.metal].amount >=shipPrefab.GetComponent<Ship>().price) //this needs to be changed to reflect
         {
             Resources[Resource.ResourceKind.metal].amount -= shipPrefab.GetComponent<Ship>().price;
-            GameObject ship = GameObject.Instantiate(shipPrefab, playerBase.transform.position, playerBase.transform.rotation);
+            GameObject ship = GameObject.Instantiate(shipPrefab, playerBase.transform.position, playerBase.transform.rotation, this.transform);
             ship.GetComponent<Ship>().SetOwner(this);
         }
         else Debug.Log("Not enough resources");
+     //   Debug.Log("Enemy Ships: " + Fleet.EnemyShips.Count);
         //ship.Ship.target = waypoint;
         //ship.GetComponent<Ship>().target = waypoint;
     }
