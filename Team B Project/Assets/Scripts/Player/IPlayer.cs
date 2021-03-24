@@ -45,6 +45,12 @@ public abstract class IPlayer : MonoBehaviour
             Resources[Resource.ResourceKind.metal].amount -= shipPrefab.GetComponent<Ship>().price;
             GameObject ship = GameObject.Instantiate(shipPrefab, playerBase.transform.position, playerBase.transform.rotation);
             ship.GetComponent<Ship>().SetOwner(this);
+            if (this is ControlledPlayer) {
+                ship.layer = 8; // 8 is the player layer
+            }
+            else {
+                ship.layer = 9; // 9 is the AI layer
+            }
         }
         else Debug.Log("Not enough resources");
         //ship.Ship.target = waypoint;
