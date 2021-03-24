@@ -28,25 +28,25 @@ public class AttackShip : Ship
         attackStrength = 3;
         attackSpeed = 3;
         attackTimer = 0;
-        if (transform.parent.GetComponent<Fleet>().enemyList.Contains(target))
+        if (transform.parent.GetComponent<Fleet>().EnemyShips.Contains(target.GetComponent<Ship>()))
             return;
-        transform.parent.GetComponent<Fleet>().enemyList.Add(target);
+        transform.parent.GetComponent<Fleet>().EnemyShips.Add(target.GetComponent<Ship>());
     }
 
     public override void Update()
     {
         base.Update();
         // Check if all enemies clear
-        if (transform.parent.GetComponent<Fleet>().enemyList.Count == 0 && !target)
+        if (transform.parent.GetComponent<Fleet>().EnemyShips.Count == 0 && !target)
             return;
-        nextTarget = transform.parent.GetComponent<Fleet>().enemyList.Count - 1;
+        nextTarget = transform.parent.GetComponent<Fleet>().EnemyShips.Count - 1;
         // Check if target is destory
         if (!target)
         {
-            if (transform.parent.GetComponent<Fleet>().enemyList.Count != 0)
+            if (transform.parent.GetComponent<Fleet>().EnemyShips.Count != 0)
             {
-                nextTarget = transform.parent.GetComponent<Fleet>().enemyList.Count - 1;
-                target = transform.parent.GetComponent<Fleet>().enemyList[nextTarget];
+                nextTarget = transform.parent.GetComponent<Fleet>().EnemyShips.Count - 1;
+              //  target = transform.parent.GetComponent<Fleet>().EnemyShips[nextTarget];
             }
         }
         if (!target)
@@ -67,9 +67,9 @@ public class AttackShip : Ship
             if (collider.transform.parent != transform.parent)     // If collider is enemy
             {
                 // Add collider to enemyList
-                if (transform.parent.GetComponent<Fleet>().enemyList.Contains(collider.gameObject))
+                if (transform.parent.GetComponent<Fleet>().EnemyShips.Contains(collider.gameObject.GetComponent<Ship>()))
                     return;
-                transform.parent.GetComponent<Fleet>().enemyList.Add(collider.gameObject);
+                transform.parent.GetComponent<Fleet>().EnemyShips.Add(collider.gameObject.GetComponent<Ship>());
 
                 // Chose the closest enemy
                 if (!isFiring)
@@ -83,9 +83,9 @@ public class AttackShip : Ship
             if (collider.transform.parent != transform.parent)     // If collider is enemy
             {
                 // Add collider to enemyList
-                if (transform.parent.GetComponent<Fleet>().enemyList.Contains(collider.gameObject))
+                if (transform.parent.GetComponent<Fleet>().EnemyShips.Contains(collider.gameObject.GetComponent<Ship>()))
                     return;
-                transform.parent.GetComponent<Fleet>().enemyList.Add(collider.gameObject);
+                transform.parent.GetComponent<Fleet>().EnemyShips.Add(collider.gameObject.GetComponent<Ship>());
 
                 // Chose the closest enemy
                 if (!isFiring)
@@ -104,7 +104,7 @@ public class AttackShip : Ship
         if (attackTimer >=  attackSpeed)
         {
             if (!target.GetComponent<Ship>().takeDamage(attackStrength))               // Target destoryed, remove destoryed targer from enemyList
-                transform.parent.GetComponent<Fleet>().enemyList.Remove(target);
+                transform.parent.GetComponent<Fleet>().EnemyShips.Remove(target.GetComponent<Ship>());
             attackTimer = 0;
             isFiring = false;
         }

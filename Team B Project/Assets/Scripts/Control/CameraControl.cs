@@ -35,7 +35,7 @@ public class CameraControl : MonoBehaviour
 
         if(directionX == 0 && directionZ == 0 )
         {
-            if(edgeDirx != 0 || edgeDirz != 0 ) newPos = Camera.main.transform.position + (new Vector3(edgeDirx, 0, edgeDirz) * speed * Time.deltaTime);
+                if(edgeDirx != 0 || edgeDirz != 0)  newPos = Camera.main.transform.position + (new Vector3(edgeDirx, 0, edgeDirz) * speed * Time.deltaTime);
         }
         else if(directionX != 0 || directionZ != 0)
         {
@@ -49,11 +49,12 @@ public class CameraControl : MonoBehaviour
         
         pos = Camera.main.transform.position;
         
+        
         if (newPos.z < zLimit && newPos.z > -zLimit)
         {   
             Camera.main.transform.position = new Vector3(pos.x, pos.y, newPos.z);
         }
-        
+       
     }
 
     public void OnZoom(InputValue value)
@@ -90,14 +91,15 @@ public class CameraControl : MonoBehaviour
     {
         Vector2 mPOS = value.Get<Vector2>();
         Vector2 viewPortPOS = Camera.main.ScreenToViewportPoint(mPOS);
-        
-        if(viewPortPOS.x < 0.025)edgeDirx = -1; 
-        else if(viewPortPOS.x > 0.975) edgeDirx = 1;    
+       
+        if(viewPortPOS.x < 0.025 && viewPortPOS.y > 0)edgeDirx = -1; 
+        else if(viewPortPOS.x > 0.975 && viewPortPOS.x < 1) edgeDirx = 1;
         else edgeDirx = 0;
 
-        if(viewPortPOS.y < 0.025) edgeDirz = -1;
-        else if(viewPortPOS.y > 0.975) edgeDirz = 1;
+        if(viewPortPOS.y < 0.025 && viewPortPOS.y > 0) edgeDirz = -1;
+        else if(viewPortPOS.y > 0.975 && viewPortPOS.y < 1) edgeDirz = 1;
         else edgeDirz = 0;
+      
         
     }
 
