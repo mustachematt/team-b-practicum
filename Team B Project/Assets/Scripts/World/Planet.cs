@@ -37,8 +37,6 @@ public class Planet : MonoBehaviour
     public enum controlEnum { neutral, player1, player2 };
     public controlEnum control;
 
-    private bool controlChanged=true;//controls when to change the sprite which shows ownership
-
     // Resources
     public PlanetResource[] resources = new PlanetResource[2];
     private Dictionary<Resource.ResourceKind, Resource> _planetResourcesAsDictionary = new Dictionary<Resource.ResourceKind, Resource>();
@@ -64,7 +62,7 @@ public class Planet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        DisplayContoller();//call to assign control sprite
     }
 
     // Update is called once per frame
@@ -81,19 +79,10 @@ public class Planet : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
-    {
-        if (controlChanged == true)
-        {
-            DisplayContoller();
-            controlChanged = false;
-        }
-    }
-
     private void SwitchControl(controlEnum c)
     {
         control = c;
-        controlChanged = true;//added so the denotion of control can be changed only when control is changed
+        DisplayContoller();//call to change control sprite
     }
 
     public Resource removeResources(Resource resourceToWithdraw)//removes resources from planet equally
@@ -118,7 +107,7 @@ public class Planet : MonoBehaviour
         {
             if (this.control == Planet.controlEnum.player1)
             {
-                if (this.transform.childCount !=0)//if the planet already had a sprite to denot control -> delete it to display the new one
+                if (this.transform.childCount !=0)//if the planet already had a sprite to denote control -> delete it to display the new one
                 {
                     GameObject toDestroy=this.transform.GetChild(0).gameObject;
                     Destroy(toDestroy);
@@ -134,7 +123,7 @@ public class Planet : MonoBehaviour
             }
             else if (this.control == Planet.controlEnum.player2)
             {
-                if (this.transform.childCount !=0)//if the planet already had a sprite to denot control -> delete it to display the new one
+                if (this.transform.childCount !=0)//if the planet already had a sprite to denote control -> delete it to display the new one
                 {
                     GameObject toDestroy = this.transform.GetChild(0).gameObject;
                     Destroy(toDestroy);
