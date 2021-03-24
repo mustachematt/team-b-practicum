@@ -38,7 +38,6 @@ public class Planet : MonoBehaviour
     public controlEnum control;
 
     private bool controlChanged=true;//controls when to change the sprite which shows ownership
-    private bool test = true;//used only for testing the control sprite
 
     // Resources
     public PlanetResource[] resources = new PlanetResource[2];
@@ -78,14 +77,6 @@ public class Planet : MonoBehaviour
                 // wait certain amount of seconds...
                 ++r.amount;
             }
-        }
-        if (test == true)//just tests the functionality of control sprite
-        {
-            if(this.control == Planet.controlEnum.player1)
-                SwitchControl(Planet.controlEnum.player2);
-            else if (this.control == Planet.controlEnum.player2)
-                SwitchControl(Planet.controlEnum.player1);
-            test = false;
         }
 
     }
