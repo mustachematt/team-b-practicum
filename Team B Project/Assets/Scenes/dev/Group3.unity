@@ -504,6 +504,7 @@ GameObject:
   - component: {fileID: 126678598}
   - component: {fileID: 126678600}
   - component: {fileID: 126678599}
+  - component: {fileID: 126678601}
   m_Layer: 0
   m_Name: NeutralTop1
   m_TagString: Planet
@@ -597,6 +598,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &126678601
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126678597}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e097e24735b574f1a8349cb3976244bc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &152706270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,6 +1426,7 @@ GameObject:
   - component: {fileID: 373816446}
   - component: {fileID: 373816448}
   - component: {fileID: 373816447}
+  - component: {fileID: 373816449}
   m_Layer: 0
   m_Name: NeutralTop3
   m_TagString: Planet
@@ -1499,6 +1520,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &373816449
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373816445}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 404ebb368104646238a45aa33f176e42, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &395859634
 GameObject:
   m_ObjectHideFlags: 0
@@ -2082,6 +2122,7 @@ GameObject:
   - component: {fileID: 691174949}
   - component: {fileID: 691174951}
   - component: {fileID: 691174950}
+  - component: {fileID: 691174952}
   m_Layer: 0
   m_Name: NeutralPlanet2
   m_TagString: Planet
@@ -2175,6 +2216,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &691174952
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691174948}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 47e8997b790b949f69aa834c51ac6323, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &736899418
 GameObject:
   m_ObjectHideFlags: 0
@@ -2310,6 +2370,7 @@ GameObject:
   - component: {fileID: 758101935}
   - component: {fileID: 758101937}
   - component: {fileID: 758101936}
+  - component: {fileID: 758101938}
   m_Layer: 0
   m_Name: NeutralPlanet5
   m_TagString: Planet
@@ -2403,6 +2464,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &758101938
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758101934}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c6726124c209041e082a2afb6af20c95, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &794684751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,6 +2788,7 @@ GameObject:
   - component: {fileID: 828408591}
   - component: {fileID: 828408593}
   - component: {fileID: 828408592}
+  - component: {fileID: 828408594}
   m_Layer: 0
   m_Name: NeutralPlanet4
   m_TagString: Planet
@@ -2801,6 +2882,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &828408594
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828408590}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6dfab90d9bbf34f97aeb561d3b862afe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &844410600
 GameObject:
   m_ObjectHideFlags: 0
@@ -2998,6 +3098,7 @@ GameObject:
   - component: {fileID: 941987825}
   - component: {fileID: 941987827}
   - component: {fileID: 941987826}
+  - component: {fileID: 941987828}
   m_Layer: 0
   m_Name: NeutralPlanet3
   m_TagString: Planet
@@ -3091,6 +3192,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &941987828
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941987824}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3afca12d47cb24538851142d7c976d03, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &946193135
 GameObject:
   m_ObjectHideFlags: 0
@@ -3292,6 +3412,7 @@ GameObject:
   - component: {fileID: 1002529413}
   - component: {fileID: 1002529415}
   - component: {fileID: 1002529414}
+  - component: {fileID: 1002529416}
   m_Layer: 0
   m_Name: NeutralCenter1
   m_TagString: Planet
@@ -3385,6 +3506,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1002529416
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002529412}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce8223be028254c578abd9337fd329d8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1011449693
 GameObject:
   m_ObjectHideFlags: 0
@@ -3989,6 +4129,7 @@ GameObject:
   - component: {fileID: 1172415557}
   - component: {fileID: 1172415559}
   - component: {fileID: 1172415558}
+  - component: {fileID: 1172415560}
   m_Layer: 0
   m_Name: NeutralBottom1
   m_TagString: Planet
@@ -4082,6 +4223,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1172415560
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172415556}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 024ff799b08bf4af19a87348d5123b24, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1176951896
 GameObject:
   m_ObjectHideFlags: 0
@@ -4093,6 +4253,7 @@ GameObject:
   - component: {fileID: 1176951897}
   - component: {fileID: 1176951899}
   - component: {fileID: 1176951898}
+  - component: {fileID: 1176951900}
   m_Layer: 0
   m_Name: NeutralTop2
   m_TagString: Planet
@@ -4186,6 +4347,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1176951900
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176951896}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 65bc6d408c6e7458fbc6ff21b6098b92, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1297267591
 GameObject:
   m_ObjectHideFlags: 0
@@ -4324,6 +4504,7 @@ GameObject:
   - component: {fileID: 1301622429}
   - component: {fileID: 1301622431}
   - component: {fileID: 1301622430}
+  - component: {fileID: 1301622432}
   m_Layer: 0
   m_Name: NeutralBottom3
   m_TagString: Planet
@@ -4417,6 +4598,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1301622432
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301622428}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 640d941f51bd047a6910cd8ebece3615, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1317354210
 GameObject:
   m_ObjectHideFlags: 0
@@ -5120,6 +5320,7 @@ GameObject:
   - component: {fileID: 1520694090}
   - component: {fileID: 1520694092}
   - component: {fileID: 1520694091}
+  - component: {fileID: 1520694093}
   m_Layer: 0
   m_Name: NeutralBottom2
   m_TagString: Planet
@@ -5213,6 +5414,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1520694093
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520694089}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 200bd445ebc0d449ca38632a3ebcaef7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1530978839
 GameObject:
   m_ObjectHideFlags: 0
@@ -5224,6 +5444,7 @@ GameObject:
   - component: {fileID: 1530978840}
   - component: {fileID: 1530978842}
   - component: {fileID: 1530978841}
+  - component: {fileID: 1530978843}
   m_Layer: 0
   m_Name: NeutralPlanet6
   m_TagString: Planet
@@ -5317,6 +5538,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1530978843
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530978839}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 703d4ff5a800c4c708f7e076a2a52b4f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1535386912
 GameObject:
   m_ObjectHideFlags: 0
