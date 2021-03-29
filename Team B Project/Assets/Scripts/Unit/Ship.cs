@@ -1,60 +1,95 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
-using System.Reflection;
+using System;
+
 [RequireComponent(typeof(NavMeshAgent))]
 public abstract class Ship : MonoBehaviour
 {
     public enum shipType { Attack, Transport };
-    protected IPlayer owner = null;
+
+    // unsigned to prevent negative prices
+    [Serializable]
+    public struct ShipPrice
+    {
+        public uint fuel;
+        public uint metal;
+    }
+
+    // to restrict the property values between _minVal and _maxVal
+    [Serializable]
+    public class ShipPropertyValue
+    {
+        private int _maxVal = 5, _minVal = 1;
+        [SerializeField] private int _value;
+
+        public int Value
+        {
+            get => _value;
+            set => _value = correctValue(value);
+        }
+
+        private int correctValue(int x)
+        {
+            if (x < _minVal) return _minVal;
+            if (x > _maxVal) return _maxVal;
+            else return x;
+        }
+    }
+
+    [Header("General Debug")]
+    public GameObject target;       // Initally hold enemy's base(Attack)/resource point(Transport).
+    public Slider healthSlider;     // Health UI
+
+    [Header("Ship Properties")]
     public shipType kind;
-    public GameObject target;       //Initally hold enemy's base(Attack)/resource point(Transport).
-    public Slider healthSlider;         // Health UI
-    public float maxSpeed;
-    public int armorStrength;           // Max health
-    public int price; //this should be an array of 2 ints
-    public int health;                  // Current health
-    protected bool isPlayer;
+    public ShipPrice price; 
+    public ShipPropertyValue maxSpeed;
+    public ShipPropertyValue armorStrength;     // Max health
+
+    private ShipPropertyValue health;            // Current health    
+    protected IPlayer owner = null;
     protected NavMeshAgent navAgent;
+    protected bool isPlayer;
+
+
     public virtual void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
     }
+
     public virtual void Start()
     {
-        // Test 
-        //All of these fields should be set in the editor
-    //    maxSpeed = 3;
-     //   armorStrength = 4;
-     //   health = armorStrength;
-    //    healthSlider.value = health / armorStrength;
-      //  price = 1;
         isPlayer = owner is ControlledPlayer;
-     //   Debug.Log(owner.GetType());
+
+        /*
+        // initialize ship properties
+        maxSpeed.Value = _maxSpeed;
+        armorStrength.Value = _armorStrength;
+        health.Value = _health;
+        */
     }
 
-    public virtual void Update()
-    {
-    }
+    public virtual void Update() {}
+
     public void SetOwner(IPlayer owner)
     {
         this.owner = owner;
     }
+
     // Change UI according to the taken damage, return false if the ship is destoryed
     // The bool value returned signals to the attacking ship that it has been destroyed
     // will make it to where the attacking ship does not try to continue attacking a destroyed ship
     public bool takeDamage(int attack) {
-        int currentHealth = health - attack;
+        int currentHealth = health.Value - attack;
         if (currentHealth <= 0)
         {
-            health = 0;
+            health.Value = 0;
             DestroyShip();
             return false;
         }
-        health = currentHealth;
-        healthSlider.value = health / armorStrength;
+        health.Value = currentHealth;
+        healthSlider.value = health.Value / armorStrength.Value;
         return true;
     }
 
