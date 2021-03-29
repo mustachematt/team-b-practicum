@@ -40,6 +40,8 @@ public class Planet : MonoBehaviour
     // Resources
     public PlanetResource[] resources = new PlanetResource[2];
 
+    bool replenishing = false;
+
     [Serializable]
     public class PlanetResource : Resource
     {
@@ -59,14 +61,8 @@ public class Planet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (PlanetResource r in resources)
-        {
-            if (r.amount < r.maxAmt)
-            {
-                // wait certain amount of seconds...
-                ++r.amount;
-            }
-        }
+        if (!replenishing)
+            StartCoroutine(ReplenishResources());
     }
 
     private void SwitchControl(controlEnum c)
@@ -78,5 +74,16 @@ public class Planet : MonoBehaviour
     {
         for(int i =0; i<resources.Length; ++i)//iterate through each index in resources
             resources[i].amount -= resourceToWithdraw.amount / resources.Length;//remove amount/length for each index
+    }
+
+    IEnumerator ReplenishResources()
+    {
+        replenishing = true;
+        foreach (PlanetResource r in resources)
+            if (r.amount < r.maxAmt)
+                r.amount++;
+
+        yield return new WaitForSeconds(15);
+        replenishing = false;
     }
 }
