@@ -10,8 +10,9 @@ public class PauseMenuManager : MonoBehaviour
 
     // root gameobject of the pause menu used to toggle activation
     public GameObject pauseMenu;
-    // used to pull functions from the pausecontrol script
+    // variables used to pull functions from other scripts
     public PauseControl pauseControl;
+
     // slider component for mouse sensitivity
     public Slider mouseSensitivitySlider;
     public Text mouseSensitivityText;
@@ -47,9 +48,9 @@ public class PauseMenuManager : MonoBehaviour
 
     public void ShowSliderValues()
     {
-        masterVolumeText.GetComponent<Text>().text = masterVolumeSlider.value + "%";
-        musicVolumeText.GetComponent<Text>().text = musicVolumeSlider.value + "%";
-        soundVolumeText.GetComponent<Text>().text = soundVolumeSlider.value + "%";
+        masterVolumeText.GetComponent<Text>().text = Mathf.Round((masterVolumeSlider.value * 200)) + "%";
+        musicVolumeText.GetComponent<Text>().text = Mathf.Round((musicVolumeSlider.value * 200)) + "%";
+        soundVolumeText.GetComponent<Text>().text = Mathf.Round((soundVolumeSlider.value * 200)) + "%";
         mouseSensitivityText.GetComponent<Text>().text = mouseSensitivitySlider.value + "%";
     }
     

@@ -16,7 +16,7 @@ public class VolumeControl : MonoBehaviour
         GameSettings.VolumeSettingsWereChanged += UpdateVolume;
         UpdateVolume();
     }
-    void UpdateVolume()
+    public void UpdateVolume()
     {
         float multiplier = GameSettings.MasterVolume * 
             (SoundType == GameSettings.SoundType.Music ? GameSettings.MusicVolume 
