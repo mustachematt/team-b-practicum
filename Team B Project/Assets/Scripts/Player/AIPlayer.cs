@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
-[RequireComponent(typeof(Fleet))]
 public class AIPlayer : IPlayer
 {
     public float timeBetweenActions = 2.0f;
