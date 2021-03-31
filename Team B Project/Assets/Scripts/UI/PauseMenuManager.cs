@@ -13,6 +13,8 @@ public class PauseMenuManager : MonoBehaviour
     // variables used to pull functions from other scripts
     public PauseControl pauseControl;
 
+
+    // GameObjects used for the pause menu
     // slider component for mouse sensitivity
     public Slider mouseSensitivitySlider;
     public Text mouseSensitivityText;
@@ -26,12 +28,31 @@ public class PauseMenuManager : MonoBehaviour
     public Slider musicVolumeSlider;
     public Text musicVolumeText;
 
+    public AudioSource[] music;
+    public AudioSource[] sounds;
+    public AudioSource[] allAudio;
+
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         Cursor.visible = true;
         ShowSliderValues();
+    }
+
+    private void Update()
+    {
+        foreach(AudioSource eachSource in music)
+        {
+            eachSource.volume = musicVolumeSlider.value;
+        }
+
+        foreach(AudioSource eachSource in sounds)
+        {
+            eachSource.volume = soundVolumeSlider.value;
+        }
     }
 
     public void ClosePauseMenu()
@@ -53,5 +74,4 @@ public class PauseMenuManager : MonoBehaviour
         soundVolumeText.GetComponent<Text>().text = Mathf.Round((soundVolumeSlider.value * 200)) + "%";
         mouseSensitivityText.GetComponent<Text>().text = mouseSensitivitySlider.value + "%";
     }
-    
 }

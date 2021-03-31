@@ -7349,6 +7349,13 @@ MonoBehaviour:
   soundVolumeText: {fileID: 1144851321}
   musicVolumeSlider: {fileID: 1111112904}
   musicVolumeText: {fileID: 1561122413}
+  music:
+  - {fileID: 233893252}
+  sounds:
+  - {fileID: 1297267592}
+  allAudio:
+  - {fileID: 1297267592}
+  - {fileID: 233893252}
 --- !u!1 &1996322449
 GameObject:
   m_ObjectHideFlags: 0
