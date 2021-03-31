@@ -54,12 +54,25 @@ public abstract class IPlayer : MonoBehaviour
             }
             else {
                 ship.layer = 9; // 9 is the AI layer
+                DisplayEnemySprite(ship);
             }
         }
         else Debug.Log("Not enough resources");
      //   Debug.Log("Enemy Ships: " + Fleet.EnemyShips.Count);
         //ship.Ship.target = waypoint;
         //ship.GetComponent<Ship>().target = waypoint;
+    }
+
+    public void DisplayEnemySprite(GameObject ship)
+    {
+        var controlSprite = UnityEngine.Resources.Load<Sprite>("enemyDenotion");//load the correect sprite for this
+        GameObject child = new GameObject();//create a child to add the sprite to
+        SpriteRenderer renderer = child.AddComponent<SpriteRenderer>();
+        renderer.sprite = controlSprite;
+        child.transform.parent = ship.transform;
+        child.transform.position = ship.transform.position + new Vector3(0f, 0f, 5f);
+        child.transform.localScale = new Vector3(8f, 8f, 0f);
+        child.transform.rotation = new Quaternion(.9f, 0f, 0f, 1.0f);
     }
 
 }
