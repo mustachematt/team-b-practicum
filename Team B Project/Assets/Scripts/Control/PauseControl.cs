@@ -8,6 +8,8 @@ public class PauseControl : MonoBehaviour
     public static event Action GameWasResumed;
     private bool _paused = false;
     public GameObject pauseMenu;
+    public GameObject inGameMenu;
+    public GameObject buyMenu;
 
     public void OnPause()
     {
@@ -22,6 +24,8 @@ public class PauseControl : MonoBehaviour
         Time.timeScale = 0f;
         GameWasPaused?.Invoke();
         pauseMenu.SetActive(true);
+        inGameMenu.SetActive(false);
+        buyMenu.SetActive(false);
     }
     public void ResumeGame()
     {
@@ -29,6 +33,7 @@ public class PauseControl : MonoBehaviour
         Time.timeScale = 1f;
         GameWasResumed?.Invoke();
         pauseMenu.SetActive(false);
+        inGameMenu.SetActive(true);
     }
     // Start is called before the first frame update
     void Start()
