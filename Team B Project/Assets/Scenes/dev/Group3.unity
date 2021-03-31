@@ -4737,6 +4737,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1308384604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6885966120574634965, guid: 643d2631ace6d44059a69d99818480f5,
+    type: 3}
+  m_PrefabInstance: {fileID: 6885966120887768827}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1317354210
 GameObject:
   m_ObjectHideFlags: 0
@@ -6808,6 +6814,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1995423322}
+  inGameMenu: {fileID: 1308384604}
+  buyMenu: {fileID: 1579767258}
 --- !u!1 &1865243712
 GameObject:
   m_ObjectHideFlags: 0
