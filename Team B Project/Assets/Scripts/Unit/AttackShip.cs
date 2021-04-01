@@ -22,8 +22,6 @@ public class AttackShip : Ship
     {
         base.Start();
 
-        kind = shipType.Attack;
-
         attackTimer = 0;
         if (transform.parent.GetComponent<Fleet>().EnemyShips.Contains(target.GetComponent<Ship>()))
             return;

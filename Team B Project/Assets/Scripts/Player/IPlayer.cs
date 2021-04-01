@@ -16,7 +16,7 @@ public abstract class IPlayer : MonoBehaviour
 
     protected virtual void Start()
     {
-        SpawnUnit(Ship.shipType.Transport);
+        SpawnUnit(Ship.shipType.Freighter);
         if (_planets == null)
             _planets = UnityEngine.Resources.FindObjectsOfTypeAll<Planet>();
     }

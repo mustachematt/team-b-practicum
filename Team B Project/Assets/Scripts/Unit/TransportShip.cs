@@ -19,7 +19,6 @@ public class TransportShip : Ship
     {
         base.Start();
 
-        kind = shipType.Transport;
         resource = new Resource(0, Resource.ResourceKind.metal);
         SetDestination();
     }

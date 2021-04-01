@@ -6,7 +6,7 @@ using System;
 [RequireComponent(typeof(NavMeshAgent))]
 public abstract class Ship : MonoBehaviour
 {
-    public enum shipType { Attack, Transport };
+    public enum shipType { BasicStarfighter, SpartanStarfighter, Freighter, Bomber };
 
     // unsigned to prevent negative prices
     [Serializable]
