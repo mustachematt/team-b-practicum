@@ -43,10 +43,10 @@ public class ConsoleController : MonoBehaviour
     {
         if (Console.cheats == false) return;
         Debug.Log("Konami Achieved");
-        var transportCost = StarShipUtilities.Instance.ShipDictionary[Ship.shipType.Transport].price;
+        var transportCost = (int)StarShipUtilities.Instance.ShipDictionary[Ship.shipType.Freighter].price.metal;
         ControlledPlayer.Instance.AddResources(new Resource(transportCost * 100, Resource.ResourceKind.metal));
         for (int i = 0; i < 100; i++)
-            ControlledPlayer.Instance.SpawnUnit(Ship.shipType.Transport);
+            ControlledPlayer.Instance.SpawnUnit(Ship.shipType.Freighter);
 
     }
     // Update is called once per frame
