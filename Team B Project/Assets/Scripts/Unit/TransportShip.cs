@@ -5,16 +5,20 @@ using UnityEngine;
 using System.Linq;
 public class TransportShip : Ship
 {
-    //public enum ResourceType { M, F };              // Temporary resource type
+    public ShipPropertyValue capacity;
+
+    [Header("Transport Debug")]
     public Resource resource;
-    public int capacity = 5;
-    protected bool returning = false;
+
     protected GameObject destination;
+    protected bool returning = false;
+
+
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
-        kind = shipType.Transport;
+
         resource = new Resource(0, Resource.ResourceKind.metal);
         SetDestination();
     }
@@ -57,7 +61,7 @@ public class TransportShip : Ship
             {
               //  Debug.Log("Reached Planet");
                 Planet planet = destination.GetComponent<Planet>();
-                var acquiredResources = planet.removeResources(new Resource(capacity, resource.kind));
+                var acquiredResources = planet.removeResources(new Resource(capacity.Value, resource.kind));
                 resource.amount += acquiredResources.amount;
                 SetDestination(true);
             }

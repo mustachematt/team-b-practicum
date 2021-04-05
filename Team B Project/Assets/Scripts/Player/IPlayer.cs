@@ -16,7 +16,7 @@ public abstract class IPlayer : MonoBehaviour
 
     protected virtual void Start()
     {
-        SpawnUnit(Ship.shipType.Transport);
+        SpawnUnit(Ship.shipType.Freighter);
         if (_planets == null)
             _planets = UnityEngine.Resources.FindObjectsOfTypeAll<Planet>();
     }
@@ -44,9 +44,9 @@ public abstract class IPlayer : MonoBehaviour
     {
         GameObject shipPrefab = StarShipUtilities.Instance.ShipDictionary[unitType].gameObject;
         //Instantiate Ship Prefab, subtract resources
-        if(Resources[Resource.ResourceKind.metal].amount >=shipPrefab.GetComponent<Ship>().price) //this needs to be changed to reflect
+        if(Resources[Resource.ResourceKind.metal].amount >=shipPrefab.GetComponent<Ship>().price.metal) //this needs to be changed to reflect
         {
-            Resources[Resource.ResourceKind.metal].amount -= shipPrefab.GetComponent<Ship>().price;
+            Resources[Resource.ResourceKind.metal].amount -= (int)shipPrefab.GetComponent<Ship>().price.metal;
             GameObject ship = GameObject.Instantiate(shipPrefab, playerBase.transform.position, playerBase.transform.rotation, this.transform);
             ship.GetComponent<Ship>().SetOwner(this);
             if (this is ControlledPlayer) {

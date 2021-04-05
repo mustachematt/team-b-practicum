@@ -23,7 +23,7 @@ public class StarShipUtilities : MonoBehaviour
     {
         foreach(Ship.shipType type in Enum.GetValues(typeof(Ship.shipType)))
         {
-            var shipObject = Resources.Load(Path.Combine("Ships", "Prefabs", type.ToString())) as GameObject;
+            var shipObject = Resources.Load(Path.Combine("Ships", "Prefabs", type.ToString())) as GameObject; // Assets/Resources/Ships/Prefabs/[Ship Name]
             if (shipObject != null)
                 ShipDictionary[type] = shipObject.GetComponent<Ship>();
             else

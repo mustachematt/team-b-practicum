@@ -31,7 +31,7 @@ public class AIPlayer : IPlayer
     }
 
     void makeDecision() {
-        SpawnUnit(Ship.shipType.Transport);
+        SpawnUnit(Ship.shipType.Freighter);
     }
 }
 
