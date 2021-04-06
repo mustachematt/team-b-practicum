@@ -62,7 +62,12 @@ public class Planet : MonoBehaviour
     {
 
     }
-
+    private void Awake()
+    {
+        foreach (Resource planetResource in resources)
+            if (!_planetResourcesAsDictionary.ContainsKey(planetResource.kind))
+                _planetResourcesAsDictionary.Add(planetResource.kind, planetResource);
+    }
     // Update is called once per frame
     void Update()
     {

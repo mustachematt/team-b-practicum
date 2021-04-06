@@ -1171,8 +1171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19107f31e28d3814d8b6b5c9ea6a82be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FuelAmount: {fileID: 292263423}
-  MetalAmount: {fileID: 2004902569}
 --- !u!1 &218957372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2895,6 +2893,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
+  inGameMenu: {fileID: 0}
+  buyMenu: {fileID: 0}
 --- !u!1 &493174013
 GameObject:
   m_ObjectHideFlags: 0
@@ -4168,6 +4168,7 @@ RectTransform:
   - {fileID: 1195777822}
   - {fileID: 1375875351}
   - {fileID: 527888215}
+  - {fileID: 1916633986}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7424,6 +7425,7 @@ GameObject:
   - component: {fileID: 1409142095}
   - component: {fileID: 1409142094}
   - component: {fileID: 1409142092}
+  - component: {fileID: 1409142093}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -7445,6 +7447,44 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1409142093
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409142091}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials: []
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!33 &1409142094
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -9994,7 +10034,7 @@ RectTransform:
   m_Children:
   - {fileID: 1877567453}
   m_Father: {fileID: 816431838}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
