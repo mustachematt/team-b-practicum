@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 using UnityEngine;
 
 public class Planet : MonoBehaviour
@@ -39,7 +40,11 @@ public class Planet : MonoBehaviour
 
     // Resources
     public PlanetResource[] resources = new PlanetResource[2];
-
+    private Dictionary<Resource.ResourceKind, Resource> _planetResourcesAsDictionary = new Dictionary<Resource.ResourceKind, Resource>();
+    public IReadOnlyDictionary<Resource.ResourceKind, Resource> PlanetResourcesAsDictionary
+    {
+        get => _planetResourcesAsDictionary;
+    }
     bool replenishing = false;
 
     [Serializable]
@@ -70,10 +75,21 @@ public class Planet : MonoBehaviour
         control = c;
     }
 
-    public void removeResources(Resource resourceToWithdraw)//removes resources from planet equally
+    public Resource removeResources(Resource resourceToWithdraw)//removes resources from planet equally
     {
-        for(int i =0; i<resources.Length; ++i)//iterate through each index in resources
-            resources[i].amount -= resourceToWithdraw.amount / resources.Length;//remove amount/length for each index
+        Resource removed = new Resource(0, resourceToWithdraw.kind);
+        int amountToWithdraw = resourceToWithdraw.amount;
+        Resource resourceToExtract = resources.FirstOrDefault(x => x.kind == resourceToWithdraw.kind);
+        if (resourceToExtract != null)
+        {
+            while (resourceToExtract.amount > 0 && amountToWithdraw > 0)
+            {
+                removed.amount += 1;
+                amountToWithdraw -= 1;
+                resourceToExtract.amount -= 1;
+            }
+        }
+        return removed;
     }
 
     IEnumerator ReplenishResources()
