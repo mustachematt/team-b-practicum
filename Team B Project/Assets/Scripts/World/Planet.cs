@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-using System.Linq;
+
 public class Planet : MonoBehaviour
 {
     /* 
@@ -39,11 +39,9 @@ public class Planet : MonoBehaviour
 
     // Resources
     public PlanetResource[] resources = new PlanetResource[2];
-    private Dictionary<Resource.ResourceKind, Resource> _planetResourcesAsDictionary = new Dictionary<Resource.ResourceKind, Resource>();
-    public IReadOnlyDictionary<Resource.ResourceKind, Resource> PlanetResourcesAsDictionary
-    {
-        get => _planetResourcesAsDictionary;
-    }
+
+    bool replenishing = false;
+
     [Serializable]
     public class PlanetResource : Resource
     {
@@ -53,90 +51,39 @@ public class Planet : MonoBehaviour
             this.maxAmt = maxAmount;
         }
     }
-    private void Awake()
-    {
-        foreach (Resource planetResource in resources)
-            if(!_planetResourcesAsDictionary.ContainsKey(planetResource.kind))
-            _planetResourcesAsDictionary.Add(planetResource.kind, planetResource);
-    }
+
     // Start is called before the first frame update
     void Start()
     {
-        DisplayContoller();//call to assign control sprite
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        foreach (PlanetResource r in resources)
-        {
-            if (r.amount < r.maxAmt)
-            {
-                // wait certain amount of seconds...
-                ++r.amount;
-            }
-        }
-
+        if (!replenishing)
+            StartCoroutine(ReplenishResources());
     }
 
     private void SwitchControl(controlEnum c)
     {
         control = c;
-        DisplayContoller();//call to change control sprite
     }
 
-    public Resource removeResources(Resource resourceToWithdraw)//removes resources from planet equally
+    public void removeResources(Resource resourceToWithdraw)//removes resources from planet equally
     {
-        Resource removed = new Resource(0, resourceToWithdraw.kind);
-        int amountToWithdraw = resourceToWithdraw.amount;
-        Resource resourceToExtract = resources.FirstOrDefault(x => x.kind == resourceToWithdraw.kind);
-        if(resourceToExtract != null)
-        {
-            while (resourceToExtract.amount > 0 && amountToWithdraw > 0)
-            {
-                removed.amount += 1;
-                amountToWithdraw -= 1;
-                resourceToExtract.amount -= 1;
-            }
-        }
-        return removed;
+        for(int i =0; i<resources.Length; ++i)//iterate through each index in resources
+            resources[i].amount -= resourceToWithdraw.amount / resources.Length;//remove amount/length for each index
     }
 
-    private void DisplayContoller() {
-        if (this.control != Planet.controlEnum.neutral)
-        {
-            if (this.control == Planet.controlEnum.player1)
-            {
-                if (this.transform.childCount !=0)//if the planet already had a sprite to denote control -> delete it to display the new one
-                {
-                    GameObject toDestroy=this.transform.GetChild(0).gameObject;
-                    Destroy(toDestroy);
-                }
-                var controlSprite = Resources.Load<Sprite>("playerDenotion");//load the correct sprite for this
-                GameObject child = new GameObject();//create a child to add the sprite to
-                SpriteRenderer renderer = child.AddComponent<SpriteRenderer>();
-                renderer.sprite = controlSprite;
-                child.transform.parent = this.transform;
-                child.transform.position = this.transform.position + new Vector3(0f, 0f, 8f);
-                child.transform.localScale = new Vector3(.5f, .5f, 0f);
-                child.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
-            }
-            else if (this.control == Planet.controlEnum.player2)
-            {
-                if (this.transform.childCount !=0)//if the planet already had a sprite to denote control -> delete it to display the new one
-                {
-                    GameObject toDestroy = this.transform.GetChild(0).gameObject;
-                    Destroy(toDestroy);
-                }
-                var controlSprite = Resources.Load<Sprite>("enemyDenotion");//load the correect sprite for this
-                GameObject child = new GameObject();//create a child to add the sprite to
-                SpriteRenderer renderer = child.AddComponent<SpriteRenderer>();
-                renderer.sprite = controlSprite;
-                child.transform.parent = this.transform;
-                child.transform.position = this.transform.position + new Vector3(0f, 0f, 8f);
-                child.transform.localScale = new Vector3(.5f, .5f, 0f);
-                child.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
-            }
-        }
+    IEnumerator ReplenishResources()
+    {
+        replenishing = true;
+        foreach (PlanetResource r in resources)
+            if (r.amount < r.maxAmt)
+                r.amount++;
+
+        yield return new WaitForSeconds(15);
+        replenishing = false;
     }
 }

@@ -26,6 +26,11 @@ public class MainMenuManager : MonoBehaviour
         buttonPress.Play();
         SceneManager.LoadScene(1);
     }
+    public void Credits()
+    {
+        buttonPress.Play();
+        SceneManager.LoadScene(2);
+    }
 
     public void Quit()
     {
