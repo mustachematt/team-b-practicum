@@ -845,7 +845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7adcef042d581114394dc3f8a8993534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBase: {fileID: 904694129}
+  playerBase: {fileID: 937130666}
   timeBetweenActions: 2
   currentTime: 0
 --- !u!114 &144121810
@@ -2704,6 +2704,7 @@ GameObject:
   - component: {fileID: 361828405}
   - component: {fileID: 361828404}
   - component: {fileID: 361828403}
+  - component: {fileID: 361828406}
   m_Layer: 0
   m_Name: Player1MainPlanet
   m_TagString: Planet
@@ -2817,6 +2818,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &361828406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361828401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca8678cbced3a841b83612ea871e17d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Owner: {fileID: 1257646090}
 --- !u!1 &444631800
 GameObject:
   m_ObjectHideFlags: 0
@@ -4694,6 +4708,7 @@ GameObject:
   - component: {fileID: 937130670}
   - component: {fileID: 937130669}
   - component: {fileID: 937130668}
+  - component: {fileID: 937130671}
   m_Layer: 0
   m_Name: Player2MainPlanet
   m_TagString: Planet
@@ -4807,6 +4822,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &937130671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937130666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca8678cbced3a841b83612ea871e17d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Owner: {fileID: 144121809}
 --- !u!1 &964150619
 GameObject:
   m_ObjectHideFlags: 0
@@ -6494,7 +6522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56f1ce91c323987498b0507fde30af04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBase: {fileID: 1775745307}
+  playerBase: {fileID: 361828401}
 --- !u!4 &1257646091
 Transform:
   m_ObjectHideFlags: 0
