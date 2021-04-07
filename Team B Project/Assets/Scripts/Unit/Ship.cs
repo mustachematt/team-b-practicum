@@ -48,39 +48,29 @@ public abstract class Ship : MonoBehaviour
     public ShipPropertyValue armorStrength;     // Max health
 
     private ShipPropertyValue health;            // Current health    
+    private Vector3 accelerationVector, currentVelocity, previousVelocity;
+
     protected IPlayer owner = null;
     protected NavMeshAgent navAgent;
     protected bool isPlayer;
 
 
+    public virtual void Start() { isPlayer = owner is ControlledPlayer; }
+    public virtual void Update() { moveAnimHandler(); }
+    public void SetOwner(IPlayer owner) { this.owner = owner; }
+
     public virtual void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
+        previousVelocity = GetComponent<Rigidbody>().velocity;
     }
 
-    public virtual void Start()
-    {
-        isPlayer = owner is ControlledPlayer;
-
-        /*
-        // initialize ship properties
-        maxSpeed.Value = _maxSpeed;
-        armorStrength.Value = _armorStrength;
-        health.Value = _health;
-        */
-    }
-
-    public virtual void Update() {}
-
-    public void SetOwner(IPlayer owner)
-    {
-        this.owner = owner;
-    }
 
     // Change UI according to the taken damage, return false if the ship is destoryed
     // The bool value returned signals to the attacking ship that it has been destroyed
     // will make it to where the attacking ship does not try to continue attacking a destroyed ship
-    public bool takeDamage(int attack) {
+    public bool takeDamage(int attack)
+    {
         int currentHealth = health.Value - attack;
         if (currentHealth <= 0)
         {
@@ -93,8 +83,26 @@ public abstract class Ship : MonoBehaviour
         return true;
     }
 
+
     // The ship is destoryed. Change animation==>delete gameobject in dictionary==>delete gameobject
-    public void DestroyShip() {
+    public void DestroyShip()
+    {
         Destroy(gameObject);
+    }
+
+
+    private void moveAnimHandler()
+    {
+        // update values
+        currentVelocity = GetComponent<Rigidbody>().velocity;
+        accelerationVector = currentVelocity - previousVelocity;
+        Vector3 sum = transform.forward + accelerationVector;
+
+        // only if the ship has positive acceleration, play the booster animation
+        if (sum.z <= transform.forward.z) GetComponent<Animator>().SetBool("hasPosAcceleration", false);
+        else GetComponent<Animator>().SetBool("hasPosAcceleration", true);
+
+        // set this value for the next call
+        previousVelocity = currentVelocity;
     }
 }
