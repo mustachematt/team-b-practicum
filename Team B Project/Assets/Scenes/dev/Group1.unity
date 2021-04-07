@@ -1171,6 +1171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19107f31e28d3814d8b6b5c9ea6a82be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FuelAmount: {fileID: 292263423}
+  MetalAmount: {fileID: 2004902569}
 --- !u!1 &218957372
 GameObject:
   m_ObjectHideFlags: 0
