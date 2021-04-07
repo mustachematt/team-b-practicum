@@ -23,7 +23,7 @@ public abstract class IPlayer : MonoBehaviour
     public virtual void Awake()
     {
         Resources = new Dictionary<Resource.ResourceKind, Resource>();
-        Resources[Resource.ResourceKind.metal] = new Resource(100, Resource.ResourceKind.metal);
+        Resources[Resource.ResourceKind.metal] = new Resource(150, Resource.ResourceKind.metal);
         Resources[Resource.ResourceKind.fuel] = new Resource(0, Resource.ResourceKind.fuel);
         Fleet = GetComponent<Fleet>();
     }

@@ -279,7 +279,7 @@ MonoBehaviour:
   armorStrength:
     _value: 2
   capacity:
-    _value: 3
+    _value: 150
 --- !u!135 &3451446417739694452
 SphereCollider:
   m_ObjectHideFlags: 0
