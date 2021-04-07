@@ -109,7 +109,7 @@ public class Planet : MonoBehaviour
         replenishing = false;
     }
 
-    private void DisplayContoller() {
+    private void DisplayController() {
         if (this.control != Planet.controlEnum.neutral)
         {
             if (this.control == Planet.controlEnum.player1)
