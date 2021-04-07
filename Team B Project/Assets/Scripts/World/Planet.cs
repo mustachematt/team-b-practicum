@@ -60,7 +60,7 @@ public class Planet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        DisplayController();
     }
     private void Awake()
     {
@@ -78,6 +78,7 @@ public class Planet : MonoBehaviour
     private void SwitchControl(controlEnum c)
     {
         control = c;
+        DisplayController();
     }
 
     public Resource removeResources(Resource resourceToWithdraw)//removes resources from planet equally
@@ -106,5 +107,43 @@ public class Planet : MonoBehaviour
 
         yield return new WaitForSeconds(15);
         replenishing = false;
+    }
+
+    private void DisplayContoller() {
+        if (this.control != Planet.controlEnum.neutral)
+        {
+            if (this.control == Planet.controlEnum.player1)
+            {
+                if (this.transform.childCount !=0)//if the planet already had a sprite to denote control -> delete it to display the new one
+                {
+                    GameObject toDestroy=this.transform.GetChild(0).gameObject;
+                    Destroy(toDestroy);
+                }
+                var controlSprite = Resources.Load<Sprite>("playerDenotion");//load the correct sprite for this
+                GameObject child = new GameObject();//create a child to add the sprite to
+                SpriteRenderer renderer = child.AddComponent<SpriteRenderer>();
+                renderer.sprite = controlSprite;
+                child.transform.parent = this.transform;
+                child.transform.position = this.transform.position + new Vector3(0f, 0f, 8f);
+                child.transform.localScale = new Vector3(.5f, .5f, 0f);
+                child.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+            }
+            else if (this.control == Planet.controlEnum.player2)
+            {
+                if (this.transform.childCount !=0)//if the planet already had a sprite to denote control -> delete it to display the new one
+                {
+                    GameObject toDestroy = this.transform.GetChild(0).gameObject;
+                    Destroy(toDestroy);
+                }
+                var controlSprite = Resources.Load<Sprite>("enemyDenotion");//load the correect sprite for this
+                GameObject child = new GameObject();//create a child to add the sprite to
+                SpriteRenderer renderer = child.AddComponent<SpriteRenderer>();
+                renderer.sprite = controlSprite;
+                child.transform.parent = this.transform;
+                child.transform.position = this.transform.position + new Vector3(0f, 0f, 8f);
+                child.transform.localScale = new Vector3(.5f, .5f, 0f);
+                child.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+            }
+        }
     }
 }
