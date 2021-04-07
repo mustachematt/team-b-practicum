@@ -440,11 +440,11 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - amount: 1500
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 3000
+    kind: 1
     maxAmt: 0
 --- !u!212 &28430029
 SpriteRenderer:
@@ -544,11 +544,11 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - amount: 3000
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 1500
+    kind: 1
     maxAmt: 0
 --- !u!212 &32417133
 SpriteRenderer:
@@ -744,11 +744,11 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - amount: 3000
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 3000
+    kind: 1
     maxAmt: 0
 --- !u!212 &63061005
 SpriteRenderer:
@@ -1707,11 +1707,11 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - amount: 3000
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 1500
+    kind: 1
     maxAmt: 0
 --- !u!212 &279901756
 SpriteRenderer:
@@ -2077,11 +2077,11 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - amount: 3000
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 1500
+    kind: 1
     maxAmt: 0
 --- !u!212 &294106451
 SpriteRenderer:
@@ -2215,11 +2215,11 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - amount: 3000
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 1500
+    kind: 1
     maxAmt: 0
 --- !u!212 &304125546
 SpriteRenderer:
@@ -3319,11 +3319,11 @@ MonoBehaviour:
   buildingType: 0
   control: 2
   resources:
-  - amount: 0
+  - amount: 3000
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 1500
+    kind: 1
     maxAmt: 0
 --- !u!212 &545030337
 SpriteRenderer:
@@ -3512,11 +3512,11 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - amount: 3000
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 1500
+    kind: 1
     maxAmt: 0
 --- !u!212 &626992371
 SpriteRenderer:
@@ -4013,11 +4013,11 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - amount: 3000
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 3000
+    kind: 1
     maxAmt: 0
 --- !u!212 &782985211
 SpriteRenderer:
@@ -4280,11 +4280,11 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - amount: 1500
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 3000
+    kind: 1
     maxAmt: 0
 --- !u!212 &854444170
 SpriteRenderer:
@@ -4384,11 +4384,11 @@ MonoBehaviour:
   buildingType: 0
   control: 1
   resources:
-  - amount: 50
+  - amount: 3000
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 1500
+    kind: 1
     maxAmt: 0
 --- !u!212 &897845688
 SpriteRenderer:
@@ -4548,11 +4548,11 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - amount: 3000
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 1500
+    kind: 1
     maxAmt: 0
 --- !u!212 &927197354
 SpriteRenderer:
@@ -5466,11 +5466,11 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - amount: 3000
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 1500
+    kind: 1
     maxAmt: 0
 --- !u!212 &1113578905
 SpriteRenderer:
@@ -6328,11 +6328,11 @@ MonoBehaviour:
   buildingType: 0
   control: 1
   resources:
-  - amount: 0
+  - amount: 1500
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 3000
+    kind: 1
     maxAmt: 0
 --- !u!212 &1210776852
 SpriteRenderer:
@@ -6589,11 +6589,11 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - amount: 3000
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 3000
+    kind: 1
     maxAmt: 0
 --- !u!212 &1284240316
 SpriteRenderer:
@@ -7709,11 +7709,11 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - amount: 1500
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 3000
+    kind: 1
     maxAmt: 0
 --- !u!212 &1432789584
 SpriteRenderer:
@@ -8492,7 +8492,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1550972320}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -684.3578, y: -343.30258, z: 172.81921}
+  m_LocalPosition: {x: -684.6, y: -343.30258, z: 173.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1075126734}
@@ -8851,11 +8851,11 @@ MonoBehaviour:
   buildingType: 0
   control: 2
   resources:
-  - amount: 0
+  - amount: 3000
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 1500
+    kind: 1
     maxAmt: 0
 --- !u!212 &1599389091
 SpriteRenderer:
@@ -9065,11 +9065,11 @@ MonoBehaviour:
   buildingType: 0
   control: 2
   resources:
-  - amount: 100000
+  - amount: 1500
     kind: 0
-    maxAmt: 100000
-  - amount: 0
-    kind: 0
+    maxAmt: 0
+  - amount: 3000
+    kind: 1
     maxAmt: 0
 --- !u!212 &1695762621
 SpriteRenderer:
@@ -9792,11 +9792,11 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - amount: 3000
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 1500
+    kind: 1
     maxAmt: 0
 --- !u!212 &1878282816
 SpriteRenderer:
@@ -10443,11 +10443,11 @@ MonoBehaviour:
   buildingType: 0
   control: 1
   resources:
-  - amount: 0
+  - amount: 3000
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 1500
+    kind: 1
     maxAmt: 0
 --- !u!212 &2036970859
 SpriteRenderer:
@@ -10714,11 +10714,11 @@ MonoBehaviour:
   buildingType: 0
   control: 0
   resources:
-  - amount: 0
+  - amount: 1500
     kind: 0
     maxAmt: 0
-  - amount: 0
-    kind: 0
+  - amount: 3000
+    kind: 1
     maxAmt: 0
 --- !u!212 &2067134950
 SpriteRenderer:
