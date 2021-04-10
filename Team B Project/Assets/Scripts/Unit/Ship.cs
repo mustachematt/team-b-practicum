@@ -40,14 +40,14 @@ public abstract class Ship : MonoBehaviour
     [Header("General Debug")]
     public GameObject target;       // Initally hold enemy's base(Attack)/resource point(Transport).
     public Slider healthSlider;     // Health UI
+    [SerializeField] private ShipPropertyValue health;  // Current health 
 
     [Header("Ship Properties")]
     public shipType kind;
     public ShipPrice price; 
     public ShipPropertyValue maxSpeed;
-    public ShipPropertyValue armorStrength;     // Max health
+    public ShipPropertyValue armorStrength;     // Max health 
 
-    private ShipPropertyValue health;            // Current health    
     private Vector3 previousVelocity;
     private Vector3 previousAcceleration;
     private Vector3 currentVelocity;
@@ -65,12 +65,17 @@ public abstract class Ship : MonoBehaviour
         navAgent = GetComponent<NavMeshAgent>();
         currentVelocity = Vector3.zero;
         currentAcceleration = Vector3.zero;
+
+        SetMaxSpeed(); SetMaxHealth();
     }
 
 
     // The ship is destoryed. Change animation==>delete gameobject in dictionary==>delete gameobject
     public void DestroyShip() { Destroy(gameObject); }
     public void SetOwner(IPlayer owner) { this.owner = owner; }
+
+    private void SetMaxSpeed() { navAgent.speed = maxSpeed.Value; }
+    private void SetMaxHealth() { health.Value = armorStrength.Value; }
     
     
     // Change UI according to the taken damage, return false if the ship is destoryed
