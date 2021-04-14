@@ -40,47 +40,49 @@ public abstract class Ship : MonoBehaviour
     [Header("General Debug")]
     public GameObject target;       // Initally hold enemy's base(Attack)/resource point(Transport).
     public Slider healthSlider;     // Health UI
+    [SerializeField] private ShipPropertyValue health;  // Current health 
 
     [Header("Ship Properties")]
     public shipType kind;
     public ShipPrice price; 
     public ShipPropertyValue maxSpeed;
-    public ShipPropertyValue armorStrength;     // Max health
+    public ShipPropertyValue armorStrength;     // Max health 
 
-    private ShipPropertyValue health;            // Current health    
+    private Vector3 previousVelocity;
+    private Vector3 previousAcceleration;
+    private Vector3 currentVelocity;
+    private Vector3 currentAcceleration;
+
     protected IPlayer owner = null;
     protected NavMeshAgent navAgent;
     protected bool isPlayer;
 
 
+    public virtual void Start() { isPlayer = owner is ControlledPlayer; }
+    public virtual void Update() { moveAnimHandler(); }
     public virtual void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
+        currentVelocity = Vector3.zero;
+        currentAcceleration = Vector3.zero;
+
+        SetMaxSpeed(); SetMaxHealth();
     }
 
-    public virtual void Start()
-    {
-        isPlayer = owner is ControlledPlayer;
 
-        /*
-        // initialize ship properties
-        maxSpeed.Value = _maxSpeed;
-        armorStrength.Value = _armorStrength;
-        health.Value = _health;
-        */
-    }
+    // The ship is destoryed. Change animation==>delete gameobject in dictionary==>delete gameobject
+    public void DestroyShip() { Destroy(gameObject); }
+    public void SetOwner(IPlayer owner) { this.owner = owner; }
 
-    public virtual void Update() {}
-
-    public void SetOwner(IPlayer owner)
-    {
-        this.owner = owner;
-    }
-
+    private void SetMaxSpeed() { navAgent.speed = maxSpeed.Value; }
+    private void SetMaxHealth() { health.Value = armorStrength.Value; }
+    
+    
     // Change UI according to the taken damage, return false if the ship is destoryed
     // The bool value returned signals to the attacking ship that it has been destroyed
     // will make it to where the attacking ship does not try to continue attacking a destroyed ship
-    public bool takeDamage(int attack) {
+    public bool takeDamage(int attack)
+    {
         int currentHealth = health.Value - attack;
         if (currentHealth <= 0)
         {
@@ -93,8 +95,21 @@ public abstract class Ship : MonoBehaviour
         return true;
     }
 
-    // The ship is destoryed. Change animation==>delete gameobject in dictionary==>delete gameobject
-    public void DestroyShip() {
-        Destroy(gameObject);
+
+    private void moveAnimHandler()
+    {
+        // update values and get acceleration
+        currentVelocity = navAgent.velocity;
+        currentAcceleration = (currentVelocity - previousVelocity) / Time.deltaTime;
+
+        // booster animation if positive acceleration, still animation otherwise
+        if (currentAcceleration.magnitude > previousAcceleration.magnitude)
+            GetComponentInChildren<Animator>().SetBool("hasPosAcceleration", true);
+        else
+            GetComponentInChildren<Animator>().SetBool("hasPosAcceleration", false);
+
+        // for the next call
+        previousVelocity = currentVelocity;
+        previousAcceleration = currentAcceleration;
     }
 }
