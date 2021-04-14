@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class BuyMenuButton : MonoBehaviour
 {
+    public Ship.shipType ship;
+
     public string shipName;
     public string shipDesc;
     public Sprite shipImage;

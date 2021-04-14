@@ -12,7 +12,7 @@ public class UnitPurchaseButtonTest : MonoBehaviour
         
     }
 
-    public void PurchaseShip() 
+    public void PurchaseShip()
     {
         //if (player.Resources >= ship.cost) {
         ControlledPlayer.Instance.SpawnUnit(ship);

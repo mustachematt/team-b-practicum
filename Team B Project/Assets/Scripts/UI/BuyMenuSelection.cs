@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class BuyMenuSelection : MonoBehaviour
 {
+    public Ship.shipType _ship;
     public BuyMenuButton _selectedButton;
 
     public Text _shipName;
@@ -13,20 +14,30 @@ public class BuyMenuSelection : MonoBehaviour
     public Slider attackSlider;
     public Slider defenseSlider;
     public Slider moveSpeedSlider;
-    public Slider AtkSpeedSlider;
+    public Slider atkSpeedSlider;
     public Slider rangeSlider;
 
     public void UpdateSelection(BuyMenuButton selectedButton)
     {
         _selectedButton = selectedButton;
 
+        _ship = _selectedButton.ship;
+
         _shipName.text = selectedButton.shipName;
         _shipDesc.text = selectedButton.shipDesc;
         _shipImage.sprite = selectedButton.shipImage;
+
         attackSlider.value = selectedButton.attackPts;
+        atkSpeedSlider.value = selectedButton.attackPts;
+        rangeSlider.value = selectedButton.attackPts;
         defenseSlider.value = selectedButton.defensePts;
         moveSpeedSlider.value = selectedButton.moveSpeedPts;
-        AtkSpeedSlider.value = selectedButton.AtkSpeedPts;
-        rangeSlider.value = selectedButton.rangePts;
+    }
+
+    public void PurchaseShip()
+    {
+        //if (player.Resources >= ship.cost) {
+        ControlledPlayer.Instance.SpawnUnit(_ship);
+        //}
     }
 }
