@@ -18,6 +18,11 @@ public class AttackShip : Ship
     private int nextTarget;
 
 
+    private void SetAttackRange() { GetComponent<SphereCollider>().radius = attackRange.Value * attackScale; }
+    private void SetAttackStrength() { }
+    private void SetAttackSpeed() { }
+
+
     public override void Start()
     {
         base.Start();
