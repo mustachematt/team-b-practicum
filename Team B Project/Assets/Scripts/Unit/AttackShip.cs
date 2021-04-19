@@ -27,11 +27,8 @@ public class AttackShip : Ship
     {
         base.Start();
 
+        SetAttackRange();
         attackTimer = 0;
-
-   //     if (transform.parent.GetComponent<Fleet>().EnemyShips.Contains(target.GetComponent<Ship>()))
-   //         return;
-   //    transform.parent.GetComponent<Fleet>().EnemyShips.Add(target.GetComponent<Ship>());
     }
 
 
@@ -110,5 +107,11 @@ public class AttackShip : Ship
             attackTimer = 0;
             isFiring = false;
         }
+    }
+    
+
+    private void SetAttackRange()
+    {
+        GetComponent<SphereCollider>().radius = attackRange.Value * attackScale;
     }
 }
