@@ -109,9 +109,4 @@ public class AttackShip : Ship
         }
     }
     
-
-    private void SetAttackRange()
-    {
-        GetComponent<SphereCollider>().radius = attackRange.Value * attackScale;
-    }
 }

@@ -10,7 +10,7 @@ public class TransportShip : Ship
     public Resource resource;
     public ShipPropertyValue capacity;
 
-    protected GameObject destination;
+    public GameObject destination { get; private set; }
     protected bool returning = false;
 
 
@@ -20,6 +20,12 @@ public class TransportShip : Ship
 
         resource = new Resource(0, Resource.ResourceKind.metal);
         SetDestination();
+    }
+    private float planetAttractiveness(Planet planet)
+    {
+        var transports = owner.Fleet.Ships.Where(x => x is TransportShip);
+        var travellingShips = transports.Where(x => (x as TransportShip).destination == planet.gameObject);
+        return planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)capacity.Value * travellingShips.Count());
     }
 
 
@@ -55,10 +61,10 @@ public class TransportShip : Ship
         {
             var Playerplanets = owner.OwnedPlanets();
             var viablePlanets = Playerplanets.Where(x => x.resources.Any(y => y.kind == resource.kind)).ToList();
+         //   var idealPlanets = viablePlanets.Where(x => x.resources.Any(y => y.kind == resource.kind && y.amount >= capacity.Value));
             viablePlanets.Sort(delegate (Planet x, Planet y)
             {
-                return y.PlanetResourcesAsDictionary[resource.kind].amount.CompareTo(x.PlanetResourcesAsDictionary[resource.kind].amount);
-                  
+                return planetAttractiveness(y).CompareTo(planetAttractiveness(x));
             });
 
             var location = viablePlanets.First();
