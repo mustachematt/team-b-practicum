@@ -53,6 +53,21 @@ public class Console : MonoBehaviour
                 Debug.Log("Enable Cheats First");
             }
         }
+        else if(command.ToLower() == "unfixed bugs") //spawn the dev fleet
+        {
+            if (cheats) {
+                Debug.Log("spawning the dev fleet");
+                if (Console.cheats == false) return;
+                Debug.Log("Konami Achieved");
+                
+                var devCost = (int)StarShipUtilities.Instance.ShipDictionary[Ship.shipType.Freighter].price.metal;
+                ControlledPlayer.Instance.AddResources(new Resource(devCost, Resource.ResourceKind.metal));
+                ControlledPlayer.Instance.SpawnUnit(Ship.shipType.Freighter);
+            }
+            else {
+                Debug.Log("Enable Cheats First");
+            }
+        }
     }
 
     void Start()
