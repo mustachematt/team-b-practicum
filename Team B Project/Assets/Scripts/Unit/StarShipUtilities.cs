@@ -24,11 +24,11 @@ public class StarShipUtilities : MonoBehaviour
                 ShipDictionary[type] = shipObject.GetComponent<Ship>();
             else
                 continue;
-            Debug.Log($"Enum Type: {type}");
+        //    Debug.Log($"Enum Type: {type}");
             var prefabObj = ShipDictionary[type];
             foreach(Transform child in prefabObj.transform)
             {
-                Debug.Log($"Child Name: {child.gameObject.name}");
+           //     Debug.Log($"Child Name: {child.gameObject.name}");
             }
         }
     }

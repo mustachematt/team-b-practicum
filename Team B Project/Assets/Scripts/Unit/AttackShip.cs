@@ -29,6 +29,14 @@ public class AttackShip : Ship
 
         SetAttackRange();
         attackTimer = 0;
+        if(this.isPlayer)
+        {
+            navAgent.SetDestination(AIPlayer.Instance.GetHomeLocation());
+        }
+        if(!this.isPlayer)
+        {
+            navAgent.SetDestination(ControlledPlayer.Instance.GetHomeLocation());
+        }
     }
 
 
@@ -108,5 +116,4 @@ public class AttackShip : Ship
             isFiring = false;
         }
     }
-    
 }

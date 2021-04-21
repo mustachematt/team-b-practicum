@@ -26,12 +26,17 @@ public class AIPlayer : IPlayer
         currentTime += Time.deltaTime;
         if (currentTime >= timeBetweenActions) {
             currentTime = 0f;
+            timeBetweenActions ++;
             makeDecision();
         }
     }
 
     void makeDecision() {
         SpawnUnit(Ship.shipType.Freighter);
+        SpawnUnit(Ship.shipType.BasicStarfighter);
+        AddResources(new Resource(1000, Resource.ResourceKind.metal));
+        AddResources(new Resource(1000, Resource.ResourceKind.fuel));
     }
+    
 }
 
