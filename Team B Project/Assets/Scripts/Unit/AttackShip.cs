@@ -29,40 +29,50 @@ public class AttackShip : Ship
 
         SetAttackRange();
         attackTimer = 0;
-        if(this.isPlayer)
+
+    }
+
+    public void SetDestinationToEnemyBase()
+    {
+        if (this.isPlayer)
         {
             navAgent.SetDestination(AIPlayer.Instance.GetHomeLocation());
         }
-        if(!this.isPlayer)
+        if (!this.isPlayer)
         {
             navAgent.SetDestination(ControlledPlayer.Instance.GetHomeLocation());
         }
     }
-
-
+    public void SetDestinationToTargetShip()
+    {
+        navAgent.SetDestination(target.transform.position);
+    }
     public override void Update()
     {
         base.Update();
         // Check if all enemies clear
-        if (transform.parent.GetComponent<Fleet>().EnemyShips.Count == 0 && !target)
-            return;
-        nextTarget = transform.parent.GetComponent<Fleet>().EnemyShips.Count - 1;
+     //   if (transform.parent.GetComponent<Fleet>().EnemyShips.Count == 0 && !target)
+     //       return;
+     //   nextTarget = transform.parent.GetComponent<Fleet>().EnemyShips.Count - 1;
         // Check if target is destroyed
         if (!target)
         {
-            if (transform.parent.GetComponent<Fleet>().EnemyShips.Count != 0)
-            {
-                nextTarget = transform.parent.GetComponent<Fleet>().EnemyShips.Count - 1;
-              //  target = transform.parent.GetComponent<Fleet>().EnemyShips[nextTarget];
-            }
-        }
-        if (!target)
+            SetDestinationToEnemyBase();
             return;
+     //       if (transform.parent.GetComponent<Fleet>().EnemyShips.Count != 0)
+     //       {
+     //           nextTarget = transform.parent.GetComponent<Fleet>().EnemyShips.Count - 1;
+     //           //  target = transform.parent.GetComponent<Fleet>().EnemyShips[nextTarget];
+      //      }
+        }
+     //   if (!target)
+     //       return;
+
         // Check if target is in range
-        float distance = (target.transform.position - gameObject.transform.position).magnitude;
-        if (distance <= attackRange.Value)
+      //  float distance = (target.transform.position - gameObject.transform.position).magnitude;
+      //  if (distance <= attackRange.Value)
             attack();
-        
+
     }
 
 
@@ -71,35 +81,10 @@ public class AttackShip : Ship
     {
         Ship ship;
         if (collider.gameObject.TryGetComponent(out ship) == true)
-            if (collider.transform.parent != transform.parent)     // If collider is enemy
+            if (target == null && owner.Fleet.EnemyShips.Contains(ship))
             {
-                // Add collider to enemyList
-                if (transform.parent.GetComponent<Fleet>().EnemyShips.Contains(ship))
-                    return;
-                transform.parent.GetComponent<Fleet>().EnemyShips.Add(ship);
-
-                // Chose the closest enemy
-                if (!isFiring)
-                {
-                    if ((transform.position - target.transform.position).magnitude > (transform.position - collider.transform.position).magnitude)
-                        target = collider.gameObject;
-                }
-            }
-
-        else
-            if (collider.transform.parent != transform.parent)     // If collider is enemy
-            {
-                // Add collider to enemyList
-                if (transform.parent.GetComponent<Fleet>().EnemyShips.Contains(collider.gameObject.GetComponent<Ship>()))
-                    return;
-                transform.parent.GetComponent<Fleet>().EnemyShips.Add(collider.gameObject.GetComponent<Ship>());
-
-                // Chose the closest enemy
-                if (!isFiring)
-                {
-                    if ((transform.position - target.transform.position).magnitude > (transform.position - collider.transform.position).magnitude)
-                        target = collider.gameObject;
-                }
+                target = ship.gameObject;
+                SetDestinationToTargetShip();
             }
     }
 
@@ -108,10 +93,12 @@ public class AttackShip : Ship
     {
         isFiring = true;
         attackTimer += Time.deltaTime;
-        if (attackTimer >=  attackSpeed.Value)
+        if (attackTimer >= attackSpeed.Value)
         {
-            if (!target.GetComponent<Ship>().takeDamage(attackStrength.Value))               // Target destoryed, remove destoryed targer from enemyList
-                transform.parent.GetComponent<Fleet>().EnemyShips.Remove(target.GetComponent<Ship>());
+            Debug.Log("Attacking");
+            target.GetComponent<Ship>().takeDamage(attackStrength.Value);
+         //   if (!target.GetComponent<Ship>().takeDamage(attackStrength.Value))               // Target destoryed, remove destoryed targer from enemyList
+         //       transform.parent.GetComponent<Fleet>().EnemyShips.Remove(target.GetComponent<Ship>());
             attackTimer = 0;
             isFiring = false;
         }
