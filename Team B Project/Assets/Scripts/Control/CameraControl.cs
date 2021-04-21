@@ -6,13 +6,13 @@ using UnityEngine.InputSystem;
 
 public class CameraControl : MonoBehaviour
 {
-    [SerializeField] float speed = 15f;
+    public float speed = 15f;
     
     [Header("Zoom Options")]
     [Space]
     [SerializeField] float minCamSize = 10f;
     [SerializeField] float maxCamSize = 30f;
-    [SerializeField] float zoomSpeed = 0.5f;
+    public float zoomSpeed = 0.5f;
     //This is used to control the camera panning.
     
     [Header("Screen  Size")]
