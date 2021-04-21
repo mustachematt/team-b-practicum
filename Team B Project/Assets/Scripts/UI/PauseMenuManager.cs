@@ -15,9 +15,12 @@ public class PauseMenuManager : MonoBehaviour
 
 
     // GameObjects used for the pause menu
-    // slider component for mouse sensitivity
-    public Slider mouseSensitivitySlider;
-    public Text mouseSensitivityText;
+    // slider component for camera sensitivity
+    public Slider cameraSensitivitySlider;
+    public Text cameraSensitivityText;
+    // slider component for zoom sensitivity
+    public Slider zoomSensitivitySlider;
+    public Text zoomSensitivityText;
     // slider component for master volume
     public Slider masterVolumeSlider;
     public Text masterVolumeText;
@@ -57,13 +60,35 @@ public class PauseMenuManager : MonoBehaviour
         masterVolumeText.GetComponent<Text>().text = Mathf.Round((masterVolumeSlider.value * 200)) + "%";
         musicVolumeText.GetComponent<Text>().text = Mathf.Round((musicVolumeSlider.value * 200)) + "%";
         soundVolumeText.GetComponent<Text>().text = Mathf.Round((soundVolumeSlider.value * 200)) + "%";
-        mouseSensitivityText.GetComponent<Text>().text = mouseSensitivitySlider.value + "%";
+        cameraSensitivityText.GetComponent<Text>().text = cameraSensitivitySlider.value + "%";
+        zoomSensitivityText.GetComponent<Text>().text = zoomSensitivitySlider.value + "%";
     }
 
-    public void SensitivitySlider()
+    public void ZoomSensitivitySlider()
     {
-        // zoom speed
-        cameraControl.speed = mouseSensitivitySlider.value;
-        cameraControl.zoomSpeed = mouseSensitivitySlider.value;
+        // zoom speed change
+        // default zoom speed is 0.5, max is 1, min is 0.25
+        cameraControl.zoomSpeed = zoomSensitivitySlider.value;
+
+        
+    }
+
+
+    public void CameraSensitivitySlider()
+    {
+        // The default number on the slider is 50. So when the slider is 50,
+        // the default speeds must be 25 and 0.5. Max number on slider is 100,
+        // so the speeds must be 50 and 1. Min number on slider is 0, so
+        // the speeds must be 12.5 and 0.25
+
+
+        // camera speed change
+        // 12.5 25 50
+        cameraControl.speed = cameraSensitivitySlider.value;
+
+        if (cameraSensitivitySlider.value == 0) 
+        {
+            cameraControl.speed = 12;
+        }
     }
 }
