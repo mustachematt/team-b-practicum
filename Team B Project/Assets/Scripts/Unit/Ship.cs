@@ -83,7 +83,9 @@ public abstract class Ship : MonoBehaviour
     // will make it to where the attacking ship does not try to continue attacking a destroyed ship
     public bool takeDamage(int attack)
     {
+        Debug.Log($"Attacked. Health: {health.Value}");
         int currentHealth = health.Value - attack;
+        Debug.Log($"Took {attack} damage. Remaining Health {currentHealth}");
         if (currentHealth <= 0)
         {
             health.Value = 0;
