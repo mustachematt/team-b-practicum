@@ -24,19 +24,21 @@ public class AIPlayer : IPlayer
         base.Update();
 
         currentTime += Time.deltaTime;
-        if (currentTime >= timeBetweenActions) {
+        if (currentTime >= timeBetweenActions)
+        {
             currentTime = 0f;
-            timeBetweenActions ++;
+            timeBetweenActions++;
             makeDecision();
         }
     }
 
-    void makeDecision() {
+    void makeDecision()
+    {
         SpawnUnit(Ship.shipType.Freighter);
         SpawnUnit(Ship.shipType.BasicStarfighter);
         AddResources(new Resource(1000, Resource.ResourceKind.metal));
         AddResources(new Resource(1000, Resource.ResourceKind.fuel));
     }
-    
+
 }
 
