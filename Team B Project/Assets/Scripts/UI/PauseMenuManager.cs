@@ -36,12 +36,19 @@ public class PauseMenuManager : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Cursor.visible = true;
+        InitializeVolumeValues();
         ShowSliderValues();
     }
+    public void InitializeVolumeValues()
+    {
+        masterVolumeSlider.SetValueWithoutNotify(GameSettings.MasterVolume / 2);
+        musicVolumeSlider.SetValueWithoutNotify(GameSettings.MusicVolume / 2);
+        soundVolumeSlider.SetValueWithoutNotify(GameSettings.EffectVolume / 2);
 
+    }
     public void ClosePauseMenu()
     {
         pauseControl.ResumeGame();
@@ -55,14 +62,15 @@ public class PauseMenuManager : MonoBehaviour
 
     public void ShowSliderValues()
     {
-        GameSettings.MasterVolume = masterVolumeSlider.value;
-        GameSettings.MusicVolume = musicVolumeSlider.value;
-        GameSettings.EffectVolume = soundVolumeSlider.value;
+
         masterVolumeText.GetComponent<Text>().text = Mathf.Round((masterVolumeSlider.value * 200)) + "%";
         musicVolumeText.GetComponent<Text>().text = Mathf.Round((musicVolumeSlider.value * 200)) + "%";
         soundVolumeText.GetComponent<Text>().text = Mathf.Round((soundVolumeSlider.value * 200)) + "%";
         cameraSensitivityText.GetComponent<Text>().text = Mathf.Round(cameraSensitivitySlider.value) + "%";
         zoomSensitivityText.GetComponent<Text>().text = Mathf.Round((zoomSensitivitySlider.value * 100)) + "%";
+        GameSettings.MasterVolume = masterVolumeSlider.value * 2;
+        GameSettings.MusicVolume = musicVolumeSlider.value * 2;
+        GameSettings.EffectVolume = soundVolumeSlider.value * 2;
     }
 
     public void ZoomSensitivitySlider()
