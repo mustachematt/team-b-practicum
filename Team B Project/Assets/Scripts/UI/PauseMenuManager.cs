@@ -30,8 +30,6 @@ public class PauseMenuManager : MonoBehaviour
     // slider component for music volume
     public Slider musicVolumeSlider;
     public Text musicVolumeText;
-
-    public VolumeControl volumeControl;
     public CameraControl cameraControl;
 
 
@@ -57,6 +55,9 @@ public class PauseMenuManager : MonoBehaviour
 
     public void ShowSliderValues()
     {
+        GameSettings.MasterVolume = masterVolumeSlider.value;
+        GameSettings.MusicVolume = musicVolumeSlider.value;
+        GameSettings.EffectVolume = soundVolumeSlider.value;
         masterVolumeText.GetComponent<Text>().text = Mathf.Round((masterVolumeSlider.value * 200)) + "%";
         musicVolumeText.GetComponent<Text>().text = Mathf.Round((musicVolumeSlider.value * 200)) + "%";
         soundVolumeText.GetComponent<Text>().text = Mathf.Round((soundVolumeSlider.value * 200)) + "%";

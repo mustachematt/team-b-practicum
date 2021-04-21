@@ -25,7 +25,7 @@ public class TransportShip : Ship
     {
         var transports = owner.Fleet.Ships.Where(x => x is TransportShip);
         var travellingShips = transports.Where(x => (x as TransportShip).destination == planet.gameObject);
-        return planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)capacity.Value * travellingShips.Count());
+        return planet.PlanetResourcesAsDictionary[resource.kind].amount / (((float)capacity.Value * travellingShips.Count() + 1));
     }
 
 
