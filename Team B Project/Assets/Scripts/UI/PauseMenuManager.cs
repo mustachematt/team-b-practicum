@@ -30,20 +30,25 @@ public class PauseMenuManager : MonoBehaviour
     // slider component for music volume
     public Slider musicVolumeSlider;
     public Text musicVolumeText;
-
-    public VolumeControl volumeControl;
     public CameraControl cameraControl;
 
 
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Cursor.visible = true;
+        InitializeVolumeValues();
         ShowSliderValues();
     }
+    public void InitializeVolumeValues()
+    {
+        masterVolumeSlider.SetValueWithoutNotify(GameSettings.MasterVolume / 2);
+        musicVolumeSlider.SetValueWithoutNotify(GameSettings.MusicVolume / 2);
+        soundVolumeSlider.SetValueWithoutNotify(GameSettings.EffectVolume / 2);
 
+    }
     public void ClosePauseMenu()
     {
         pauseControl.ResumeGame();
@@ -57,11 +62,15 @@ public class PauseMenuManager : MonoBehaviour
 
     public void ShowSliderValues()
     {
+
         masterVolumeText.GetComponent<Text>().text = Mathf.Round((masterVolumeSlider.value * 200)) + "%";
         musicVolumeText.GetComponent<Text>().text = Mathf.Round((musicVolumeSlider.value * 200)) + "%";
         soundVolumeText.GetComponent<Text>().text = Mathf.Round((soundVolumeSlider.value * 200)) + "%";
-        cameraSensitivityText.GetComponent<Text>().text = cameraSensitivitySlider.value + "%";
-        zoomSensitivityText.GetComponent<Text>().text = zoomSensitivitySlider.value + "%";
+        cameraSensitivityText.GetComponent<Text>().text = Mathf.Round(cameraSensitivitySlider.value) + "%";
+        zoomSensitivityText.GetComponent<Text>().text = Mathf.Round((zoomSensitivitySlider.value * 100)) + "%";
+        GameSettings.MasterVolume = masterVolumeSlider.value * 2;
+        GameSettings.MusicVolume = musicVolumeSlider.value * 2;
+        GameSettings.EffectVolume = soundVolumeSlider.value * 2;
     }
 
     public void ZoomSensitivitySlider()
@@ -76,19 +85,6 @@ public class PauseMenuManager : MonoBehaviour
 
     public void CameraSensitivitySlider()
     {
-        // The default number on the slider is 50. So when the slider is 50,
-        // the default speeds must be 25 and 0.5. Max number on slider is 100,
-        // so the speeds must be 50 and 1. Min number on slider is 0, so
-        // the speeds must be 12.5 and 0.25
-
-
-        // camera speed change
-        // 12.5 25 50
         cameraControl.speed = cameraSensitivitySlider.value;
-
-        if (cameraSensitivitySlider.value == 0) 
-        {
-            cameraControl.speed = 12;
-        }
     }
 }

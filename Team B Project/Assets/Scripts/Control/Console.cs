@@ -23,17 +23,53 @@ public class Console : MonoBehaviour
     }
     void CheckCommand(string command)
     {
-        if (command.ToLower() == "sv_cheats 1")
+        if (command.ToLower() == "sv_cheats 1") //Enable Cheats
         {
             Debug.Log("Cheats Activated");
             cheats = true;
         }
-        else if(command.ToLower() == "sv_cheats 0")
+        else if(command.ToLower() == "sv_cheats 0") //Disable Cheats
         {
             Debug.Log("Cheats Deactivated");
             cheats = false;
         }
+        else if(command.ToLower() == "thats so metal") //Gain Metal resources
+        {
+            if (cheats) {
+                Debug.Log("+10000 metal");
+                ControlledPlayer.Instance.AddResources(new Resource(10000, Resource.ResourceKind.metal));
+            }
+            else {
+                Debug.Log("Enable Cheats First");
+            }
+        }
+        else if(command.ToLower() == "miniature sun") //Gain Fuel resources
+        {
+            if (cheats) {
+                Debug.Log("+10000 fuel");
+                ControlledPlayer.Instance.AddResources(new Resource(10000, Resource.ResourceKind.fuel));
+            }
+            else {
+                Debug.Log("Enable Cheats First");
+            }
+        }
+        else if(command.ToLower() == "unfixed bugs") //spawn the dev fleet
+        {
+            if (cheats) {
+                Debug.Log("spawning the dev fleet");
+                if (Console.cheats == false) return;
+                Debug.Log("Konami Achieved");
+                
+                var devCost = (int)StarShipUtilities.Instance.ShipDictionary[Ship.shipType.Freighter].price.metal;
+                ControlledPlayer.Instance.AddResources(new Resource(devCost, Resource.ResourceKind.metal));
+                ControlledPlayer.Instance.SpawnUnit(Ship.shipType.Freighter);
+            }
+            else {
+                Debug.Log("Enable Cheats First");
+            }
+        }
     }
+
     void Start()
     {
         

@@ -18,7 +18,6 @@ public abstract class IPlayer : MonoBehaviour
     protected virtual void Start()
     {
         SpawnUnit(Ship.shipType.Freighter);
-        if (_planets == null)
             _planets = UnityEngine.Resources.FindObjectsOfTypeAll<Planet>();
     }
     public virtual void Awake()
@@ -71,9 +70,9 @@ public abstract class IPlayer : MonoBehaviour
         SpriteRenderer renderer = child.AddComponent<SpriteRenderer>();
         renderer.sprite = controlSprite;
         child.transform.parent = ship.transform;
-        child.transform.position = ship.transform.position + new Vector3(0f, 0f, 5f);
+        child.transform.position = ship.transform.position + new Vector3(0f, 5f, 0f);
         child.transform.localScale = new Vector3(8f, 8f, 0f);
-        child.transform.rotation = new Quaternion(.9f, 0f, 0f, 1.0f);
+        //child.transform.rotation = new Quaternion(.9f, 0f, 0f, 1.0f);
     }
 
 }

@@ -12,6 +12,7 @@ public class ControlledPlayer : IPlayer
         base.Awake();
         Instance = this;
     }
+
     public override List<Planet> OwnedPlanets()
     {
         return _planets.Where(x => x.control == Planet.controlEnum.player1).ToList();

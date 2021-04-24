@@ -10,6 +10,7 @@ public class PauseControl : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject inGameMenu;
     public GameObject buyMenu;
+    public AudioSource gameAudio;
 
     public void OnPause()
     {
@@ -23,6 +24,7 @@ public class PauseControl : MonoBehaviour
         _paused = true;
         Time.timeScale = 0f;
         GameWasPaused?.Invoke();
+        gameAudio.Pause();
         pauseMenu.SetActive(true);
         inGameMenu.SetActive(false);
         buyMenu.SetActive(false);
@@ -32,6 +34,7 @@ public class PauseControl : MonoBehaviour
         _paused = false;
         Time.timeScale = 1f;
         GameWasResumed?.Invoke();
+        gameAudio.Play();
         pauseMenu.SetActive(false);
         inGameMenu.SetActive(true);
     }
