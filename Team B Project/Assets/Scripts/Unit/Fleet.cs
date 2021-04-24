@@ -30,7 +30,8 @@ public class Fleet : MonoBehaviour
                 return new List<Ship>();
         }
     }
-    //void buyShip(StarshipKind kind)
+
+
     public void Start()
     {
         owner = GetComponent<IPlayer>();

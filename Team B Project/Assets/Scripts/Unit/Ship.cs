@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.AI;
 using System;
+using System.IO;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public abstract class Ship : MonoBehaviour
@@ -70,10 +71,13 @@ public abstract class Ship : MonoBehaviour
     }
 
 
-    // The ship is destoryed. Change animation==>delete gameobject in dictionary==>delete gameobject
-    public void DestroyShip() { Destroy(gameObject); }
     public void SetOwner(IPlayer owner) { this.owner = owner; }
-
+    public void DestroyShip()
+    {
+        Instantiate(Resources.Load("Explosions/Prefabs/TempExplosion"), transform.position, Quaternion.Euler(90, 0, 0));
+        Debug.Log("Instantiated");
+        Destroy(gameObject);
+    }
     private void SetMaxSpeed() { navAgent.speed = maxSpeed.Value * 2; }
     private void SetMaxHealth() { health.Value = armorStrength.Value; }
     

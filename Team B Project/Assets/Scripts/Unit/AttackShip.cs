@@ -96,6 +96,7 @@ public class AttackShip : Ship
         if (attackTimer >= attackSpeed.Value)
         {
             Debug.Log("Attacking");
+            GetComponent<AudioSource>().Play(); // shooting sound effect
             target.GetComponent<Ship>().takeDamage(attackStrength.Value);
          //   if (!target.GetComponent<Ship>().takeDamage(attackStrength.Value))               // Target destoryed, remove destoryed targer from enemyList
          //       transform.parent.GetComponent<Fleet>().EnemyShips.Remove(target.GetComponent<Ship>());
