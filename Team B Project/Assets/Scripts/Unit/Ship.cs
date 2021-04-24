@@ -74,7 +74,7 @@ public abstract class Ship : MonoBehaviour
     public void DestroyShip() { Destroy(gameObject); }
     public void SetOwner(IPlayer owner) { this.owner = owner; }
 
-    private void SetMaxSpeed() { navAgent.speed = maxSpeed.Value; }
+    private void SetMaxSpeed() { navAgent.speed = maxSpeed.Value * 2; }
     private void SetMaxHealth() { health.Value = armorStrength.Value; }
     
     
