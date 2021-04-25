@@ -75,16 +75,12 @@ public abstract class Ship : MonoBehaviour
     public void DestroyShip()
     {
         Instantiate(Resources.Load("Explosions/Prefabs/TempExplosion"), transform.position, Quaternion.Euler(90, 0, 0));
-        Debug.Log("Instantiated");
         Destroy(gameObject);
     }
     private void SetMaxSpeed() { navAgent.speed = maxSpeed.Value * 2; }
     private void SetMaxHealth() { health.Value = armorStrength.Value; }
     
     
-    // Change UI according to the taken damage, return false if the ship is destoryed
-    // The bool value returned signals to the attacking ship that it has been destroyed
-    // will make it to where the attacking ship does not try to continue attacking a destroyed ship
     public bool takeDamage(int attack)
     {
         Debug.Log($"Attacked. Health: {health.Value}");
