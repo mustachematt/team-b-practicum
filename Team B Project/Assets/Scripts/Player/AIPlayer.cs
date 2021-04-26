@@ -34,10 +34,25 @@ public class AIPlayer : IPlayer
 
     void makeDecision()
     {
-        SpawnUnit(Ship.shipType.Freighter);
-        SpawnUnit(Ship.shipType.BasicStarfighter);
-        AddResources(new Resource(1000, Resource.ResourceKind.metal));
-        AddResources(new Resource(1000, Resource.ResourceKind.fuel));
+        int myAttackShips = Fleet.Ships.Where(x => x is AttackShip).Count();
+        int myTransportShips = Fleet.Ships.Where(x => x is TransportShip).Count();
+        int enemyAttackShips = Fleet.EnemyShips.Where(x => x is AttackShip).Count();
+        int enemyTransportShips = Fleet.EnemyShips.Where(x => x is TransportShip).Count();
+        uint attackShipPrice = StarShipUtilities.Instance.ShipDictionary[Ship.shipType.BasicStarfighter].price.metal;
+        uint transportShipPrice = StarShipUtilities.Instance.ShipDictionary[Ship.shipType.Freighter].price.metal;
+        bool canBuyAttack = Resources[Resource.ResourceKind.metal].amount >= attackShipPrice;
+        bool canBuyTransport = Resources[Resource.ResourceKind.metal].amount >= transportShipPrice;
+
+        if (myTransportShips > 0 && myAttackShips <= enemyAttackShips && canBuyAttack)
+        {
+            SpawnUnit(Ship.shipType.BasicStarfighter);
+        }
+      //  else if(enemyAttackShips <= myAttackShips)
+        // Debug Ship Spawning
+        //  SpawnUnit(Ship.shipType.Freighter);
+        //  SpawnUnit(Ship.shipType.BasicStarfighter);
+        //  AddResources(new Resource(1000, Resource.ResourceKind.metal));
+        //  AddResources(new Resource(1000, Resource.ResourceKind.fuel));
     }
 
 }
