@@ -8,6 +8,8 @@ public class AttackShip : Ship
     public ShipPropertyValue attackStrength;
     public ShipPropertyValue attackSpeed;
     float setDestinationRange = 8f;
+    string[] planetList = { "Player2MainPlanet", "Player2Planet1", "Player2Planet3", "Player2Planet2", "NeutralTop2", "NeutralTopMain", "NeutralTop3", "NeutralTop1", "NeutralCenter1", "NeutralPlanet3", "NeutralPlanet2", "NeutralCenterMain", "NeutralPlanet6", "NeutralPlanet4", "NeutralPlanet5", "NeutralBottom1", "NeutralBottomMain", "NeutralBottom3", "NeutralBottom2", "Player1Planet2", "Player1Planet3", "Player1Planet1", "Player1MainPlanet" };
+    int planetTargetIndex;
 
     [Header("Attack Debug")]
     public bool isFiring = false;
@@ -30,244 +32,37 @@ public class AttackShip : Ship
 
         SetAttackRange();
         attackTimer = attackSpeed.Value;
+
+        if (this.isPlayer)
+            planetTargetIndex = planetList.Length-1;
+        else if (!this.isPlayer)
+            planetTargetIndex = 0;
     }
 
     public void SetDestinationToEnemyBase()
     {
         if (this.isPlayer)
         {
-            if (Mathf.Abs(this.transform.position.x - GameObject.Find("Player1MainPlanet").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("Player1MainPlanet").transform.position.z) < setDestinationRange)
+            if (Mathf.Abs(this.transform.position.x - GameObject.Find(planetList[planetTargetIndex]).transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find(planetList[planetTargetIndex]).transform.position.z) < setDestinationRange)//checks to see if this ship is close enough to its target planet
             {
-                navAgent.SetDestination(GameObject.Find("Player1Planet1").transform.position);
-                GameObject.Find("Player1MainPlanet").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("Player1Planet1").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("Player1Planet1").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("Player1Planet3").transform.position);
-                GameObject.Find("Player1Planet1").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("Player1Planet3").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("Player1Planet3").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("Player1Planet2").transform.position);
-                GameObject.Find("Player1Planet3").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("Player1Planet2").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("Player1Planet2").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralBottom2").transform.position);
-                GameObject.Find("Player1Planet2").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralBottom2").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralBottom2").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralBottom3").transform.position);
-                GameObject.Find("NeutralBottom2").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralBottom3").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralBottom3").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralBottomMain").transform.position);
-                GameObject.Find("NeutralBottom3").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralBottomMain").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralBottomMain").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralBottom1").transform.position);
-                GameObject.Find("NeutralBottomMain").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralBottom1").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralBottom1").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralPlanet5").transform.position);
-                GameObject.Find("NeutralBottom1").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralPlanet5").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralPlanet5").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralPlanet4").transform.position);
-                GameObject.Find("NeutralPlanet5").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralPlanet4").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralPlanet4").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralPlanet6").transform.position);
-                GameObject.Find("NeutralPlanet4").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralPlanet6").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralPlanet6").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralCenterMain").transform.position);
-                GameObject.Find("NeutralPlanet6").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralCenterMain").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralCenterMain").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralPlanet2").transform.position);
-                GameObject.Find("NeutralCenterMain").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralPlanet2").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralPlanet2").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralPlanet3").transform.position);
-                GameObject.Find("NeutralPlanet2").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralPlanet3").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralPlanet3").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralCenter1").transform.position);
-                GameObject.Find("NeutralPlanet3").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralCenter1").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralCenter1").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralTop1").transform.position);
-                GameObject.Find("NeutralCenter1").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralTop1").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralTop1").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralTop3").transform.position);
-                GameObject.Find("NeutralTop1").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralTop3").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralTop3").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralTopMain").transform.position);
-                GameObject.Find("NeutralTop3").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralTopMain").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralTopMain").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralTop2").transform.position);
-                GameObject.Find("NeutralTopMain").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralTop2").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralTop2").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("Player2Planet2").transform.position);
-                GameObject.Find("NeutralTop2").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("Player2Planet2").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("Player2Planet2").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("Player2Planet3").transform.position);
-                GameObject.Find("Player2Planet2").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("Player2Planet3").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("Player2Planet3").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("Player2Planet1").transform.position);
-                GameObject.Find("Player2Planet3").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("Player2Planet1").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("Player2Planet1").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("Player2MainPlanet").transform.position);
-                GameObject.Find("Player2Planet1").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("Player2MainPlanet").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("Player2MainPlanet").transform.position.z) < setDestinationRange)
-            {
-                GameObject.Find("Player2MainPlanet").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);
-                //call win game?
+                GameObject.Find(planetList[planetTargetIndex]).GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);//gains control of the previous planet target
+                if (planetTargetIndex > 0)
+                {
+                    navAgent.SetDestination(GameObject.Find(planetList[planetTargetIndex - 1]).transform.position);//sets destination of next planet
+                    --planetTargetIndex;
+                }
             }
         }
         if (!this.isPlayer)
         {
-            if (Mathf.Abs(this.transform.position.x - GameObject.Find("Player2MainPlanet").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("Player2MainPlanet").transform.position.z) < setDestinationRange)
+            if (Mathf.Abs(this.transform.position.x - GameObject.Find(planetList[planetTargetIndex]).transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find(planetList[planetTargetIndex]).transform.position.z) < setDestinationRange)//checks to see if this ship is close enough to its target planet
             {
-                navAgent.SetDestination(GameObject.Find("Player2Planet1").transform.position);
-                GameObject.Find("Player2MainPlanet").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("Player2Planet1").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("Player2Planet1").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("Player2Planet3").transform.position);
-                GameObject.Find("Player2Planet1").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("Player2Planet3").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("Player2Planet3").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("Player2Planet2").transform.position);
-                GameObject.Find("Player2Planet3").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("Player2Planet2").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("Player2Planet2").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralTop2").transform.position);
-                GameObject.Find("Player2Planet2").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralTop2").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralTop2").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralTopMain").transform.position);
-                GameObject.Find("NeutralTop2").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralTopMain").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralTopMain").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralTop3").transform.position);
-                GameObject.Find("NeutralTopMain").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralTop3").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralTop3").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralTop1").transform.position);
-                GameObject.Find("NeutralTop3").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralTop1").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralTop1").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralCenter1").transform.position);
-                GameObject.Find("NeutralTop1").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralCenter1").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralCenter1").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralPlanet3").transform.position);
-                GameObject.Find("NeutralCenter1").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralPlanet3").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralPlanet3").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralPlanet2").transform.position);
-                GameObject.Find("NeutralPlanet3").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralPlanet2").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralPlanet2").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralCenterMain").transform.position);
-                GameObject.Find("NeutralPlanet2").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralCenterMain").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralCenterMain").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralPlanet6").transform.position);
-                GameObject.Find("NeutralCenterMain").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralPlanet6").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralPlanet6").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralPlanet4").transform.position);
-                GameObject.Find("NeutralPlanet6").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralPlanet4").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralPlanet4").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralPlanet5").transform.position);
-                GameObject.Find("NeutralPlanet4").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralPlanet5").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralPlanet5").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralBottom1").transform.position);
-                GameObject.Find("NeutralPlanet5").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralBottom1").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralBottom1").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralBottomMain").transform.position);
-                GameObject.Find("NeutralBottom1").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralBottomMain").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralBottomMain").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralBottom3").transform.position);
-                GameObject.Find("NeutralBottomMain").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralBottom3").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralBottom3").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("NeutralBottom2").transform.position);
-                GameObject.Find("NeutralBottom3").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("NeutralBottom2").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("NeutralBottom2").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("Player1Planet2").transform.position);
-                GameObject.Find("NeutralBottom2").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("Player1Planet2").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("Player1Planet2").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("Player1Planet3").transform.position);
-                GameObject.Find("Player1Planet2").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("Player1Planet3").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("Player1Planet3").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("Player1Planet1").transform.position);
-                GameObject.Find("Player1Planet3").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("Player1Planet1").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("Player1Planet1").transform.position.z) < setDestinationRange)
-            {
-                navAgent.SetDestination(GameObject.Find("Player1MainPlanet").transform.position);
-                GameObject.Find("Player1Planet1").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-            }
-            else if (Mathf.Abs(this.transform.position.x - GameObject.Find("Player1MainPlanet").transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find("Player1MainPlanet").transform.position.z) < setDestinationRange)
-            {
-                GameObject.Find("Player1MainPlanet").GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);
-                //call lose game?
+                GameObject.Find(planetList[planetTargetIndex]).GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);//gains control of the previous planet target
+                if (planetTargetIndex < planetList.Length-1)
+                {
+                    navAgent.SetDestination(GameObject.Find(planetList[planetTargetIndex + 1]).transform.position);//sets destination of next planet
+                    ++planetTargetIndex;
+                }
             }
         }
     }
