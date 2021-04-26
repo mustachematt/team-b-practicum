@@ -27,7 +27,10 @@ public class TransportShip : Ship
         var travellingShips = transports.Where(x => (x as TransportShip).destination == planet.gameObject);
         return planet.PlanetResourcesAsDictionary[resource.kind].amount / (((float)capacity.Value * travellingShips.Count() + 1));
     }
-
+    private float planetDistance(Planet planet)
+    {
+        return Vector3.Distance(planet.gameObject.transform.position, owner.playerBase.gameObject.transform.position);
+    }
 
     public void LateUpdate()
     {
@@ -64,7 +67,10 @@ public class TransportShip : Ship
          //   var idealPlanets = viablePlanets.Where(x => x.resources.Any(y => y.kind == resource.kind && y.amount >= capacity.Value));
             viablePlanets.Sort(delegate (Planet x, Planet y)
             {
-                return planetAttractiveness(y).CompareTo(planetAttractiveness(x));
+                var attractCompare = planetAttractiveness(y).CompareTo(planetAttractiveness(x));
+                if (attractCompare == 0)
+                    return planetDistance(x).CompareTo(planetDistance(y));
+                return attractCompare;
             });
 
             var location = viablePlanets.First();
