@@ -46,6 +46,6 @@ public class FullZoomOut : MonoBehaviour
             GetComponent<Camera>().orthographicSize = Mathf.SmoothDamp(GetComponent<Camera>().orthographicSize, inFOV, ref zoomVel, camSpeed);
             yield return null;
         }
-        camControl.GetComponent<CameraControl>().enabled = true;
+        //camControl.GetComponent<CameraControl>().enabled = true;
     }
 }
