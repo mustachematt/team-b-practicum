@@ -28,8 +28,7 @@ public class AttackShip : Ship
         base.Start();
 
         SetAttackRange();
-        attackTimer = 0;
-
+        attackTimer = attackSpeed.Value;
     }
 
     public void SetDestinationToEnemyBase()
@@ -65,14 +64,7 @@ public class AttackShip : Ship
      //           //  target = transform.parent.GetComponent<Fleet>().EnemyShips[nextTarget];
       //      }
         }
-     //   if (!target)
-     //       return;
-
-        // Check if target is in range
-      //  float distance = (target.transform.position - gameObject.transform.position).magnitude;
-      //  if (distance <= attackRange.Value)
-            attack();
-
+        attack();
     }
 
 
@@ -88,7 +80,7 @@ public class AttackShip : Ship
             }
     }
 
-
+    
     void attack()
     {
         isFiring = true;
@@ -96,6 +88,7 @@ public class AttackShip : Ship
         if (attackTimer >= attackSpeed.Value)
         {
             Debug.Log("Attacking");
+            GetComponent<AudioSource>().Play(); // shooting sound effect
             target.GetComponent<Ship>().takeDamage(attackStrength.Value);
          //   if (!target.GetComponent<Ship>().takeDamage(attackStrength.Value))               // Target destoryed, remove destoryed targer from enemyList
          //       transform.parent.GetComponent<Fleet>().EnemyShips.Remove(target.GetComponent<Ship>());

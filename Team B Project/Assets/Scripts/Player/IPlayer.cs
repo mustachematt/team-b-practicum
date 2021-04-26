@@ -15,6 +15,7 @@ public abstract class IPlayer : MonoBehaviour
     protected static Planet[] _planets;
     public abstract List<Planet> OwnedPlanets();
 
+
     protected virtual void Start()
     {
         SpawnUnit(Ship.shipType.Freighter);
@@ -27,20 +28,20 @@ public abstract class IPlayer : MonoBehaviour
         Resources[Resource.ResourceKind.fuel] = new Resource(0, Resource.ResourceKind.fuel);
         Fleet = GetComponent<Fleet>();
     }
+    public virtual void Update() {}
+
+
     public void AddResources(Resource resourceToAdd)
     {
         Resources[resourceToAdd.kind].amount += resourceToAdd.amount;
     }
+
+
     public Vector3 GetHomeLocation() {return playerBase.transform.position; }
 
-    public virtual void Update()
-    {
-
-    }
 
     //Player Actions
     public void SpawnUnit(Ship.shipType unitType/*, GameObject waypoint*/)
-
     {
         GameObject shipPrefab = StarShipUtilities.Instance.ShipDictionary[unitType].gameObject;
         //Instantiate Ship Prefab, subtract resources
@@ -58,9 +59,6 @@ public abstract class IPlayer : MonoBehaviour
             }
         }
         else Debug.Log("Not enough resources");
-     //   Debug.Log("Enemy Ships: " + Fleet.EnemyShips.Count);
-        //ship.Ship.target = waypoint;
-        //ship.GetComponent<Ship>().target = waypoint;
     }
 
     public void DisplayEnemySprite(GameObject ship)
