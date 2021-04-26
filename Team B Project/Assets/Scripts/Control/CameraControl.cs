@@ -27,10 +27,14 @@ public class CameraControl : MonoBehaviour
     private float edgeDirz = 0;
 
     private Vector3 newPos;
-   
+
+    public bool isZoomedOut = false;
     
     private void Update()
     {
+        if (isZoomedOut)
+            return;
+
         var pos = Camera.main.transform.position;
 
         if(directionX == 0 && directionZ == 0 )
@@ -59,6 +63,8 @@ public class CameraControl : MonoBehaviour
 
     public void OnZoom(InputValue value)
     {
+        if (isZoomedOut)
+            return;
         var zoomDir = value.Get<Vector2>();
         if(zoomDir.y == 1f)
         {

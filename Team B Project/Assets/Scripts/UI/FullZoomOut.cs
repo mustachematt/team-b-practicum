@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class FullZoomOut : MonoBehaviour
 {
-    public GameObject camControl;
-    Vector3 outPos = new Vector3(0, 1, 0);
-    Vector3 inPos;
+    public CameraControl camControl;
+    public Vector3 outPos = new Vector3(0, 1, 0);
+    public Vector3 inPos;
 
-    float inFOV;
-    float outFOV = 120f;
+    public float inFOV;
+    public float outFOV = 120f;
 
     private Vector3 moveVel = Vector3.zero;
     private float zoomVel = 0;
@@ -18,34 +18,49 @@ public class FullZoomOut : MonoBehaviour
     public void zoomOutFunc()
     {
         StartCoroutine(zoomOut());
+        StartCoroutine(moveCam(outPos));
     }
 
     public IEnumerator zoomOut()
     {
-        camControl.GetComponent<CameraControl>().enabled = false;
+        camControl.isZoomedOut = true;
+
+        // saving these for zooming back in
         inPos = transform.position;
         inFOV = GetComponent<Camera>().orthographicSize;
-        while (transform.position != outPos)
+
+        while (GetComponent<Camera>().orthographicSize < outFOV)
         {
-            transform.position = Vector3.SmoothDamp(transform.position, outPos, ref moveVel, camSpeed);
+            Debug.Log(GetComponent<Camera>().orthographicSize + " / " + outFOV);
             GetComponent<Camera>().orthographicSize = Mathf.SmoothDamp(GetComponent<Camera>().orthographicSize, outFOV, ref zoomVel, camSpeed);
             yield return null;
         }
+        yield break;
     }
 
     public void zoomInFunc()
     {
-        StartCoroutine(zoomIn());
+        StartCoroutine(zoomIn(inPos));
+        //StartCoroutine(moveCam(inPos));
     }
 
-    public IEnumerator zoomIn()
+    public IEnumerator zoomIn(Vector3 dest)
     {
-        while (transform.position != inPos)
+        while (GetComponent<Camera>().orthographicSize > inFOV || transform.position != dest)
         {
-            transform.position = Vector3.SmoothDamp(transform.position, inPos, ref moveVel, camSpeed);
             GetComponent<Camera>().orthographicSize = Mathf.SmoothDamp(GetComponent<Camera>().orthographicSize, inFOV, ref zoomVel, camSpeed);
+            transform.position = Vector3.SmoothDamp(transform.position, dest, ref moveVel, camSpeed);
             yield return null;
         }
-        camControl.GetComponent<CameraControl>().enabled = true;
+        camControl.isZoomedOut = false;
+    }
+
+    public IEnumerator moveCam(Vector3 dest)
+    {
+        while (transform.position != dest)
+        {
+            transform.position = Vector3.SmoothDamp(transform.position, dest, ref moveVel, camSpeed);
+            yield return null;
+        }
     }
 }

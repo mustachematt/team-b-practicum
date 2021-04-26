@@ -3,14 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System;
+using System.IO;
+
 public class Console : MonoBehaviour
 {
+    public enum devType { dev_JonStarfighter, };
+    public List<Ship> dev_fleet;
     public static bool cheats = false;
     InputField input;
     // Start is called before the first frame update
     private void Awake()
     {
         input = GetComponentInChildren<InputField>();
+
+        foreach(devType type in Enum.GetValues(typeof(devType)))
+        {
+            var shipObject = Resources.Load(Path.Combine("Ships", "Prefabs", type.ToString())) as GameObject; // Assets/Resources/Ships/Prefabs/[Ship Name]
+            if (shipObject != null)
+                dev_fleet.Add(shipObject.GetComponent<Ship>());
+            else
+                continue;
+        }
     }
     public void Submit()
     {
@@ -56,13 +70,17 @@ public class Console : MonoBehaviour
         else if(command.ToLower() == "unfixed bugs") //spawn the dev fleet
         {
             if (cheats) {
-                Debug.Log("spawning the dev fleet");
+                Debug.Log("unfixed bugs");
                 if (Console.cheats == false) return;
                 Debug.Log("Konami Achieved");
                 
-                var devCost = (int)StarShipUtilities.Instance.ShipDictionary[Ship.shipType.Freighter].price.metal;
-                ControlledPlayer.Instance.AddResources(new Resource(devCost, Resource.ResourceKind.metal));
-                ControlledPlayer.Instance.SpawnUnit(Ship.shipType.Freighter);
+                foreach(Ship ship in dev_fleet) {
+                    for (int i = 0; i < 10; i++) {
+                        GameObject shipObj = GameObject.Instantiate(ship.gameObject, ControlledPlayer.Instance.playerBase.transform.position, ControlledPlayer.Instance.playerBase.transform.rotation, ControlledPlayer.Instance.transform);
+                        shipObj.GetComponent<Ship>().SetOwner(ControlledPlayer.Instance);
+                        shipObj.layer = 8; // 8 is the player layer
+                    }
+                }
             }
             else {
                 Debug.Log("Enable Cheats First");
