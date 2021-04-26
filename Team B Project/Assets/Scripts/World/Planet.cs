@@ -75,7 +75,7 @@ public class Planet : MonoBehaviour
             StartCoroutine(ReplenishResources());
     }
 
-    private void SwitchControl(controlEnum c)
+    public void SwitchControl(controlEnum c)
     {
         control = c;
         DisplayController();

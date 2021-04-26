@@ -7,7 +7,7 @@ using System.IO;
 [RequireComponent(typeof(NavMeshAgent))]
 public abstract class Ship : MonoBehaviour
 {
-    public enum shipType { BasicStarfighter, SpartanStarfighter, Freighter, Bomber };
+    public enum shipType { BasicStarfighter, SpartanStarfighter, Freighter, Bomber, };
 
     // unsigned to prevent negative prices
     [Serializable]
@@ -105,8 +105,8 @@ public abstract class Ship : MonoBehaviour
         currentAcceleration = (currentVelocity - previousVelocity) / Time.deltaTime;
 
         // booster animation if positive acceleration, still animation otherwise
-        if (currentAcceleration.magnitude > previousAcceleration.magnitude) GetComponentInChildren<Animator>().SetBool("hasPosAcceleration", true);
-        else GetComponentInChildren<Animator>().SetBool("hasPosAcceleration", false);
+        if (currentAcceleration.magnitude > previousAcceleration.magnitude) GetComponentInChildren<Animator>()?.SetBool("hasPosAcceleration", true);
+        else GetComponentInChildren<Animator>()?.SetBool("hasPosAcceleration", false);
 
         // for the next call
         previousVelocity = currentVelocity;
