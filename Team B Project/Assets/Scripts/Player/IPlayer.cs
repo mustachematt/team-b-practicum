@@ -14,7 +14,7 @@ public abstract class IPlayer : MonoBehaviour
     public Fleet Fleet;
     protected static Planet[] _planets;
     public abstract List<Planet> OwnedPlanets();
-
+    public List<Planet> NeutralPlanets() { return _planets.Where(x => x.control == Planet.controlEnum.neutral).ToList();}
 
     protected virtual void Start()
     {
