@@ -29,7 +29,7 @@ public class TransportShip : Ship
 
     public void LateUpdate()
     {
-        if (Vector3.Distance(navAgent.destination, gameObject.transform.position) < 3)
+        if (Vector3.Distance(navAgent.destination, gameObject.transform.position) < 4)
         {
             //Destination Reached
             if (!returning)
@@ -59,7 +59,8 @@ public class TransportShip : Ship
         if (!goHome)
         {
             var Playerplanets = owner.OwnedPlanets();
-            var viablePlanets = Playerplanets.Where(x => x.resources.Any(y => y.kind == resource.kind)).ToList();
+           // var neutralPlanets = owner.NeutralPlanets();
+            var viablePlanets = Playerplanets.Where(x => x.resources.Any(y => y.kind == resource.kind)).ToList();//.Concat(neutralPlanets.Where(x => x.resources.Any(y => y.kind == resource.kind))).ToList();
          //   var idealPlanets = viablePlanets.Where(x => x.resources.Any(y => y.kind == resource.kind && y.amount >= cap));
             viablePlanets.Sort(delegate (Planet x, Planet y)
             {
@@ -88,6 +89,12 @@ public class TransportShip : Ship
     {
         var transports = owner.Fleet.Ships.Where(x => x is TransportShip);
         var travellingShips = transports.Where(x => (x as TransportShip).destination == planet.gameObject);
-        return planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)cap * travellingShips.Count() + 1);
+        var distance = planetDistance(planet);
+        //Debug.Log("Travelling Ships: " + travellingShips.Count());
+        //Debug.Log("Distance: " + distance);
+        // Debug.Log("Resources: " + planet.PlanetResourcesAsDictionary[resource.kind].amount);
+        // Debug.Log("Resource Divided: " + planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)cap * travellingShips.Count() + 1));
+        // Debug.Log("Final:" + planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)cap * travellingShips.Count() + 1) / (distance / 100));
+        return planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)cap * travellingShips.Count() + 1);// / (distance / 100);
     }
 }
