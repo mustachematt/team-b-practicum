@@ -7,9 +7,10 @@ public class AttackShip : Ship
     public ShipPropertyValue attackRange;
     public ShipPropertyValue attackStrength;
     public ShipPropertyValue attackSpeed;
-    float setDestinationRange = 8f;
+    float setDestinationRange = 8f;//distance from a planet this ship must be to gain control of it and move to next target
     string[] planetList = { "Player2MainPlanet", "Player2Planet1", "Player2Planet3", "Player2Planet2", "NeutralTop2", "NeutralTopMain", "NeutralTop3", "NeutralTop1", "NeutralCenter1", "NeutralPlanet3", "NeutralPlanet2", "NeutralCenterMain", "NeutralPlanet6", "NeutralPlanet4", "NeutralPlanet5", "NeutralBottom1", "NeutralBottomMain", "NeutralBottom3", "NeutralBottom2", "Player1Planet2", "Player1Planet3", "Player1Planet1", "Player1MainPlanet" };
-    int planetTargetIndex;
+    //the string array above lists the order planets are to be visited, for player ships -> start at Length-1 and move towords 0, for AI ships -> start at 0 and move towords Length-1
+    int planetTargetIndex;//used to track which planet this ship is targeting
 
     [Header("Attack Debug")]
     public bool isFiring = false;
@@ -45,25 +46,29 @@ public class AttackShip : Ship
         {
             if (Mathf.Abs(this.transform.position.x - GameObject.Find(planetList[planetTargetIndex]).transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find(planetList[planetTargetIndex]).transform.position.z) < setDestinationRange)//checks to see if this ship is close enough to its target planet
             {
-                GameObject.Find(planetList[planetTargetIndex]).GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);//gains control of the previous planet target
+                GameObject.Find(planetList[planetTargetIndex]).GetComponent<Planet>().SwitchControl(Planet.controlEnum.player1);//gains control of the previous planet
                 if (planetTargetIndex > 0)
                 {
-                    navAgent.SetDestination(GameObject.Find(planetList[planetTargetIndex - 1]).transform.position);//sets destination of next planet
+                    navAgent.SetDestination(GameObject.Find(planetList[planetTargetIndex - 1]).transform.position);//sets destination to next planet
                     --planetTargetIndex;
                 }
             }
+            else
+                navAgent.SetDestination(GameObject.Find(planetList[planetTargetIndex]).transform.position);//sets destination to current planet
         }
         if (!this.isPlayer)
         {
             if (Mathf.Abs(this.transform.position.x - GameObject.Find(planetList[planetTargetIndex]).transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find(planetList[planetTargetIndex]).transform.position.z) < setDestinationRange)//checks to see if this ship is close enough to its target planet
             {
-                GameObject.Find(planetList[planetTargetIndex]).GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);//gains control of the previous planet target
+                GameObject.Find(planetList[planetTargetIndex]).GetComponent<Planet>().SwitchControl(Planet.controlEnum.player2);//gains control of the previous planet
                 if (planetTargetIndex < planetList.Length-1)
                 {
-                    navAgent.SetDestination(GameObject.Find(planetList[planetTargetIndex + 1]).transform.position);//sets destination of next planet
+                    navAgent.SetDestination(GameObject.Find(planetList[planetTargetIndex + 1]).transform.position);//sets destination to next planet
                     ++planetTargetIndex;
                 }
             }
+            else
+                navAgent.SetDestination(GameObject.Find(planetList[planetTargetIndex]).transform.position);//sets destination to current planet
         }
     }
     public void SetDestinationToTargetShip()
