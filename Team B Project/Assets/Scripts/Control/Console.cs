@@ -31,7 +31,7 @@ public class Console : MonoBehaviour
         string command = input.text;
         input.text = "";
         input.caretPosition = 0;
-      //  Debug.Log("Command: " + command);
+      // Debug.Log("Command: " + command);
         CheckCommand(command);
         gameObject.SetActive(false);
     }

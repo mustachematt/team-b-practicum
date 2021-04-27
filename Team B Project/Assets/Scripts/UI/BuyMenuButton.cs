@@ -15,4 +15,6 @@ public class BuyMenuButton : MonoBehaviour
     public int moveSpeedPts;
     public int AtkSpeedPts;
     public int rangePts;
+    public int fuelCost;
+    public int metalCost;
 }
