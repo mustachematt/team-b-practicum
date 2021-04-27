@@ -9,7 +9,7 @@ public class FullZoomOut : MonoBehaviour
     public Vector3 inPos;
 
     public float inFOV;
-    public float outFOV = 120f;
+    public float outFOV = 120;
 
     private Vector3 moveVel = Vector3.zero;
     private float zoomVel = 0;
@@ -31,25 +31,27 @@ public class FullZoomOut : MonoBehaviour
 
         while (GetComponent<Camera>().orthographicSize < outFOV)
         {
-            Debug.Log(GetComponent<Camera>().orthographicSize + " / " + outFOV);
+            //Debug.Log(GetComponent<Camera>().orthographicSize + " / " + outFOV);
             GetComponent<Camera>().orthographicSize = Mathf.SmoothDamp(GetComponent<Camera>().orthographicSize, outFOV, ref zoomVel, camSpeed);
+            if (GetComponent<Camera>().orthographicSize > 119) // this fixes a bug lol
+                GetComponent<Camera>().orthographicSize = 120;
             yield return null;
         }
-        yield break;
     }
 
     public void zoomInFunc()
     {
-        StartCoroutine(zoomIn(inPos));
-        //StartCoroutine(moveCam(inPos));
+        StartCoroutine(zoomIn());
+        StartCoroutine(moveCam(inPos));
     }
 
-    public IEnumerator zoomIn(Vector3 dest)
+    public IEnumerator zoomIn()
     {
-        while (GetComponent<Camera>().orthographicSize > inFOV || transform.position != dest)
+        while (GetComponent<Camera>().orthographicSize > inFOV)
         {
             GetComponent<Camera>().orthographicSize = Mathf.SmoothDamp(GetComponent<Camera>().orthographicSize, inFOV, ref zoomVel, camSpeed);
-            transform.position = Vector3.SmoothDamp(transform.position, dest, ref moveVel, camSpeed);
+            if (GetComponent<Camera>().orthographicSize < inFOV + 1) // this fixes a bug lol
+                GetComponent<Camera>().orthographicSize = inFOV;
             yield return null;
         }
         camControl.isZoomedOut = false;
