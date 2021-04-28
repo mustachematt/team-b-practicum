@@ -274,7 +274,7 @@ MonoBehaviour:
     _value: 0
   kind: 4
   price:
-    fuel: 150
+    fuel: 0
     metal: 150
   maxSpeed:
     _value: 2
