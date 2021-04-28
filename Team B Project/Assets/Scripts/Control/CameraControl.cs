@@ -11,7 +11,7 @@ public class CameraControl : MonoBehaviour
     [Header("Zoom Options")]
     [Space]
     [SerializeField] float minCamSize = 10f;
-    [SerializeField] float maxCamSize = 30f;
+    [SerializeField] float maxCamSize = 60f;
     public float zoomSpeed = 0.5f;
     //This is used to control the camera panning.
     
