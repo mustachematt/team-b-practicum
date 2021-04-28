@@ -16,12 +16,14 @@ public class TransportShip : Ship
 
     private int cap;
 
-
+    public virtual void SetResource()
+    {
+        resource = new Resource(0, Resource.ResourceKind.metal);
+    }
     public override void Start()
     {
         base.Start();
-        resource = new Resource(0, Resource.ResourceKind.metal);
-        SetDestination(); SetCap();
+        SetResource(); SetDestination(); SetCap(); 
     }
     private float planetDistance(Planet planet)
     {
@@ -42,7 +44,12 @@ public class TransportShip : Ship
         bool planetNoLongerValid = false;
         if (destinationPlanet != null && PlayerForControl(destinationPlanet.control) != owner)
             planetNoLongerValid = true;
-        if (planetNoLongerValid || Vector3.Distance(navAgent.destination, gameObject.transform.position) < 4)
+        if(planetNoLongerValid)
+        {
+            SetDestination(false);
+            return;
+        }
+        if (Vector3.Distance(navAgent.destination, gameObject.transform.position) < 4)
         {
             //Destination Reached
             if (!returning)
@@ -109,6 +116,10 @@ public class TransportShip : Ship
         // Debug.Log("Resources: " + planet.PlanetResourcesAsDictionary[resource.kind].amount);
         // Debug.Log("Resource Divided: " + planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)cap * travellingShips.Count() + 1));
         // Debug.Log("Final:" + planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)cap * travellingShips.Count() + 1) / (distance / 100));
-        return planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)cap * travellingShips.Count() + 1);// / (distance / 100);
+        float attractiveness = planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)cap * travellingShips.Count() + 1);
+        if(travellingShips.Count() < 3)
+            attractiveness /= (distance / 100);
+        return attractiveness;
+        //return planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)cap * travellingShips.Count() + 1) / (distance / 100);
     }
 }
