@@ -114,6 +114,10 @@ public class TransportShip : Ship
         // Debug.Log("Resources: " + planet.PlanetResourcesAsDictionary[resource.kind].amount);
         // Debug.Log("Resource Divided: " + planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)cap * travellingShips.Count() + 1));
         // Debug.Log("Final:" + planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)cap * travellingShips.Count() + 1) / (distance / 100));
-        return planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)cap * travellingShips.Count() + 1);// / (distance / 100);
+        float attractiveness = planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)cap * travellingShips.Count() + 1);
+        if(travellingShips.Count() < 3)
+            attractiveness /= (distance / 100);
+        return attractiveness;
+        //return planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)cap * travellingShips.Count() + 1) / (distance / 100);
     }
 }

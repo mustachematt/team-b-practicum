@@ -17,6 +17,7 @@ public class FullZoomOut : MonoBehaviour
 
     public void zoomOutFunc()
     {
+        if (camControl.isZoomedOut) return;
         StartCoroutine(zoomOut());
         StartCoroutine(moveCam(outPos));
     }
@@ -41,17 +42,18 @@ public class FullZoomOut : MonoBehaviour
 
     public void zoomInFunc()
     {
-        StartCoroutine(zoomIn());
+        StartCoroutine(zoomIn(inPos));
         StartCoroutine(moveCam(inPos));
     }
 
-    public IEnumerator zoomIn()
+    public IEnumerator zoomIn(Vector3 dest)
     {
-        while (GetComponent<Camera>().orthographicSize > inFOV)
+        while (GetComponent<Camera>().orthographicSize > inFOV || Vector3.Distance(transform.position, dest) > 0.01)
         {
             GetComponent<Camera>().orthographicSize = Mathf.SmoothDamp(GetComponent<Camera>().orthographicSize, inFOV, ref zoomVel, camSpeed);
             if (GetComponent<Camera>().orthographicSize < inFOV + 1) // this fixes a bug lol
                 GetComponent<Camera>().orthographicSize = inFOV;
+            transform.position = Vector3.SmoothDamp(transform.position, dest, ref moveVel, camSpeed);
             yield return null;
         }
         camControl.isZoomedOut = false;
@@ -59,7 +61,8 @@ public class FullZoomOut : MonoBehaviour
 
     public IEnumerator moveCam(Vector3 dest)
     {
-        while (transform.position != dest)
+        
+        while (Vector3.Distance(transform.position, dest) > 0.01)
         {
             transform.position = Vector3.SmoothDamp(transform.position, dest, ref moveVel, camSpeed);
             yield return null;
