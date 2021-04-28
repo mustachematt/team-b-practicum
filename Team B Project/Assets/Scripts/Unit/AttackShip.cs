@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class AttackShip : Ship
 {
     public ShipPropertyValue attackRange;
@@ -33,15 +33,32 @@ public class AttackShip : Ship
 
         SetAttackRange();
         attackTimer = attackSpeed.Value;
+        UpdateDestinationPlanetIndex();
 
-        if (this.isPlayer)
-            planetTargetIndex = planetList.Length-1;
-        else if (!this.isPlayer)
-            planetTargetIndex = 0;
     }
 
+    void UpdateDestinationPlanetIndex()
+    {
+        if (this.isPlayer)
+        {
+            var lastNotOwnedPlanet = planetList.FirstOrDefault(x => GameObject.Find(x).GetComponent<Planet>().control == Planet.controlEnum.player1);
+            if (lastNotOwnedPlanet == null)
+                planetTargetIndex = planetList.Length - 1;
+            else
+                planetTargetIndex = Mathf.Clamp(planetList.ToList().IndexOf(lastNotOwnedPlanet) - 1, 0, planetList.Length);
+        }
+        else if (!this.isPlayer)
+        {
+            var lastNotOwnedPlanet = planetList.LastOrDefault(x => GameObject.Find(x).GetComponent<Planet>().control == Planet.controlEnum.player2);
+            if (lastNotOwnedPlanet == null)
+                planetTargetIndex = planetList.Length - 1;
+            else
+                planetTargetIndex = Mathf.Clamp(planetList.ToList().IndexOf(lastNotOwnedPlanet) + 1, 0, planetList.Length);
+        }
+    }
     public void SetDestinationToEnemyBase()
     {
+        UpdateDestinationPlanetIndex();
         if (this.isPlayer)
         {
             if (Mathf.Abs(this.transform.position.x - GameObject.Find(planetList[planetTargetIndex]).transform.position.x) < setDestinationRange && Mathf.Abs(this.transform.position.z - GameObject.Find(planetList[planetTargetIndex]).transform.position.z) < setDestinationRange)//checks to see if this ship is close enough to its target planet
