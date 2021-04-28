@@ -81,20 +81,28 @@ public class CameraControl : MonoBehaviour
     }
     public void OnPanHorizontal(InputValue value)
     {
+        if (isZoomedOut)
+            return;
         directionX = value.Get<float>();
     }
     public void OnPanVertical(InputValue value)
     {
+        if (isZoomedOut)
+            return;
         directionZ = value.Get<float>();
     }
     public void OnCameraSpeed(InputValue value)
     {
-        if(value.Get<float>() > 0f) speed *=  2;
+        if (isZoomedOut)
+            return;
+        if (value.Get<float>() > 0f) speed *=  2;
         
         else if(value.Get<float>() == 0.0f) speed /= 2;
     }
     public void OnMousePosition(InputValue value)
     {
+        if (isZoomedOut)
+            return;
         Vector2 mPOS = value.Get<Vector2>();
         Vector2 viewPortPOS = Camera.main.ScreenToViewportPoint(mPOS);
        

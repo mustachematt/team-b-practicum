@@ -77,8 +77,10 @@ public class Planet : MonoBehaviour
 
     public void SwitchControl(controlEnum c)
     {
-        control = c;
-        DisplayController();
+        if (control != c) {
+            control = c;
+            DisplayController();
+        }
     }
 
     public Resource removeResources(Resource resourceToWithdraw)//removes resources from planet equally
@@ -116,8 +118,11 @@ public class Planet : MonoBehaviour
             {
                 if (this.transform.childCount !=0)//if the planet already had a sprite to denote control -> delete it to display the new one
                 {
-                    GameObject toDestroy=this.transform.GetChild(0).gameObject;
-                    Destroy(toDestroy);
+                    for (int i = 0; i < this.transform.childCount; ++i)
+                    {
+                        GameObject toDestroy = this.transform.GetChild(i).gameObject;
+                        Destroy(toDestroy);
+                    }
                 }
                 var controlSprite = Resources.Load<Sprite>("playerDenotion");//load the correct sprite for this
                 GameObject child = new GameObject();//create a child to add the sprite to
@@ -132,8 +137,13 @@ public class Planet : MonoBehaviour
             {
                 if (this.transform.childCount !=0)//if the planet already had a sprite to denote control -> delete it to display the new one
                 {
-                    GameObject toDestroy = this.transform.GetChild(0).gameObject;
-                    Destroy(toDestroy);
+                    for (int i = 0; i < this.transform.childCount; ++i)
+                    {
+                        GameObject toDestroy = this.transform.GetChild(i).gameObject;
+                        Destroy(toDestroy);
+                    }
+                    //GameObject toDestroy = this.transform.GetChild(0).gameObject;
+                    //Destroy(toDestroy);
                 }
                 var controlSprite = Resources.Load<Sprite>("enemyDenotion");//load the correect sprite for this
                 GameObject child = new GameObject();//create a child to add the sprite to
