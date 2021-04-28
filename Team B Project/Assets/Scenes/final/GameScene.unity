@@ -5505,7 +5505,7 @@ PrefabInstance:
     - target: {fileID: 1860476125503371575, guid: 05ff13c702c6b4d219b6c58e8ce352ed,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.05666679
+      value: 0.056666553
       objectReference: {fileID: 0}
     - target: {fileID: 1860476125596780962, guid: 05ff13c702c6b4d219b6c58e8ce352ed,
         type: 3}
@@ -5809,6 +5809,11 @@ PrefabInstance:
       propertyPath: metalCost
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 1860476126040689175, guid: 05ff13c702c6b4d219b6c58e8ce352ed,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -26
+      objectReference: {fileID: 0}
     - target: {fileID: 1860476126290063133, guid: 05ff13c702c6b4d219b6c58e8ce352ed,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -5819,6 +5824,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2264956224878431410, guid: 05ff13c702c6b4d219b6c58e8ce352ed,
+        type: 3}
+      propertyPath: m_Text
+      value: Fuel Freighter
+      objectReference: {fileID: 0}
+    - target: {fileID: 5511364372960598274, guid: 05ff13c702c6b4d219b6c58e8ce352ed,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -23.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5511364372960598274, guid: 05ff13c702c6b4d219b6c58e8ce352ed,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -76
+      objectReference: {fileID: 0}
+    - target: {fileID: 8903014230252152946, guid: 05ff13c702c6b4d219b6c58e8ce352ed,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 319328079}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05ff13c702c6b4d219b6c58e8ce352ed, type: 3}
 --- !u!224 &1701754307 stripped
@@ -6452,7 +6477,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88dacca2960c6394eaf7eb2399fd1313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dev_fleet: []
 --- !u!1 &1967582330
 GameObject:
   m_ObjectHideFlags: 0

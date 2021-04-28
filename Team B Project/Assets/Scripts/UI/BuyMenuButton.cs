@@ -2,26 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using System;
 public class BuyMenuButton : MonoBehaviour
 {
     public Ship.shipType ship;
 
     public string shipName;
     public string shipDesc;
-    public Sprite shipImage;
-    public int attackPts;
-    public int defensePts;
-    public int moveSpeedPts;
-    public int AtkSpeedPts;
-    public int rangePts;
-    public int fuelCost;
-    public int metalCost;
+    [NonSerialized] public Sprite shipImage;
+    [NonSerialized] public int attackPts;
+    [NonSerialized] public int defensePts;
+    [NonSerialized] public int moveSpeedPts;
+    [NonSerialized] public int AtkSpeedPts;
+    [NonSerialized] public int rangePts;
+    [NonSerialized] public int fuelCost;
+    [NonSerialized] public int metalCost;
 
     public void Awake()
     {
         var ship = StarShipUtilities.Instance.ShipDictionary[this.ship];
-        var spriteRenderer = ship.gameObject.GetComponentInChildren<SpriteRenderer>();
+        var spriteRenderer = ship.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
         shipImage = spriteRenderer.sprite;
         attackPts = ship is AttackShip ? (ship as AttackShip).attackStrength.Value : 0;
         defensePts = ship.armorStrength.Value;

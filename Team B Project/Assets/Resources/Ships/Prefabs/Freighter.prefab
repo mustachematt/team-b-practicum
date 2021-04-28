@@ -272,7 +272,7 @@ MonoBehaviour:
   healthSlider: {fileID: 3313618466915761953}
   health:
     _value: 0
-  kind: 4
+  kind: 2
   price:
     fuel: 0
     metal: 150

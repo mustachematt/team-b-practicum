@@ -277,11 +277,11 @@ MonoBehaviour:
     fuel: 0
     metal: 150
   maxSpeed:
-    _value: 0
+    _value: 2
   armorStrength:
-    _value: 0
+    _value: 2
   capacity:
-    _value: 0
+    _value: 2
 --- !u!135 &3454944595307158901
 SphereCollider:
   m_ObjectHideFlags: 0
