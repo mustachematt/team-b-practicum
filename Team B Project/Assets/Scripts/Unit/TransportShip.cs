@@ -23,7 +23,7 @@ public class TransportShip : Ship
     public override void Start()
     {
         base.Start();
-        SetDestination(); SetCap(); SetResource();
+        SetResource(); SetDestination(); SetCap(); 
     }
     private float planetDistance(Planet planet)
     {
