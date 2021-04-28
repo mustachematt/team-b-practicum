@@ -563,8 +563,8 @@ MonoBehaviour:
     _value: 0
   kind: 1
   price:
-    fuel: 150
-    metal: 100
+    fuel: 225
+    metal: 225
   maxSpeed:
     _value: 3
   armorStrength:
