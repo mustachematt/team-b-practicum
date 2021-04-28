@@ -39,11 +39,13 @@ public class PauseMenuManager : MonoBehaviour
     void Awake()
     {
         Cursor.visible = true;
-        InitializeVolumeValues();
+        InitializeSliderValues();
         ShowSliderValues();
     }
-    public void InitializeVolumeValues()
+    public void InitializeSliderValues()
     {
+        zoomSensitivitySlider.SetValueWithoutNotify(cameraControl.zoomSpeed);
+        cameraSensitivitySlider.SetValueWithoutNotify(cameraControl.speed);
         masterVolumeSlider.SetValueWithoutNotify(GameSettings.MasterVolume / 2);
         musicVolumeSlider.SetValueWithoutNotify(GameSettings.MusicVolume / 2);
         soundVolumeSlider.SetValueWithoutNotify(GameSettings.EffectVolume / 2);

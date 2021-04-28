@@ -65,7 +65,7 @@ public class AIPlayer : IPlayer
                 SpawnUnit(Ship.shipType.BasicStarfighter);
             else if(canBuyTransport)
             {
-                Debug.Log($"Transports: {myTransportShips} Fuel: {myTransportFuelShips} Metal: {myMetalTransportShips}");
+             //   Debug.Log($"Transports: {myTransportShips} Fuel: {myTransportFuelShips} Metal: {myMetalTransportShips}");
                 if (myTransportFuelShips == 0 && myTransportShips > 0)
                     SpawnUnit(Ship.shipType.FuelFreighter);
                 else if ( ((float)myTransportFuelShips / myTransportShips) < 0.3)
