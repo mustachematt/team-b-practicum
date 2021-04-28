@@ -77,8 +77,10 @@ public class Planet : MonoBehaviour
 
     public void SwitchControl(controlEnum c)
     {
-        control = c;
-        DisplayController();
+        if (control != c) {
+            control = c;
+            DisplayController();
+        }
     }
 
     public Resource removeResources(Resource resourceToWithdraw)//removes resources from planet equally
