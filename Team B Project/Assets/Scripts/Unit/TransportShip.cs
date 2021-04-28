@@ -16,12 +16,14 @@ public class TransportShip : Ship
 
     private int cap;
 
-
+    public virtual void SetResource()
+    {
+        resource = new Resource(0, Resource.ResourceKind.metal);
+    }
     public override void Start()
     {
         base.Start();
-        resource = new Resource(0, Resource.ResourceKind.metal);
-        SetDestination(); SetCap();
+        SetDestination(); SetCap(); SetResource();
     }
     private float planetDistance(Planet planet)
     {
