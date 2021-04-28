@@ -36,12 +36,15 @@ public class AIPlayer : IPlayer
     {
         int myAttackShips = Fleet.Ships.Where(x => x is AttackShip).Count();
         int myTransportShips = Fleet.Ships.Where(x => x is TransportShip).Count();
+        int myTransportFuelShips = Fleet.Ships.Where(x => x is FuelTransportShip).Count();
         int enemyAttackShips = Fleet.EnemyShips.Where(x => x is AttackShip).Count();
         int enemyTransportShips = Fleet.EnemyShips.Where(x => x is TransportShip).Count();
         uint attackShipPrice = StarShipUtilities.Instance.ShipDictionary[Ship.shipType.BasicStarfighter].price.metal;
+        uint attackShipFuelPrice = StarShipUtilities.Instance.ShipDictionary[Ship.shipType.BasicStarfighter].price.fuel;
         uint transportShipPrice = StarShipUtilities.Instance.ShipDictionary[Ship.shipType.Freighter].price.metal;
-        bool canBuyAttack = Resources[Resource.ResourceKind.metal].amount >= attackShipPrice;
-        bool canBuyTransport = Resources[Resource.ResourceKind.metal].amount >= transportShipPrice;
+        uint transportShipFuelPrice = StarShipUtilities.Instance.ShipDictionary[Ship.shipType.Freighter].price.fuel;
+        bool canBuyAttack = Resources[Resource.ResourceKind.metal].amount >= attackShipPrice && Resources[Resource.ResourceKind.fuel].amount >= attackShipFuelPrice;
+        bool canBuyTransport = Resources[Resource.ResourceKind.metal].amount >= transportShipPrice && Resources[Resource.ResourceKind.fuel].amount >= transportShipFuelPrice; ;
 
         if (myTransportShips > 0 && myAttackShips <= enemyAttackShips && canBuyAttack)
         {
@@ -58,6 +61,7 @@ public class AIPlayer : IPlayer
                 SpawnUnit(Ship.shipType.BasicStarfighter);
             else if(canBuyTransport)
             {
+                
                 SpawnUnit(Ship.shipType.Freighter);
             }
         }

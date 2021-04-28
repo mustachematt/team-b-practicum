@@ -45,9 +45,10 @@ public abstract class IPlayer : MonoBehaviour
     {
         GameObject shipPrefab = StarShipUtilities.Instance.ShipDictionary[unitType].gameObject;
         //Instantiate Ship Prefab, subtract resources
-        if(Resources[Resource.ResourceKind.metal].amount >=shipPrefab.GetComponent<Ship>().price.metal) //this needs to be changed to reflect
+        if(Resources[Resource.ResourceKind.metal].amount >=shipPrefab.GetComponent<Ship>().price.metal && Resources[Resource.ResourceKind.fuel].amount >= shipPrefab.GetComponent<Ship>().price.fuel) //this needs to be changed to reflect
         {
             Resources[Resource.ResourceKind.metal].amount -= (int)shipPrefab.GetComponent<Ship>().price.metal;
+            Resources[Resource.ResourceKind.fuel].amount -= (int)shipPrefab.GetComponent<Ship>().price.fuel;
             GameObject ship = GameObject.Instantiate(shipPrefab, playerBase.transform.position, playerBase.transform.rotation, this.transform);
             ship.GetComponent<Ship>().SetOwner(this);
             if (this is ControlledPlayer) {
