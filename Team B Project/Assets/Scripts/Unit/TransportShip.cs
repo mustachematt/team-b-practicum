@@ -79,6 +79,11 @@ public class TransportShip : Ship
         if (!goHome)
         {
             var Playerplanets = owner.OwnedPlanets();
+            if(Playerplanets.Count == 0)
+            {
+                SetDestination(true);
+                return;
+            }
            // var neutralPlanets = owner.NeutralPlanets();
             var viablePlanets = Playerplanets.Where(x => x.resources.Any(y => y.kind == resource.kind)).ToList();//.Concat(neutralPlanets.Where(x => x.resources.Any(y => y.kind == resource.kind))).ToList();
          //   var idealPlanets = viablePlanets.Where(x => x.resources.Any(y => y.kind == resource.kind && y.amount >= cap));

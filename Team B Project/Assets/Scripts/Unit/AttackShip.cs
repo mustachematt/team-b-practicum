@@ -45,7 +45,7 @@ public class AttackShip : Ship
             if (lastNotOwnedPlanet == null)
                 planetTargetIndex = planetList.Length - 1;
             else
-                planetTargetIndex = Mathf.Clamp(planetList.ToList().IndexOf(lastNotOwnedPlanet) - 1, 0, planetList.Length);
+                planetTargetIndex = Mathf.Clamp(planetList.ToList().IndexOf(lastNotOwnedPlanet) - 1, 0, planetList.Length - 1);
         }
         else if (!this.isPlayer)
         {
@@ -53,7 +53,7 @@ public class AttackShip : Ship
             if (lastNotOwnedPlanet == null)
                 planetTargetIndex = planetList.Length - 1;
             else
-                planetTargetIndex = Mathf.Clamp(planetList.ToList().IndexOf(lastNotOwnedPlanet) + 1, 0, planetList.Length);
+                planetTargetIndex = Mathf.Clamp(planetList.ToList().IndexOf(lastNotOwnedPlanet) + 1, 0, planetList.Length - 1);
         }
     }
     public void SetDestinationToEnemyBase()
