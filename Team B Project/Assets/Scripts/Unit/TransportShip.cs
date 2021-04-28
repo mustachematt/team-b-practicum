@@ -42,7 +42,12 @@ public class TransportShip : Ship
         bool planetNoLongerValid = false;
         if (destinationPlanet != null && PlayerForControl(destinationPlanet.control) != owner)
             planetNoLongerValid = true;
-        if (planetNoLongerValid || Vector3.Distance(navAgent.destination, gameObject.transform.position) < 4)
+        if(planetNoLongerValid)
+        {
+            SetDestination(false);
+            return;
+        }
+        if (Vector3.Distance(navAgent.destination, gameObject.transform.position) < 4)
         {
             //Destination Reached
             if (!returning)
