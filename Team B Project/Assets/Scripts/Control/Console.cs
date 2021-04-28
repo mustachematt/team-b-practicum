@@ -9,7 +9,7 @@ using System.IO;
 public class Console : MonoBehaviour
 {
     public enum devType { dev_JonStarfighter, };
-    public List<Ship> dev_fleet;
+    public static List<Ship> dev_fleet;
     public static bool cheats = false;
     InputField input;
     // Start is called before the first frame update
@@ -70,10 +70,7 @@ public class Console : MonoBehaviour
         else if(command.ToLower() == "unfixed bugs") //spawn the dev fleet
         {
             if (cheats) {
-                Debug.Log("unfixed bugs");
-                if (Console.cheats == false) return;
-                Debug.Log("Konami Achieved");
-                
+                Debug.Log("unfixed bugs, dev fleet");
                 foreach(Ship ship in dev_fleet) {
                     for (int i = 0; i < 10; i++) {
                         GameObject shipObj = GameObject.Instantiate(ship.gameObject, ControlledPlayer.Instance.playerBase.transform.position, ControlledPlayer.Instance.playerBase.transform.rotation, ControlledPlayer.Instance.transform);
@@ -81,6 +78,32 @@ public class Console : MonoBehaviour
                         shipObj.layer = 8; // 8 is the player layer
                     }
                 }
+            }
+            else {
+                Debug.Log("Enable Cheats First");
+            }
+        }
+        else if (command.ToLower() == "adorable bugs") // Spawn basic fighters
+        {
+            if (cheats) {
+                Debug.Log("Adorable bugs, 100 basic fighters");
+                var Cost = (int)StarShipUtilities.Instance.ShipDictionary[Ship.shipType.BasicStarfighter].price.metal;
+                ControlledPlayer.Instance.AddResources(new Resource(Cost * 100, Resource.ResourceKind.metal));
+                for (int i = 0; i < 100; i++)
+                    ControlledPlayer.Instance.SpawnUnit(Ship.shipType.BasicStarfighter);
+            }
+            else {
+                Debug.Log("Enable Cheats First");
+            }
+        }
+        else if (command.ToLower() == "for sparta") // spawn spartan fighters
+        {
+            if (cheats) {                
+                Debug.Log("for sparta, 300 spartan fighters");
+                var Cost = (int)StarShipUtilities.Instance.ShipDictionary[Ship.shipType.SpartanStarfighter].price.metal;
+                ControlledPlayer.Instance.AddResources(new Resource(Cost * 300, Resource.ResourceKind.metal));
+                for (int i = 0; i < 300; i++)
+                    ControlledPlayer.Instance.SpawnUnit(Ship.shipType.SpartanStarfighter);
             }
             else {
                 Debug.Log("Enable Cheats First");
