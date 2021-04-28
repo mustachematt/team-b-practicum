@@ -8,7 +8,10 @@ public class ControlledPlayer : IPlayer
 {
     public static ControlledPlayer Instance;
 
-
+    public void GameEnd(bool win)
+    {
+        Debug.Log($"Game Over: {(win ? "Win!" : "Lose")}");
+    }
     public override void Awake()
     {
         base.Awake();

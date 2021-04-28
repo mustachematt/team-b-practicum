@@ -67,7 +67,7 @@ public class AIPlayer : IPlayer
             {
                 if (myTransportFuelShips == 0 && myTransportShips > 0)
                     SpawnUnit(Ship.shipType.FuelFreighter);
-                else if ((myTransportFuelShips / myTransportShips) <= 0.33)
+                else if ((myTransportFuelShips / myTransportShips) < 0.3)
                     SpawnUnit(Ship.shipType.FuelFreighter);
                 else
                     SpawnUnit(Ship.shipType.Freighter);

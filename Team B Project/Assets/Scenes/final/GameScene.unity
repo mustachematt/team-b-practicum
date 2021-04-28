@@ -3065,6 +3065,7 @@ GameObject:
   - component: {fileID: 937130669}
   - component: {fileID: 937130668}
   - component: {fileID: 937130671}
+  - component: {fileID: 937130672}
   m_Layer: 0
   m_Name: Player2MainPlanet
   m_TagString: Planet
@@ -3191,6 +3192,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Owner: {fileID: 144121809}
+--- !u!65 &937130672
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937130666}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: -0.0000014305115, y: 0, z: 0.0000005424023}
 --- !u!1 &1042344257
 GameObject:
   m_ObjectHideFlags: 0

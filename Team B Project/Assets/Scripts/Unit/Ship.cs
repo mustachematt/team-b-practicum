@@ -54,7 +54,7 @@ public abstract class Ship : MonoBehaviour
     private Vector3 currentVelocity;
     private Vector3 currentAcceleration;
 
-    protected IPlayer owner = null;
+    public IPlayer owner { get;  private set; } = null;
     protected NavMeshAgent navAgent;
     protected bool isPlayer;
 

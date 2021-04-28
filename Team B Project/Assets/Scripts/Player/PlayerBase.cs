@@ -10,7 +10,22 @@ public class PlayerBase : MonoBehaviour
     {
         
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        var ship = other.gameObject.GetComponent<Ship>();
+        if(ship is AttackShip attacker)
+        {
+            if(attacker.owner != Owner)
+                if(Owner is ControlledPlayer)
+                {
+                    ControlledPlayer.Instance.GameEnd(false);
+                }
+                else
+                {
+                    ControlledPlayer.Instance.GameEnd(true);
+                }
+        }
+    }
     // Update is called once per frame
     void Update()
     {
