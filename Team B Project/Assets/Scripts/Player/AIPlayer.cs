@@ -27,7 +27,7 @@ public class AIPlayer : IPlayer
         if (currentTime >= timeBetweenActions)
         {
             currentTime = 0f;
-            timeBetweenActions++;
+            //timeBetweenActions++;
             makeDecision();
         }
     }
