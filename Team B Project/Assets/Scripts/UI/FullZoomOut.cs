@@ -48,7 +48,7 @@ public class FullZoomOut : MonoBehaviour
 
     public IEnumerator zoomIn(Vector3 dest)
     {
-        while (GetComponent<Camera>().orthographicSize > inFOV || Vector3.Distance(transform.position, dest) > 0.01)
+        while (GetComponent<Camera>().orthographicSize > inFOV || Vector3.Distance(transform.position, dest) > 1)
         {
             GetComponent<Camera>().orthographicSize = Mathf.SmoothDamp(GetComponent<Camera>().orthographicSize, inFOV, ref zoomVel, camSpeed);
             if (GetComponent<Camera>().orthographicSize < inFOV + 1) // this fixes a bug lol

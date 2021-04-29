@@ -78,7 +78,7 @@ public abstract class Ship : MonoBehaviour
         Destroy(gameObject);
     }
     private void SetMaxSpeed() { navAgent.speed = maxSpeed.Value * 2; }
-    private void SetMaxHealth() { health.Value = armorStrength.Value; }
+    private void SetMaxHealth() { health.Value = armorStrength.Value * 2; }
     
     
     public bool takeDamage(int attack)

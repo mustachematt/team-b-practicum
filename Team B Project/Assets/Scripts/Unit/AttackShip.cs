@@ -17,7 +17,7 @@ public class AttackShip : Ship
     public List<GameObject> targetList;
 
     // 3 is too small for attackRange, use attackRange(3) to calculate points of balance and use (attackRange * sale) to set actual attack range 
-    private float attackScale = 3;
+    private float attackScale = 6;
     private float attackTimer;
     private int nextTarget;
 
