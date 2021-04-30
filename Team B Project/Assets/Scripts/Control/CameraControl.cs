@@ -36,17 +36,26 @@ public class CameraControl : MonoBehaviour
             return;
 
         var pos = Camera.main.transform.position;
-
+        newPos = pos;
+     //   Debug.Log("pos" + pos);
         if(directionX == 0 && directionZ == 0 )
         {
-                if(edgeDirx != 0 || edgeDirz != 0)  newPos = Camera.main.transform.position + (new Vector3(edgeDirx, 0, edgeDirz) * speed * Time.deltaTime);
+            if (edgeDirx != 0 || edgeDirz != 0)
+            {
+                Vector3 addVec = new Vector3(edgeDirx, 0, edgeDirz) * speed * Time.deltaTime;
+          //      Debug.Log("addVec" + addVec);
+                newPos = Camera.main.transform.position + addVec;
+            }
         }
         else if(directionX != 0 || directionZ != 0)
         {
-            newPos = Camera.main.transform.position + (new Vector3(directionX, 0, directionZ) * speed * Time.deltaTime);
+            Vector3 addVec = new Vector3(directionX, 0, directionZ) * speed * Time.deltaTime;
+          //  Debug.Log("addVec" + addVec);
+            newPos = Camera.main.transform.position + addVec;
         }
+      //  Debug.Log("newPos" + newPos);
 
-        if(newPos.x < xLimit && newPos.x > -xLimit)
+        if (newPos.x < xLimit && newPos.x > -xLimit)
         {
             Camera.main.transform.position = new Vector3(newPos.x, pos.y, pos.z);
         }
@@ -81,28 +90,20 @@ public class CameraControl : MonoBehaviour
     }
     public void OnPanHorizontal(InputValue value)
     {
-        if (isZoomedOut)
-            return;
         directionX = value.Get<float>();
     }
     public void OnPanVertical(InputValue value)
     {
-        if (isZoomedOut)
-            return;
         directionZ = value.Get<float>();
     }
     public void OnCameraSpeed(InputValue value)
     {
-        if (isZoomedOut)
-            return;
         if (value.Get<float>() > 0f) speed *=  2;
         
         else if(value.Get<float>() == 0.0f) speed /= 2;
     }
     public void OnMousePosition(InputValue value)
     {
-        if (isZoomedOut)
-            return;
         Vector2 mPOS = value.Get<Vector2>();
         Vector2 viewPortPOS = Camera.main.ScreenToViewportPoint(mPOS);
        

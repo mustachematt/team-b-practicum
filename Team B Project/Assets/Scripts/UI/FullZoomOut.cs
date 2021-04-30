@@ -11,13 +11,15 @@ public class FullZoomOut : MonoBehaviour
     public float inFOV;
     public float outFOV = 120;
 
-    private Vector3 moveVel = Vector3.zero;
+    private Vector3 moveVel = Vector3.one;
     private float zoomVel = 0;
     private float camSpeed = 0.4f;
 
     public void zoomOutFunc()
     {
         if (camControl.isZoomedOut) return;
+        this.StopAllCoroutines();
+        inPos = transform.position;
         StartCoroutine(zoomOut());
         StartCoroutine(moveCam(outPos));
     }
@@ -27,7 +29,6 @@ public class FullZoomOut : MonoBehaviour
         camControl.isZoomedOut = true;
 
         // saving these for zooming back in
-        inPos = transform.position;
         inFOV = GetComponent<Camera>().orthographicSize;
 
         while (GetComponent<Camera>().orthographicSize < outFOV)
@@ -42,8 +43,9 @@ public class FullZoomOut : MonoBehaviour
 
     public void zoomInFunc()
     {
+        this.StopAllCoroutines();
         StartCoroutine(zoomIn(inPos));
-        StartCoroutine(moveCam(inPos));
+       // StartCoroutine(moveCam(inPos));
     }
 
     public IEnumerator zoomIn(Vector3 dest)
