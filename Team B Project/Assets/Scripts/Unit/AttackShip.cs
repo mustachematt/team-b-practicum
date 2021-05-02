@@ -278,20 +278,10 @@ public class AttackShip : Ship
     public override void Update()
     {
         base.Update();
-        // Check if all enemies clear
-     //   if (transform.parent.GetComponent<Fleet>().EnemyShips.Count == 0 && !target)
-     //       return;
-     //   nextTarget = transform.parent.GetComponent<Fleet>().EnemyShips.Count - 1;
-        // Check if target is destroyed
         if (!target)
         {
             SetDestinationToEnemyBase();
             return;
-     //       if (transform.parent.GetComponent<Fleet>().EnemyShips.Count != 0)
-     //       {
-     //           nextTarget = transform.parent.GetComponent<Fleet>().EnemyShips.Count - 1;
-     //           //  target = transform.parent.GetComponent<Fleet>().EnemyShips[nextTarget];
-      //      }
         }
         attack();
     }
@@ -316,13 +306,28 @@ public class AttackShip : Ship
         attackTimer += Time.deltaTime;
         if (attackTimer >= attackSpeed.Value)
         {
-            Debug.Log("Attacking");
+            shoot();
             GetComponent<AudioSource>().Play(); // shooting sound effect
             target.GetComponent<Ship>().takeDamage(attackStrength.Value);
-         //   if (!target.GetComponent<Ship>().takeDamage(attackStrength.Value))               // Target destoryed, remove destoryed targer from enemyList
-         //       transform.parent.GetComponent<Fleet>().EnemyShips.Remove(target.GetComponent<Ship>());
             attackTimer = 0;
             isFiring = false;
         }
+    }
+
+
+    void shoot()
+    {
+        string color;
+        if (owner is ControlledPlayer) color = "blue";
+        else color = "red";
+
+        GameObject laser = (GameObject)Instantiate(
+            Resources.Load($"Lasers/{color}Laser"), 
+            transform.position, 
+            Quaternion.Euler(90, transform.rotation.eulerAngles.y, 0)
+        );
+
+        laser.GetComponent<LaserController>().range = GetComponent<SphereCollider>().radius;
+        laser.GetComponent<LaserController>().owner = owner;
     }
 }

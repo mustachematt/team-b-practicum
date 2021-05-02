@@ -48,26 +48,28 @@ public abstract class Ship : MonoBehaviour
     public ShipPrice price; 
     public ShipPropertyValue maxSpeed;
     public ShipPropertyValue armorStrength;     // Max health 
+    public IPlayer owner = null;
 
     private Vector3 previousVelocity;
     private Vector3 previousAcceleration;
     private Vector3 currentVelocity;
     private Vector3 currentAcceleration;
 
-    protected IPlayer owner = null;
     protected NavMeshAgent navAgent;
     protected bool isPlayer;
 
 
-    public virtual void Start() { isPlayer = owner is ControlledPlayer; }
     public virtual void Update() { moveAnimHandler(); }
     public virtual void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
         currentVelocity = Vector3.zero;
         currentAcceleration = Vector3.zero;
-
-        SetMaxSpeed(); SetMaxHealth();
+    }
+    public virtual void Start()
+    {
+        isPlayer = owner is ControlledPlayer;
+        SetMaxSpeed(); SetMaxHealth(); SetHealthBarColor();
     }
 
 
@@ -77,15 +79,9 @@ public abstract class Ship : MonoBehaviour
         Instantiate(Resources.Load("Explosions/Prefabs/TempExplosion"), transform.position, Quaternion.Euler(90, 0, 0));
         Destroy(gameObject);
     }
-    private void SetMaxSpeed() { navAgent.speed = maxSpeed.Value * 2; }
-    private void SetMaxHealth() { health.Value = armorStrength.Value; }
-    
-    
     public bool takeDamage(int attack)
     {
-        Debug.Log($"Attacked. Health: {health.Value}");
         int currentHealth = health.Value - attack;
-        Debug.Log($"Took {attack} damage. Remaining Health {currentHealth}");
         if (currentHealth <= 0)
         {
             health.Value = 0;
@@ -98,6 +94,21 @@ public abstract class Ship : MonoBehaviour
     }
 
 
+    private void SetMaxSpeed() { navAgent.speed = maxSpeed.Value * 2; }
+    private void SetMaxHealth() { health.Value = armorStrength.Value; }
+    private void SetHealthBarColor()
+    {
+        Image[] images = GetComponentsInChildren<Image>();
+        foreach (var i in images)
+        {
+            if (i.name == "Fill")
+            {
+                if (owner is ControlledPlayer) i.color = Color.green;
+                else i.color = Color.red;
+                return;
+            }
+        }
+    }
     private void moveAnimHandler()
     {
         // update values and get acceleration

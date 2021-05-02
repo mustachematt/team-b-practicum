@@ -400,7 +400,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc3ee5a552534d78a4290a0f4f59f3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camControl: {fileID: 356949604}
+  camControl: {fileID: 356949605}
+  outPos: {x: 0, y: 1, z: 0}
+  inPos: {x: 0, y: 0, z: 0}
+  inFOV: 0
+  outFOV: 120
 --- !u!1 &28430026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1718,6 +1722,7 @@ MonoBehaviour:
   zoomSpeed: 0.5
   xLimit: 150
   zLimit: 100
+  isZoomedOut: 0
 --- !u!4 &356949607
 Transform:
   m_ObjectHideFlags: 0
@@ -6185,6 +6190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88dacca2960c6394eaf7eb2399fd1313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dev_fleet: []
 --- !u!1 &1967582330
 GameObject:
   m_ObjectHideFlags: 0
