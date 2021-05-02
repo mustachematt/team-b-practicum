@@ -24,8 +24,8 @@ public abstract class IPlayer : MonoBehaviour
     public virtual void Awake()
     {
         Resources = new Dictionary<Resource.ResourceKind, Resource>();
-        Resources[Resource.ResourceKind.metal] = new Resource(150, Resource.ResourceKind.metal);
-        Resources[Resource.ResourceKind.fuel] = new Resource(0, Resource.ResourceKind.fuel);
+        Resources[Resource.ResourceKind.metal] = new Resource(450, Resource.ResourceKind.metal);
+        Resources[Resource.ResourceKind.fuel] = new Resource(100, Resource.ResourceKind.fuel);
         Fleet = GetComponent<Fleet>();
     }
     public virtual void Update() {}
@@ -45,9 +45,10 @@ public abstract class IPlayer : MonoBehaviour
     {
         GameObject shipPrefab = StarShipUtilities.Instance.ShipDictionary[unitType].gameObject;
         //Instantiate Ship Prefab, subtract resources
-        if(Resources[Resource.ResourceKind.metal].amount >=shipPrefab.GetComponent<Ship>().price.metal) //this needs to be changed to reflect
+        if(Resources[Resource.ResourceKind.metal].amount >=shipPrefab.GetComponent<Ship>().price.metal && Resources[Resource.ResourceKind.fuel].amount >= shipPrefab.GetComponent<Ship>().price.fuel) //this needs to be changed to reflect
         {
             Resources[Resource.ResourceKind.metal].amount -= (int)shipPrefab.GetComponent<Ship>().price.metal;
+            Resources[Resource.ResourceKind.fuel].amount -= (int)shipPrefab.GetComponent<Ship>().price.fuel;
             GameObject ship = GameObject.Instantiate(shipPrefab, playerBase.transform.position, playerBase.transform.rotation, this.transform);
             ship.GetComponent<Ship>().SetOwner(this);
             if (this is ControlledPlayer) {

@@ -16,10 +16,13 @@ public class BuyMenuSelection : MonoBehaviour
     public Slider moveSpeedSlider;
     public Slider atkSpeedSlider;
     public Slider rangeSlider;
+    public Text costText;
 
     public void UpdateSelection(BuyMenuButton selectedButton)
     {
         _selectedButton = selectedButton;
+
+        costText.text = selectedButton.fuelCost + " Fuel\n" + selectedButton.metalCost + " Metal";
 
         _ship = _selectedButton.ship;
 

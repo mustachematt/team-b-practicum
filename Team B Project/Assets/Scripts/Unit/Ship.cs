@@ -7,7 +7,7 @@ using System.IO;
 [RequireComponent(typeof(NavMeshAgent))]
 public abstract class Ship : MonoBehaviour
 {
-    public enum shipType { BasicStarfighter, SpartanStarfighter, Freighter, Bomber, };
+    public enum shipType { BasicStarfighter, SpartanStarfighter, Freighter, Bomber, FuelFreighter };
 
     // unsigned to prevent negative prices
     [Serializable]
@@ -55,6 +55,7 @@ public abstract class Ship : MonoBehaviour
     private Vector3 currentVelocity;
     private Vector3 currentAcceleration;
 
+    public IPlayer owner { get;  private set; } = null;
     protected NavMeshAgent navAgent;
     protected bool isPlayer;
 

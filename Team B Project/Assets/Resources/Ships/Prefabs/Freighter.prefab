@@ -243,7 +243,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6117247595295266187}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 5
+  m_Radius: 2.5
   m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
@@ -274,7 +274,7 @@ MonoBehaviour:
     _value: 0
   kind: 2
   price:
-    fuel: 150
+    fuel: 0
     metal: 150
   maxSpeed:
     _value: 2

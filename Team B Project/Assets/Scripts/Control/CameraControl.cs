@@ -11,8 +11,8 @@ public class CameraControl : MonoBehaviour
     [Header("Zoom Options")]
     [Space]
     [SerializeField] float minCamSize = 10f;
-    [SerializeField] float maxCamSize = 30f;
-    public float zoomSpeed = 0.5f;
+    [SerializeField] float maxCamSize = 80f;
+    public float zoomSpeed = 0.6f;
     //This is used to control the camera panning.
     
     [Header("Screen  Size")]
@@ -36,17 +36,26 @@ public class CameraControl : MonoBehaviour
             return;
 
         var pos = Camera.main.transform.position;
-
+        newPos = pos;
+     //   Debug.Log("pos" + pos);
         if(directionX == 0 && directionZ == 0 )
         {
-                if(edgeDirx != 0 || edgeDirz != 0)  newPos = Camera.main.transform.position + (new Vector3(edgeDirx, 0, edgeDirz) * speed * Time.deltaTime);
+            if (edgeDirx != 0 || edgeDirz != 0)
+            {
+                Vector3 addVec = new Vector3(edgeDirx, 0, edgeDirz) * speed * Time.deltaTime;
+          //      Debug.Log("addVec" + addVec);
+                newPos = Camera.main.transform.position + addVec;
+            }
         }
         else if(directionX != 0 || directionZ != 0)
         {
-            newPos = Camera.main.transform.position + (new Vector3(directionX, 0, directionZ) * speed * Time.deltaTime);
+            Vector3 addVec = new Vector3(directionX, 0, directionZ) * speed * Time.deltaTime;
+          //  Debug.Log("addVec" + addVec);
+            newPos = Camera.main.transform.position + addVec;
         }
+      //  Debug.Log("newPos" + newPos);
 
-        if(newPos.x < xLimit && newPos.x > -xLimit)
+        if (newPos.x < xLimit && newPos.x > -xLimit)
         {
             Camera.main.transform.position = new Vector3(newPos.x, pos.y, pos.z);
         }
@@ -89,7 +98,7 @@ public class CameraControl : MonoBehaviour
     }
     public void OnCameraSpeed(InputValue value)
     {
-        if(value.Get<float>() > 0f) speed *=  2;
+        if (value.Get<float>() > 0f) speed *=  2;
         
         else if(value.Get<float>() == 0.0f) speed /= 2;
     }

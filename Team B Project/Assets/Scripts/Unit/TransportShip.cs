@@ -11,24 +11,44 @@ public class TransportShip : Ship
     public ShipPropertyValue capacity;
 
     public GameObject destination { get; private set; }
+    private Planet destinationPlanet;
     protected bool returning = false;
 
     private int cap;
 
-
+    public virtual void SetResource()
+    {
+        resource = new Resource(0, Resource.ResourceKind.metal);
+    }
     public override void Start()
     {
         base.Start();
-        resource = new Resource(0, Resource.ResourceKind.metal);
-        SetDestination(); SetCap();
+        SetResource(); SetDestination(); SetCap(); 
     }
     private float planetDistance(Planet planet)
     {
         return Vector3.Distance(planet.gameObject.transform.position, owner.playerBase.gameObject.transform.position);
     }
-
-    public void LateUpdate()
+    public IPlayer PlayerForControl(Planet.controlEnum control)
     {
+        if (control == Planet.controlEnum.player1)
+            return ControlledPlayer.Instance;
+        else if (control == Planet.controlEnum.player2)
+            return AIPlayer.Instance;
+        else
+            return null;
+    }
+    public override void Update()
+    {
+        base.Update();
+        bool planetNoLongerValid = false;
+        if (destinationPlanet != null && PlayerForControl(destinationPlanet.control) != owner)
+            planetNoLongerValid = true;
+        if(planetNoLongerValid)
+        {
+            SetDestination(false);
+            return;
+        }
         if (Vector3.Distance(navAgent.destination, gameObject.transform.position) < 4)
         {
             //Destination Reached
@@ -59,6 +79,11 @@ public class TransportShip : Ship
         if (!goHome)
         {
             var Playerplanets = owner.OwnedPlanets();
+            if(Playerplanets.Count == 0)
+            {
+                SetDestination(true);
+                return;
+            }
            // var neutralPlanets = owner.NeutralPlanets();
             var viablePlanets = Playerplanets.Where(x => x.resources.Any(y => y.kind == resource.kind)).ToList();//.Concat(neutralPlanets.Where(x => x.resources.Any(y => y.kind == resource.kind))).ToList();
          //   var idealPlanets = viablePlanets.Where(x => x.resources.Any(y => y.kind == resource.kind && y.amount >= cap));
@@ -74,13 +99,14 @@ public class TransportShip : Ship
             var pos = location.gameObject.transform.position;
             navAgent.SetDestination(new Vector3(pos.x, gameObject.transform.position.y, pos.z));
             destination = location.gameObject;
+            destinationPlanet = location;
         }
         else
         {
             var pos = owner.playerBase.transform.position;
             navAgent.SetDestination(new Vector3(pos.x, gameObject.transform.position.y, pos.z));
             destination = owner.gameObject;
-
+            destinationPlanet = null;
         }
     }
 
@@ -95,6 +121,10 @@ public class TransportShip : Ship
         // Debug.Log("Resources: " + planet.PlanetResourcesAsDictionary[resource.kind].amount);
         // Debug.Log("Resource Divided: " + planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)cap * travellingShips.Count() + 1));
         // Debug.Log("Final:" + planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)cap * travellingShips.Count() + 1) / (distance / 100));
-        return planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)cap * travellingShips.Count() + 1);// / (distance / 100);
+        float attractiveness = planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)cap * travellingShips.Count() + 1);
+        if(travellingShips.Count() < 3)
+            attractiveness /= (distance / 100);
+        return attractiveness;
+        //return planet.PlanetResourcesAsDictionary[resource.kind].amount / ((float)cap * travellingShips.Count() + 1) / (distance / 100);
     }
 }

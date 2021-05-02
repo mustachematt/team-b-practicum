@@ -27,8 +27,11 @@ public class AIPlayer : IPlayer
         if (currentTime >= timeBetweenActions)
         {
             currentTime = 0f;
-            timeBetweenActions++;
+            //timeBetweenActions++;
             makeDecision();
+            if (Console.cheats) {
+                doCheats();
+            }
         }
     }
 
@@ -36,12 +39,16 @@ public class AIPlayer : IPlayer
     {
         int myAttackShips = Fleet.Ships.Where(x => x is AttackShip).Count();
         int myTransportShips = Fleet.Ships.Where(x => x is TransportShip).Count();
+        int myTransportFuelShips = Fleet.Ships.Where(x => x is FuelTransportShip).Count();
+        int myMetalTransportShips = myTransportShips - myTransportFuelShips;
         int enemyAttackShips = Fleet.EnemyShips.Where(x => x is AttackShip).Count();
         int enemyTransportShips = Fleet.EnemyShips.Where(x => x is TransportShip).Count();
         uint attackShipPrice = StarShipUtilities.Instance.ShipDictionary[Ship.shipType.BasicStarfighter].price.metal;
+        uint attackShipFuelPrice = StarShipUtilities.Instance.ShipDictionary[Ship.shipType.BasicStarfighter].price.fuel;
         uint transportShipPrice = StarShipUtilities.Instance.ShipDictionary[Ship.shipType.Freighter].price.metal;
-        bool canBuyAttack = Resources[Resource.ResourceKind.metal].amount >= attackShipPrice;
-        bool canBuyTransport = Resources[Resource.ResourceKind.metal].amount >= transportShipPrice;
+        uint transportShipFuelPrice = StarShipUtilities.Instance.ShipDictionary[Ship.shipType.Freighter].price.fuel;
+        bool canBuyAttack = Resources[Resource.ResourceKind.metal].amount >= attackShipPrice && Resources[Resource.ResourceKind.fuel].amount >= attackShipFuelPrice;
+        bool canBuyTransport = Resources[Resource.ResourceKind.metal].amount >= transportShipPrice && Resources[Resource.ResourceKind.fuel].amount >= transportShipFuelPrice; ;
 
         if (myTransportShips > 0 && myAttackShips <= enemyAttackShips && canBuyAttack)
         {
@@ -53,12 +60,18 @@ public class AIPlayer : IPlayer
         }
         else
         {
-            int rand = UnityEngine.Random.Range(0, 2);
+            int rand = UnityEngine.Random.Range(0, 5);
             if (rand == 0 && canBuyAttack)
                 SpawnUnit(Ship.shipType.BasicStarfighter);
             else if(canBuyTransport)
             {
-                SpawnUnit(Ship.shipType.Freighter);
+             //   Debug.Log($"Transports: {myTransportShips} Fuel: {myTransportFuelShips} Metal: {myMetalTransportShips}");
+                if (myTransportFuelShips == 0 && myTransportShips > 0)
+                    SpawnUnit(Ship.shipType.FuelFreighter);
+                else if ( ((float)myTransportFuelShips / myTransportShips) < 0.3)
+                    SpawnUnit(Ship.shipType.FuelFreighter);
+                else
+                    SpawnUnit(Ship.shipType.Freighter);
             }
         }
         // Debug Ship Spawning
@@ -66,6 +79,48 @@ public class AIPlayer : IPlayer
         //  SpawnUnit(Ship.shipType.BasicStarfighter);
         //  AddResources(new Resource(1000, Resource.ResourceKind.metal));
         //  AddResources(new Resource(1000, Resource.ResourceKind.fuel));
+    }
+
+    void doCheats() {
+        int rand = UnityEngine.Random.Range(0, 10);
+        if (rand == 0) {
+            rand = UnityEngine.Random.Range(0, 5);
+            int Cost;
+            switch (rand) {
+                case 0:
+                    Debug.Log("+10000 metal : AI");
+                    AIPlayer.Instance.AddResources(new Resource(10000, Resource.ResourceKind.metal));
+                    break;
+                case 1:
+                    Debug.Log("+10000 fuel : AI");
+                    AIPlayer.Instance.AddResources(new Resource(10000, Resource.ResourceKind.fuel));
+                    break;
+                case 2:
+                    Debug.Log("unfixed bugs, dev fleet : AI");
+                    foreach(Ship ship in Console.dev_fleet) {
+                        for (int i = 0; i < 10; i++) {
+                            GameObject shipObj = GameObject.Instantiate(ship.gameObject, AIPlayer.Instance.playerBase.transform.position, AIPlayer.Instance.playerBase.transform.rotation, AIPlayer.Instance.transform);
+                            shipObj.GetComponent<Ship>().SetOwner(AIPlayer.Instance);
+                            shipObj.layer = 8; // 8 is the player layer
+                        }
+                    }
+                    break;
+                case 3:
+                    Debug.Log("Adorable bugs, 100 basic fighters : AI");
+                    Cost = (int)StarShipUtilities.Instance.ShipDictionary[Ship.shipType.BasicStarfighter].price.metal;
+                    AIPlayer.Instance.AddResources(new Resource(Cost * 100, Resource.ResourceKind.metal));
+                    for (int i = 0; i < 100; i++)
+                        AIPlayer.Instance.SpawnUnit(Ship.shipType.BasicStarfighter);
+                    break;
+                case 4:
+                    Debug.Log("for sparta, 300 spartan fighters");
+                    Cost = (int)StarShipUtilities.Instance.ShipDictionary[Ship.shipType.SpartanStarfighter].price.metal;
+                    AIPlayer.Instance.AddResources(new Resource(Cost * 300, Resource.ResourceKind.metal));
+                    for (int i = 0; i < 300; i++)
+                        AIPlayer.Instance.SpawnUnit(Ship.shipType.SpartanStarfighter);
+                    break;
+            }
+        }
     }
 
 }
