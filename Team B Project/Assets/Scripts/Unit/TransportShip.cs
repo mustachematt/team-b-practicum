@@ -95,11 +95,15 @@ public class TransportShip : Ship
                 return attractCompare;
             });
 
-            var location = viablePlanets.First();
-            var pos = location.gameObject.transform.position;
-            navAgent.SetDestination(new Vector3(pos.x, gameObject.transform.position.y, pos.z));
-            destination = location.gameObject;
-            destinationPlanet = location;
+            var location = viablePlanets.FirstOrDefault();
+            if(location != null)
+            {
+                var pos = location.gameObject.transform.position;
+                navAgent.SetDestination(new Vector3(pos.x, gameObject.transform.position.y, pos.z));
+                destination = location.gameObject;
+                destinationPlanet = location;
+            }
+
         }
         else
         {
