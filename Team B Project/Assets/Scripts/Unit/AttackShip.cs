@@ -112,16 +112,20 @@ public class AttackShip : Ship
             if (target == null && owner.Fleet.EnemyShips.Contains(ship))
             {
                 target = ship.gameObject;
+                attackTimer = 0;
                 SetDestinationToTargetShip();
             }
     }
 
-    
+    private float GetTrueAttackSpeed()
+    {
+        return (6 - attackSpeed.Value) / 2f;
+    }
     void attack()
     {
         isFiring = true;
         attackTimer += Time.deltaTime;
-        if (attackTimer >= attackSpeed.Value)
+        if (attackTimer >= GetTrueAttackSpeed())
         {
             shoot();
             GetComponent<AudioSource>().Play(); // shooting sound effect
