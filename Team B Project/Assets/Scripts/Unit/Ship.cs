@@ -41,7 +41,7 @@ public abstract class Ship : MonoBehaviour
     [Header("General Debug")]
     public GameObject target;       // Initally hold enemy's base(Attack)/resource point(Transport).
     public Slider healthSlider;     // Health UI
-    [SerializeField] private ShipPropertyValue health;  // Current health 
+    [SerializeField] private int health;  // Current health 
 
     [Header("Ship Properties")]
     public shipType kind;
@@ -81,21 +81,21 @@ public abstract class Ship : MonoBehaviour
     }
     public bool takeDamage(int attack)
     {
-        int currentHealth = health.Value - attack;
+        int currentHealth = health - attack;
         if (currentHealth <= 0)
         {
-            health.Value = 0;
+            health = 0;
             DestroyShip();
             return false;
         }
-        health.Value = currentHealth;
-        healthSlider.value = health.Value / armorStrength.Value;
+        health = currentHealth;
+        healthSlider.value = (float)health / armorStrength.Value;
         return true;
     }
 
 
     private void SetMaxSpeed() { navAgent.speed = maxSpeed.Value * 2; }
-    private void SetMaxHealth() { health.Value = armorStrength.Value; }
+    private void SetMaxHealth() { health = armorStrength.Value * 3; }
     private void SetHealthBarColor()
     {
         Image[] images = GetComponentsInChildren<Image>();

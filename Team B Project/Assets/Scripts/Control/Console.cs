@@ -9,7 +9,7 @@ using System.IO;
 public class Console : MonoBehaviour
 {
     public enum devType { dev_JonStarfighter, };
-    public static List<Ship> dev_fleet;
+    public static List<Ship> dev_fleet = new List<Ship>();
     public static bool cheats = false;
     InputField input;
     // Start is called before the first frame update
@@ -20,7 +20,7 @@ public class Console : MonoBehaviour
         foreach(devType type in Enum.GetValues(typeof(devType)))
         {
             var shipObject = Resources.Load(Path.Combine("Ships", "Prefabs", type.ToString())) as GameObject; // Assets/Resources/Ships/Prefabs/[Ship Name]
-            if (shipObject != null)
+            if (shipObject != null && dev_fleet != null)
                 dev_fleet.Add(shipObject.GetComponent<Ship>());
             else
                 continue;
