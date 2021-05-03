@@ -72,7 +72,10 @@ public abstract class Ship : MonoBehaviour
         SetMaxSpeed(); SetMaxHealth(); SetHealthBarColor();
     }
 
-
+    private int GetMaxHealth()
+    {
+        return armorStrength.Value * 3;
+    }
     public void SetOwner(IPlayer owner) { this.owner = owner; }
     public void DestroyShip()
     {
@@ -89,13 +92,13 @@ public abstract class Ship : MonoBehaviour
             return false;
         }
         health = currentHealth;
-        healthSlider.value = (float)health / armorStrength.Value;
+        healthSlider.value = (float)health / GetMaxHealth();
         return true;
     }
 
 
     private void SetMaxSpeed() { navAgent.speed = maxSpeed.Value * 2; }
-    private void SetMaxHealth() { health = armorStrength.Value * 3; }
+    private void SetMaxHealth() { health = GetMaxHealth(); }
     private void SetHealthBarColor()
     {
         Image[] images = GetComponentsInChildren<Image>();
