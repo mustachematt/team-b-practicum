@@ -13,7 +13,7 @@ public class PauseMenuManager : MonoBehaviour
     // variables used to pull functions from other scripts
     public PauseControl pauseControl;
 
-
+    
     // GameObjects used for the pause menu
     // slider component for camera sensitivity
     public Slider cameraSensitivitySlider;

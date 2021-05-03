@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.25
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -114,13 +114,13 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.083333336
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 47efd3e98494974409174c2dcf5ca977, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 8c2716d102e3db943ae10cbb3c9316dc, type: 2}
 --- !u!1 &4441606
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,7 +934,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144121807}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 262.61877, y: -92.962524, z: -167.72038}
+  m_LocalPosition: {x: 262.61877, y: 0, z: -167.72038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 314782101}
@@ -1736,7 +1736,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314782100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 577.539, y: 436.2651, z: -35.198833}
+  m_LocalPosition: {x: 577.539, y: 0, z: -35.198833}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1863259639}
@@ -2021,7 +2021,7 @@ MonoBehaviour:
   speed: 25
   minCamSize: 10
   maxCamSize: 80
-  zoomSpeed: 0.5
+  zoomSpeed: 1.5
   xLimit: 150
   zLimit: 100
   isZoomedOut: 0
@@ -4554,7 +4554,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1195777822
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4990,7 +4990,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1375875351
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8854,7 +8854,12 @@ PrefabInstance:
     - target: {fileID: 2856419802817257368, guid: 7bda71939b2d84088b62ed19568f4da0,
         type: 3}
       propertyPath: m_Value
-      value: 0.5
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2856419802817257368, guid: 7bda71939b2d84088b62ed19568f4da0,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2856419802817257368, guid: 7bda71939b2d84088b62ed19568f4da0,
         type: 3}

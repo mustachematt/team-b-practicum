@@ -9,7 +9,7 @@ using System.IO;
 public class Console : MonoBehaviour
 {
     public enum devType { dev_JonStarfighter, };
-    public static List<Ship> dev_fleet;
+    public static List<Ship> dev_fleet = new List<Ship>();
     public static bool cheats = false;
     InputField input;
     // Start is called before the first frame update
@@ -20,7 +20,7 @@ public class Console : MonoBehaviour
         foreach(devType type in Enum.GetValues(typeof(devType)))
         {
             var shipObject = Resources.Load(Path.Combine("Ships", "Prefabs", type.ToString())) as GameObject; // Assets/Resources/Ships/Prefabs/[Ship Name]
-            if (shipObject != null)
+            if (shipObject != null && dev_fleet != null)
                 dev_fleet.Add(shipObject.GetComponent<Ship>());
             else
                 continue;
@@ -87,7 +87,9 @@ public class Console : MonoBehaviour
         {
             if (cheats) {
                 Debug.Log("Adorable bugs, 100 basic fighters");
+                var CostFuel = (int)StarShipUtilities.Instance.ShipDictionary[Ship.shipType.BasicStarfighter].price.fuel;
                 var Cost = (int)StarShipUtilities.Instance.ShipDictionary[Ship.shipType.BasicStarfighter].price.metal;
+                ControlledPlayer.Instance.AddResources(new Resource(CostFuel * 100, Resource.ResourceKind.fuel));
                 ControlledPlayer.Instance.AddResources(new Resource(Cost * 100, Resource.ResourceKind.metal));
                 for (int i = 0; i < 100; i++)
                     ControlledPlayer.Instance.SpawnUnit(Ship.shipType.BasicStarfighter);
@@ -100,7 +102,9 @@ public class Console : MonoBehaviour
         {
             if (cheats) {                
                 Debug.Log("for sparta, 300 spartan fighters");
+                var CostFuel = (int)StarShipUtilities.Instance.ShipDictionary[Ship.shipType.SpartanStarfighter].price.fuel;
                 var Cost = (int)StarShipUtilities.Instance.ShipDictionary[Ship.shipType.SpartanStarfighter].price.metal;
+                ControlledPlayer.Instance.AddResources(new Resource(CostFuel * 300, Resource.ResourceKind.fuel));
                 ControlledPlayer.Instance.AddResources(new Resource(Cost * 300, Resource.ResourceKind.metal));
                 for (int i = 0; i < 300; i++)
                     ControlledPlayer.Instance.SpawnUnit(Ship.shipType.SpartanStarfighter);
