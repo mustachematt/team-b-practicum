@@ -7,7 +7,7 @@ public class AttackShip : Ship
     public ShipPropertyValue attackRange;
     public ShipPropertyValue attackStrength;
     public ShipPropertyValue attackSpeed;
-    float setDestinationRange = 8f;//distance from a planet this ship must be to gain control of it and move to next target
+    float setDestinationRange = 10f;//distance from a planet this ship must be to gain control of it and move to next target
     string[] planetList = { "Player2MainPlanet", "Player2Planet1", "Player2Planet3", "Player2Planet2", "NeutralTop2", "NeutralTopMain", "NeutralTop3", "NeutralTop1", "NeutralCenter1", "NeutralPlanet3", "NeutralPlanet2", "NeutralCenterMain", "NeutralPlanet6", "NeutralPlanet4", "NeutralPlanet5", "NeutralBottom1", "NeutralBottomMain", "NeutralBottom3", "NeutralBottom2", "Player1Planet2", "Player1Planet3", "Player1Planet1", "Player1MainPlanet" };
     //the string array above lists the order planets are to be visited, for player ships -> start at Length-1 and move towords 0, for AI ships -> start at 0 and move towords Length-1
     int planetTargetIndex;//used to track which planet this ship is targeting
