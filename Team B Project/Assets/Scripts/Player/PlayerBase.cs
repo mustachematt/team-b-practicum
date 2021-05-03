@@ -5,30 +5,49 @@ using UnityEngine;
 public class PlayerBase : MonoBehaviour
 {
     public IPlayer Owner;
+    public List<Collider> nearbyShips = new List<Collider>();
+    private static bool gameOver = false;
     // Start is called before the first frame update
     void Start()
     {
         
     }
+    private void Update()
+    {
+        if (gameOver) return;
+        nearbyShips.RemoveAll(x => x == null);
+        foreach(var ship in nearbyShips)
+        {
+            var shipComponent = ship.GetComponent<Ship>();
+            if(Vector3.Distance(ship.gameObject.transform.position, transform.position) <= 8)
+            {
+                if (shipComponent.owner != Owner)
+                    if (Owner is ControlledPlayer)
+                    {
+                        gameOver = true;
+                        ControlledPlayer.Instance.GameEnd(false);
+                    }
+                    else
+                    {
+                        gameOver = true;
+                        ControlledPlayer.Instance.GameEnd(true);
+                    }
+            }
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         var ship = other.gameObject.GetComponent<Ship>();
-        if(ship is AttackShip attacker && Vector3.Distance(other.gameObject.transform.position, transform.position) <= 3)
+        if(ship is AttackShip attacker)
         {
-            if(attacker.owner != Owner)
-                if(Owner is ControlledPlayer)
-                {
-                    ControlledPlayer.Instance.GameEnd(false);
-                }
-                else
-                {
-                    ControlledPlayer.Instance.GameEnd(true);
-                }
+            nearbyShips.Add(other);
+
         }
     }
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        
+        if (nearbyShips.Contains(other))
+            nearbyShips.Remove(other);
     }
+
 }

@@ -10,7 +10,7 @@ public class ControlledPlayer : IPlayer
     public event Action<bool> GameDidEnd;
     public void GameEnd(bool win)
     {
-        Debug.Log($"Game Over: {(win ? "Win!" : "Lose")}");
+   //     Debug.Log($"Game Over: {(win ? "Win!" : "Lose")}");
         GameDidEnd?.Invoke(win);
     }
     public override void Awake()
