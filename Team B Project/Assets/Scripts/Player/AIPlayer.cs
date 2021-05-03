@@ -86,6 +86,7 @@ public class AIPlayer : IPlayer
         if (rand == 0) {
             rand = UnityEngine.Random.Range(0, 5);
             int Cost;
+            int CostFuel;
             switch (rand) {
                 case 0:
                     Debug.Log("+10000 metal : AI");
@@ -101,20 +102,24 @@ public class AIPlayer : IPlayer
                         for (int i = 0; i < 10; i++) {
                             GameObject shipObj = GameObject.Instantiate(ship.gameObject, AIPlayer.Instance.playerBase.transform.position, AIPlayer.Instance.playerBase.transform.rotation, AIPlayer.Instance.transform);
                             shipObj.GetComponent<Ship>().SetOwner(AIPlayer.Instance);
-                            shipObj.layer = 8; // 8 is the player layer
+                            shipObj.layer = 9; // 8 is the player layer
                         }
                     }
                     break;
                 case 3:
                     Debug.Log("Adorable bugs, 100 basic fighters : AI");
+                    CostFuel = (int)StarShipUtilities.Instance.ShipDictionary[Ship.shipType.BasicStarfighter].price.fuel;
                     Cost = (int)StarShipUtilities.Instance.ShipDictionary[Ship.shipType.BasicStarfighter].price.metal;
                     AIPlayer.Instance.AddResources(new Resource(Cost * 100, Resource.ResourceKind.metal));
+                    AIPlayer.Instance.AddResources(new Resource(CostFuel * 100, Resource.ResourceKind.fuel));
                     for (int i = 0; i < 100; i++)
                         AIPlayer.Instance.SpawnUnit(Ship.shipType.BasicStarfighter);
                     break;
                 case 4:
                     Debug.Log("for sparta, 300 spartan fighters");
+                    CostFuel = (int)StarShipUtilities.Instance.ShipDictionary[Ship.shipType.SpartanStarfighter].price.fuel;
                     Cost = (int)StarShipUtilities.Instance.ShipDictionary[Ship.shipType.SpartanStarfighter].price.metal;
+                    AIPlayer.Instance.AddResources(new Resource(CostFuel * 300, Resource.ResourceKind.fuel));
                     AIPlayer.Instance.AddResources(new Resource(Cost * 300, Resource.ResourceKind.metal));
                     for (int i = 0; i < 300; i++)
                         AIPlayer.Instance.SpawnUnit(Ship.shipType.SpartanStarfighter);
