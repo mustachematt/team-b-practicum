@@ -2251,8 +2251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd1836650714364c912a75b232cbd5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameEndPanel: {fileID: 0}
-  GameEndText: {fileID: 0}
+  GameEndPanel: {fileID: 1124005234}
+  GameEndText: {fileID: 760481094}
 --- !u!1 &465214694
 GameObject:
   m_ObjectHideFlags: 0
@@ -7141,7 +7141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88dacca2960c6394eaf7eb2399fd1313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dev_fleet: []
 --- !u!1 &1967582330
 GameObject:
   m_ObjectHideFlags: 0

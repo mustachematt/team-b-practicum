@@ -48,7 +48,6 @@ public abstract class Ship : MonoBehaviour
     public ShipPrice price; 
     public ShipPropertyValue maxSpeed;
     public ShipPropertyValue armorStrength;     // Max health 
-    public IPlayer owner = null;
 
     private Vector3 previousVelocity;
     private Vector3 previousAcceleration;
