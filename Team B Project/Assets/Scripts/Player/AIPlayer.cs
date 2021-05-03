@@ -101,7 +101,7 @@ public class AIPlayer : IPlayer
                         for (int i = 0; i < 10; i++) {
                             GameObject shipObj = GameObject.Instantiate(ship.gameObject, AIPlayer.Instance.playerBase.transform.position, AIPlayer.Instance.playerBase.transform.rotation, AIPlayer.Instance.transform);
                             shipObj.GetComponent<Ship>().SetOwner(AIPlayer.Instance);
-                            shipObj.layer = 8; // 8 is the player layer
+                            shipObj.layer = 9; // 8 is the player layer
                         }
                     }
                     break;
