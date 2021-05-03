@@ -13,7 +13,7 @@ public class PlayerBase : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var ship = other.gameObject.GetComponent<Ship>();
-        if(ship is AttackShip attacker)
+        if(ship is AttackShip attacker && Vector3.Distance(other.gameObject.transform.position, transform.position) <= 3)
         {
             if(attacker.owner != Owner)
                 if(Owner is ControlledPlayer)
