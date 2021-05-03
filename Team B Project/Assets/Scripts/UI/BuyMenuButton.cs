@@ -18,7 +18,7 @@ public class BuyMenuButton : MonoBehaviour
     [NonSerialized] public int fuelCost;
     [NonSerialized] public int metalCost;
 
-    public void Awake()
+    public void Start()
     {
         var ship = StarShipUtilities.Instance.ShipDictionary[this.ship];
         var spriteRenderer = ship.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
