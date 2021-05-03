@@ -41,7 +41,7 @@ public abstract class Ship : MonoBehaviour
     [Header("General Debug")]
     public GameObject target;       // Initally hold enemy's base(Attack)/resource point(Transport).
     public Slider healthSlider;     // Health UI
-    [SerializeField] private int health;  // Current health 
+    private int health;  // Current health 
 
     [Header("Ship Properties")]
     public shipType kind;
