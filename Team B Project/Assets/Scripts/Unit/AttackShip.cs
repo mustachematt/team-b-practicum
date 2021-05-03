@@ -14,7 +14,7 @@ public class AttackShip : Ship
 
     [Header("Attack Debug")]
     public bool isFiring = false;
-    public List<GameObject> targetList;
+    public List<GameObject> targetList = new List<GameObject>();
 
     // 3 is too small for attackRange, use attackRange(3) to calculate points of balance and use (attackRange * sale) to set actual attack range 
     private float attackScale = 10;
@@ -90,14 +90,20 @@ public class AttackShip : Ship
     }
     public void SetDestinationToTargetShip()
     {
+        if (target == null)
+            target = targetList.First();
         navAgent.SetDestination(target.transform.position);
     }
     public override void Update()
     {
         base.Update();
+        targetList.RemoveAll(x => x == null);
         if (!target)
         {
-            SetDestinationToEnemyBase();
+            if (targetList.Count == 0)
+                SetDestinationToEnemyBase();
+            else
+                SetDestinationToTargetShip();
             return;
         }
         attack();
@@ -111,12 +117,17 @@ public class AttackShip : Ship
         if (collider.gameObject.TryGetComponent(out ship) == true)
             if (target == null && owner.Fleet.EnemyShips.Contains(ship))
             {
+                targetList.Add(collider.gameObject);
                 target = ship.gameObject;
                 attackTimer = 0;
                 SetDestinationToTargetShip();
             }
     }
-
+    public void OnTriggerExit(Collider other)
+    {
+        if (targetList.Contains(other.gameObject))
+            targetList.Remove(other.gameObject);
+    }
     private float GetTrueAttackSpeed()
     {
         return (6 - attackSpeed.Value) / 2f;
