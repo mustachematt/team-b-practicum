@@ -91,7 +91,8 @@ public class AttackShip : Ship
     public void SetDestinationToTargetShip()
     {
         if (target == null)
-            target = targetList.First();
+            target = targetList.FirstOrDefault();
+        if (target == null) return;
         navAgent.SetDestination(target.transform.position);
     }
     public override void Update()
