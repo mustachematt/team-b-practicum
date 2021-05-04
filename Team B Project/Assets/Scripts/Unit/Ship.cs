@@ -79,7 +79,11 @@ public abstract class Ship : MonoBehaviour
     public void SetOwner(IPlayer owner) { this.owner = owner; }
     public void DestroyShip()
     {
-        Instantiate(Resources.Load("Explosions/Prefabs/TempExplosion"), transform.position, Quaternion.Euler(90, 0, 0));
+        Instantiate(
+            Resources.Load($"Explosions/Prefabs/{kind}Explosion"), 
+            transform.position, 
+            Quaternion.Euler(90, transform.rotation.y, 0)
+        );
         Destroy(gameObject);
     }
     public bool takeDamage(int attack)
