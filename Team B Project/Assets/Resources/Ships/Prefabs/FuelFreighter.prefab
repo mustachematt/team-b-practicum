@@ -270,7 +270,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   healthSlider: {fileID: 3307959379104047904}
-  health: 0
+  ExplosionPrefab: {fileID: 7481154581353954071, guid: b71ca801d2e759f4ca71c7d9a2645f6d,
+    type: 3}
   kind: 4
   price:
     fuel: 0

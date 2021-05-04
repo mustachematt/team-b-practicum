@@ -42,7 +42,7 @@ public abstract class Ship : MonoBehaviour
     public GameObject target;       // Initally hold enemy's base(Attack)/resource point(Transport).
     public Slider healthSlider;     // Health UI
     private int health;  // Current health 
-
+    public GameObject ExplosionPrefab;
     [Header("Ship Properties")]
     public shipType kind;
     public ShipPrice price; 
@@ -79,11 +79,14 @@ public abstract class Ship : MonoBehaviour
     public void SetOwner(IPlayer owner) { this.owner = owner; }
     public void DestroyShip()
     {
-        Instantiate(
-            Resources.Load($"Explosions/Prefabs/{kind}Explosion"), 
-            transform.position, 
-            Quaternion.Euler(90, transform.rotation.y, 0)
-        );
+        if(ExplosionPrefab != null)
+        {
+            Instantiate(
+                ExplosionPrefab,
+                transform.position,
+                Quaternion.Euler(90, transform.rotation.y, 0)
+            );
+        }
         Destroy(gameObject);
     }
     public bool takeDamage(int attack)
