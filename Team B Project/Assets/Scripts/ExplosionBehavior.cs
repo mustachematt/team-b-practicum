@@ -12,7 +12,7 @@ public class ExplosionBehavior : MonoBehaviour
     IEnumerator Explode()
     {
         GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
     }
 }

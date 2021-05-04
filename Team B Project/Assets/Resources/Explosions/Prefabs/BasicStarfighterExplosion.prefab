@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7402671853816576230}
   - component: {fileID: 9018154365925525901}
   m_Layer: 0
-  m_Name: TempExplosion
+  m_Name: BasicStarfighterExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 422552696513543800}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 40, y: 40, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.8490566, g: 0.33140668, b: 0.15619439, a: 1}
+  m_Sprite: {fileID: 893799461819587634, guid: d5a7c0bb17e8fdd468ac43588c392111, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -202,7 +202,7 @@ Animator:
   m_GameObject: {fileID: 422552696513543800}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ddf0915a98ab10240998198b31a9bf81, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8aa985b815f83fc47b7914bf2bd6f3d9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
