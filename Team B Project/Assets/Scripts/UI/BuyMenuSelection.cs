@@ -29,7 +29,7 @@ public class BuyMenuSelection : MonoBehaviour
         _shipName.text = selectedButton.shipName;
         _shipDesc.text = selectedButton.shipDesc;
         _shipImage.sprite = selectedButton.shipImage;
-
+        _shipImage.color = selectedButton.shipImageColor;
         attackSlider.value = selectedButton.attackPts;
         atkSpeedSlider.value = selectedButton.attackPts;
         rangeSlider.value = selectedButton.attackPts;

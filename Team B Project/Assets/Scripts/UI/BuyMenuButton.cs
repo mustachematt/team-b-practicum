@@ -10,6 +10,7 @@ public class BuyMenuButton : MonoBehaviour
     public string shipName;
     public string shipDesc;
     [NonSerialized] public Sprite shipImage;
+    [NonSerialized] public Color shipImageColor;
     [NonSerialized] public int attackPts;
     [NonSerialized] public int defensePts;
     [NonSerialized] public int moveSpeedPts;
@@ -23,6 +24,7 @@ public class BuyMenuButton : MonoBehaviour
         var ship = StarShipUtilities.Instance.ShipDictionary[this.ship];
         var spriteRenderer = ship.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
         shipImage = spriteRenderer.sprite;
+        shipImageColor = spriteRenderer.color;
         attackPts = ship is AttackShip ? (ship as AttackShip).attackStrength.Value : 0;
         defensePts = ship.armorStrength.Value;
         moveSpeedPts = ship.maxSpeed.Value;
