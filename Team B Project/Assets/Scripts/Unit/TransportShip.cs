@@ -49,7 +49,7 @@ public class TransportShip : Ship
             SetDestination(false);
             return;
         }
-        if (Vector3.Distance(navAgent.destination, gameObject.transform.position) < 4)
+        if (Vector3.Distance(navAgent.destination, gameObject.transform.position) < 8)
         {
             //Destination Reached
             if (!returning)
