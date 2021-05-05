@@ -40,7 +40,8 @@ public class PlayerBase : MonoBehaviour
         var ship = other.gameObject.GetComponent<Ship>();
         if(ship is AttackShip attacker)
         {
-            nearbyShips.Add(other);
+            if(!nearbyShips.Contains(other))
+                nearbyShips.Add(other);
 
         }
     }
