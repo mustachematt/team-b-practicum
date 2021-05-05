@@ -46,8 +46,8 @@ public class PlayerBase : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (nearbyShips.Contains(other))
-            nearbyShips.Remove(other);
+     //   if (nearbyShips.Contains(other))
+     //       nearbyShips.Remove(other);
     }
 
 }
