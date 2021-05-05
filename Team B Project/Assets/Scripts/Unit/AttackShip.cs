@@ -118,12 +118,15 @@ public class AttackShip : Ship
     {
         Ship ship;
         if (collider.gameObject.TryGetComponent(out ship) == true)
-            if (target == null && owner.Fleet.EnemyShips.Contains(ship))
+            if (owner.Fleet.EnemyShips.Contains(ship))
             {
                 targetList.Add(collider.gameObject);
-                target = ship.gameObject;
-                attackTimer = 0;
-                SetDestinationToTargetShip();
+                if(target == null)
+                {
+                    target = ship.gameObject;
+                    attackTimer = 0;
+                    SetDestinationToTargetShip();
+                }
             }
     }
     public void OnTriggerExit(Collider other)
