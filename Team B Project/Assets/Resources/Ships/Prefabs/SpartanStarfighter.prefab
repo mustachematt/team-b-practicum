@@ -565,15 +565,15 @@ MonoBehaviour:
     fuel: 225
     metal: 225
   maxSpeed:
-    _value: 3
-  armorStrength:
     _value: 4
+  armorStrength:
+    _value: 3
   attackRange:
-    _value: 2
+    _value: 3
   attackStrength:
     _value: 4
   attackSpeed:
-    _value: 3
+    _value: 4
   isFiring: 0
   targetList: []
 --- !u!135 &1654379007770411190

@@ -74,7 +74,7 @@ public abstract class Ship : MonoBehaviour
 
     private int GetMaxHealth()
     {
-        return armorStrength.Value * 3;
+        return (int)Math.Pow(armorStrength.Value, 2);
     }
     public void SetOwner(IPlayer owner) { this.owner = owner; }
     public void DestroyShip()

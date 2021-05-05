@@ -381,11 +381,11 @@ MonoBehaviour:
   maxSpeed:
     _value: 3
   armorStrength:
-    _value: 3
+    _value: 2
   attackRange:
     _value: 3
   attackStrength:
-    _value: 3
+    _value: 2
   attackSpeed:
     _value: 3
   isFiring: 0

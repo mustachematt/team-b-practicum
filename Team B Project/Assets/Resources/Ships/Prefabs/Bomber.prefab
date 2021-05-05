@@ -438,18 +438,18 @@ MonoBehaviour:
     type: 3}
   kind: 3
   price:
-    fuel: 225
-    metal: 225
+    fuel: 300
+    metal: 200
   maxSpeed:
-    _value: 3
+    _value: 2
   armorStrength:
     _value: 5
   attackRange:
-    _value: 2
+    _value: 4
   attackStrength:
     _value: 4
   attackSpeed:
-    _value: 2
+    _value: 1
   isFiring: 0
   targetList: []
 --- !u!135 &1580470756706616869
