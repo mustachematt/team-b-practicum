@@ -47,9 +47,11 @@ public abstract class IPlayer : MonoBehaviour
         //Instantiate Ship Prefab, subtract resources
         if(Resources[Resource.ResourceKind.metal].amount >=shipPrefab.GetComponent<Ship>().price.metal && Resources[Resource.ResourceKind.fuel].amount >= shipPrefab.GetComponent<Ship>().price.fuel) //this needs to be changed to reflect
         {
+            Vector2 CircleAdjust = UnityEngine.Random.insideUnitCircle.normalized * 10;
+            Vector3 spawnPos = new Vector3(playerBase.transform.position.x + CircleAdjust.x, playerBase.transform.position.y, playerBase.transform.position.z + CircleAdjust.y);
             Resources[Resource.ResourceKind.metal].amount -= (int)shipPrefab.GetComponent<Ship>().price.metal;
             Resources[Resource.ResourceKind.fuel].amount -= (int)shipPrefab.GetComponent<Ship>().price.fuel;
-            GameObject ship = GameObject.Instantiate(shipPrefab, playerBase.transform.position, playerBase.transform.rotation, this.transform);
+            GameObject ship = GameObject.Instantiate(shipPrefab, spawnPos, playerBase.transform.rotation, this.transform);
             ship.GetComponent<Ship>().SetOwner(this);
             if (this is ControlledPlayer) {
                 ship.layer = 8; // 8 is the player layer
