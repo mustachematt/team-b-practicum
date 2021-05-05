@@ -571,7 +571,7 @@ MonoBehaviour:
   attackRange:
     _value: 3
   attackStrength:
-    _value: 4
+    _value: 3
   attackSpeed:
     _value: 4
   isFiring: 0

@@ -381,7 +381,7 @@ MonoBehaviour:
   maxSpeed:
     _value: 3
   armorStrength:
-    _value: 2
+    _value: 3
   attackRange:
     _value: 3
   attackStrength:
