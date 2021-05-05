@@ -18,12 +18,13 @@ public class AttackShip : Ship
 
     // 3 is too small for attackRange, use attackRange(3) to calculate points of balance and use (attackRange * sale) to set actual attack range 
     private float attackScale = 10;
+    private int trueAttack = 0;
     private float attackTimer;
     private int nextTarget;
 
 
     private void SetAttackRange() { GetComponent<SphereCollider>().radius = attackRange.Value * attackScale; }
-    private void SetAttackStrength() { }
+    private void SetAttackStrength() { trueAttack = attackStrength.Value * 2; }
     private void SetAttackSpeed() { }
 
 
@@ -32,6 +33,7 @@ public class AttackShip : Ship
         base.Start();
 
         SetAttackRange();
+        SetAttackStrength();
         attackTimer = attackSpeed.Value;
         UpdateDestinationPlanetIndex();
 
@@ -141,7 +143,7 @@ public class AttackShip : Ship
         {
             shoot();
             GetComponent<AudioSource>().Play(); // shooting sound effect
-            target.GetComponent<Ship>().takeDamage(attackStrength.Value);
+            target.GetComponent<Ship>().takeDamage(trueAttack);
             attackTimer = 0;
             isFiring = false;
         }
