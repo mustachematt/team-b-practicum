@@ -10,7 +10,7 @@ public class ConsoleController : MonoBehaviour
     public GameObject console;
     internal static Key[] konami = new Key[] { Key.UpArrow, Key.UpArrow, Key.DownArrow, Key.DownArrow, Key.LeftArrow, Key.RightArrow, Key.LeftArrow, Key.RightArrow, Key.B, Key.A };
     private int konamiIndex = 0;
-    bool keyboard = false;
+   // bool keyboard = false;
     // Start is called before the first frame update
     void Start()
     {
