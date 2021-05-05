@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+
 public class AIPlayer : IPlayer
 {
-    public float timeBetweenActions = 2.0f;
+    public float timeBetweenActions = 3.0f;
     public float currentTime = 0.0f;
     public static AIPlayer Instance;
     public override void Awake()
